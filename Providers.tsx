@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import React from 'react'
 import { ChakraProvider } from '@chakra-ui/react'
 
-export function Providers({ children }: { children: ReactNode }) {
+export function Providers({ children }) {
   return (
     <ChakraProvider>
       {children}
