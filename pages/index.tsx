@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Text, Flex } from '@chakra-ui/react'
 import { COLORS } from './theme'
+import { Text, Flex } from '@chakra-ui/react'
 
-function App() {
+export default function Home() {
   const [bgColor, setBgColor] = useState(COLORS.backgrounds.yellow)
 
   useEffect(() => {
@@ -119,5 +119,3 @@ function App() {
     </>
   )
 }
-
-export default App
