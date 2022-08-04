@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { COLORS } from './theme'
+import { COLORS } from '../theme'
 import { Text, Flex } from '@chakra-ui/react'
 
 export default function Home() {
