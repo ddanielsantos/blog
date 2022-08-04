@@ -36,25 +36,29 @@ export default function Home() {
         bg={bgColor}
         transition={'ease-out'}
         transitionDuration={'0.3s'}
-        justifyContent={'center'}
-        alignItems='center'
-        flexDir={'column'}
         w='100%'
-      // border='1px solid red'
+        flexDir={'column'}
+        alignItems='center'
+
+        scrollSnapType={'y mandatory'}
+        overflowY='scroll'
+        h='100vh'
       >
         <Flex
           as={'section'}
           bg={COLORS.backgrounds.yellow}
           shadow={'2xl'}
           w={['100%', '48em']}
-          minH={'100vh'}
           flexDir='column'
           alignItems='flex-end'
           justifyContent={'flex-end'}
           padding={'1em'}
+
+          flexShrink={0}
+          scrollSnapAlign='start'
+          h={'100vh'}
         >
           <Text
-            // marginBlockStart={0}
             lineHeight={0.9}
             textTransform={'uppercase'}
             fontWeight='extrabold'
@@ -86,11 +90,14 @@ export default function Home() {
           bg={COLORS.backgrounds.blue}
           shadow={'2xl'}
           w={['100%', '48em']}
-          minH={'100vh'}
           flexDir='column'
           alignItems='flex-start'
           justifyContent={'flex-start'}
           padding={'1em'}
+
+          flexShrink={0}
+          scrollSnapAlign='start'
+          h={'100vh'}
         >
           <Text
             lineHeight={1}
@@ -107,13 +114,15 @@ export default function Home() {
           bg={COLORS.backgrounds.red}
           shadow={'2xl'}
           w={['100%', '48em']}
-          minH={'100vh'}
           flexDir='column'
           alignItems='flex-start'
           justifyContent={'flex-start'}
           padding={'1em'}
-        >
 
+          flexShrink={0}
+          scrollSnapAlign='start'
+          h={'100vh'}
+        >
         </Flex>
       </Flex>
     </>
