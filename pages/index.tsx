@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { COLORS } from '../theme'
-import { Text, Flex } from '@chakra-ui/react'
+import { Text, Flex, Box } from '@chakra-ui/react'
+import { Timeline } from '../components/Timeline'
 
 export default function Home() {
   const [bgColor, setBgColor] = useState(COLORS.backgrounds.yellow)
@@ -117,12 +118,36 @@ export default function Home() {
           flexDir='column'
           alignItems='flex-start'
           justifyContent={'flex-start'}
-          padding={'1em'}
 
           flexShrink={0}
           scrollSnapAlign='start'
           h={'100vh'}
         >
+          <Flex
+            alignItems={'center'}
+            overflow={'hidden'}
+          >
+            <Timeline>
+              <Box>
+                pisadinha
+              </Box>
+              <Box>
+                caneta azul
+              </Box>
+              <Box>
+                jailson mendes
+              </Box>
+              <Box>
+                cavalo
+              </Box>
+              <Box>
+                irineu
+              </Box>
+              <Box>
+                voce nao sabe nem eu
+              </Box>
+            </Timeline>
+          </Flex>
         </Flex>
       </Flex>
     </>
