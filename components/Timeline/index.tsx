@@ -14,21 +14,31 @@ export const Timeline = (props: Props) => {
   }
 
   return (
-    <Box>
-      {
-        props.children[clicked]
-      }
+    <Flex
+      position={'relative'}
+      flex={1}
+      gap='1em'
+      w='100%'
+      flexDir={'column'}
+      overflow={'hidden'}
+    >
+      <Box
+        marginY={'auto'}
+      >
+        {
+          props.children[clicked]
+        }
+      </Box>
+
       <Flex
-        position={'relative'}
-        gap={['1em', '3em']}
-        w='fit-content'
-        ml={'5em'}
+        gap={['0.75em', '1.25em']}
       >
         {
           props.children.map((_, index) => {
             return (
               <TimelineIndicator
                 key={index}
+                flexShrink={0}
                 focused={index === clicked}
                 zIndex={'2'}
                 boxSize={['1.25em', '1.5em']}
@@ -37,16 +47,7 @@ export const Timeline = (props: Props) => {
             )
           })
         }
-        <Box
-          bgColor={'#FFEEEE'}
-          position='absolute'
-          alignSelf='center'
-          right={'5%'}
-          w={'500%'}
-          h={['2px', '4px']}
-          zIndex={'1'}
-        />
       </Flex>
-    </Box>
+    </Flex>
   )
 }
