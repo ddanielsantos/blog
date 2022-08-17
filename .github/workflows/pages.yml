@@ -43,10 +43,20 @@ jobs:
             echo "::set-output name=command::ci"
             echo "::set-output name=runner::npx --no-install"
             exit 0
+          elif [ -f "${{ github.workspace }}/pnpm-lock.yaml"]; then
+            echo "::set-output name=manager::pnpm"
+            echo "::set-output name=command::install"
+            echo "::set-output name=manager::pnpm"
           else
             echo "Unable to determine packager manager"
             exit 1
           fi
+      - uses: pnpm/actions-setup@v2.2.2
+        name: Install PNPM
+        id: pnpm-install
+        with: 
+          version: 7
+          run_install: false
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
