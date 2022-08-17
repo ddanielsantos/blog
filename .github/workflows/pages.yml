@@ -51,7 +51,7 @@ jobs:
             echo "Unable to determine packager manager"
             exit 1
           fi
-      - uses: pnpm/actions-setup@v2.2.2
+      - uses: pnpm/action-setup@v2.2.2
         name: Install PNPM
         id: pnpm-install
         with: 
