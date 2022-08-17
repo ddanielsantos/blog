@@ -61,6 +61,8 @@ jobs:
         with: 
           version: 7
           run_install: false
+      - name: Set node-linker to hoisted
+        run: pnpm config set node-linker=hoisted
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v1
