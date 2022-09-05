@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { COLORS } from '../theme'
-import { Text, Flex } from '@chakra-ui/react'
-import { Timeline } from '../components/Timeline'
-import { JobResume } from '../components/JobResume'
+import { Text, Flex, Image, Link } from '@chakra-ui/react'
+import { Timeline } from '../src/components/Timeline'
+import { JobResume } from '../src/components/JobResume'
+import NextLink from 'next/link'
+import { ExcaliArrow } from '../src/icons/Me'
 
 export default function Home() {
   const [bgColor, setBgColor] = useState(COLORS.backgrounds.yellow)
@@ -31,7 +33,6 @@ export default function Home() {
   }, [])
 
   return (
-    <>
       <Flex
         id='main'
         as='main'
@@ -93,7 +94,6 @@ export default function Home() {
           </Text>
           <Text
             textTransform={'uppercase'}
-            fontWeight='light'
             fontSize={['1.25em', '1.25em']}
             textAlign='right'
           >
@@ -116,7 +116,7 @@ export default function Home() {
           minH={'100vh'}
         >
           <Text
-          lineHeight={1}
+            lineHeight={1}
             color={COLORS.paneIndicator.main.blue}
             textTransform={'uppercase'}
             fontWeight='extrabold'
@@ -124,6 +124,49 @@ export default function Home() {
           >
             me
           </Text>
+          
+          <Flex
+            flexDir={'column'}
+            mt={'1'}
+            gap={'2'}
+          >
+          <Text
+            fontWeight='semibold'
+            fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}
+            color={COLORS.paneIndicator.main.blue}
+          >
+            Hi, I'm Daniel Santos. I like to code and drink coffee, sometimes I blog about random stuff.
+          </Text>
+          <ExcaliArrow width={40} h={40} color={'white'}/>
+          <Image
+            src={'/Happy-Person-Free-Download-PNG.png'}
+            alt="me"
+            boxSize={'250px'}
+            sx={{
+              filter:`drop-shadow(15px 0px ${COLORS.paneIndicator.main.blue})`
+            }}
+          />
+          </Flex>
+          <NextLink href='/blog' passHref>
+          <Link
+            position={'relative'}
+            background={'white'}
+            padding={'2'}
+            borderRadius={'7px'}
+            paddingInline={'4'}
+            fontSize='sm'
+            fontWeight="bold"
+            transition={'background-color 0.3s'}
+            border={`2px solid white`}
+            color={COLORS.backgrounds.blue}
+            _hover={{
+              color: 'white',
+              bg: 'transparent',
+            }}
+          >
+            read the blog
+          </Link>
+          </NextLink>
         </Flex>
 
         <Flex
@@ -170,6 +213,5 @@ export default function Home() {
           </Timeline>
         </Flex>
       </Flex>
-    </>
   )
 }
