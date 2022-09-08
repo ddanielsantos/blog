@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
+import { Tag } from '../Tag'
 
 type Props = {
   title: string
@@ -33,27 +34,7 @@ export const JobResume = (props: Props) => {
         gap='1rem'
         flexWrap={'wrap'}
       >
-        {props.tags?.map((tag, index) => {
-          return (
-            <Text
-              cursor={'default'}
-              px={'2'}
-              py={'1'}
-              transitionDuration='0.5s'
-              borderRadius={'5'}
-              key={index}
-              _hover={{
-                bg: 'whiteAlpha.200',
-                textDecor: 'underline'
-              }}
-              color={props.color}
-              fontSize={['sm', 'sm', 'md', 'md', 'lg', 'xl']}
-              fontWeight='bold'
-            >
-              #{tag}
-            </Text>
-          )
-        })}
+        {props.tags?.map((tag, index) => <Tag key={index} tag={tag} color={props.color}/>)}
       </Flex>
     </Box>
   )
