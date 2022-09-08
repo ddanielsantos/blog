@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 const Fonts = () => (
@@ -7,6 +7,7 @@ const Fonts = () => (
     styles={`
       @font-face {
         font-family: 'Virgil';
+        font-display: optional;
         font-style: normal;
         font-weight: 700;
         src: url(/fonts/Virgil.woff2) format('woff2')
