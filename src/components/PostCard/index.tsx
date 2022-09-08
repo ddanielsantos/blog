@@ -1,10 +1,12 @@
 import NextLink from 'next/link'
-import { Box, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Link, Text } from "@chakra-ui/react"
+import { Tag } from '../Tag'
 
 type Props = {
   slug: string
   title: string
   date: string
+  tags: string[]
   description: string
 }
 
@@ -32,7 +34,9 @@ export const PostCard = (props: Props): JSX.Element => {
           >
             {props.title}
           </Text>
-          <Text>
+          <Text
+            whiteSpace={'nowrap'}
+          >
             {props.date}
           </Text>
         </Box>
@@ -40,6 +44,14 @@ export const PostCard = (props: Props): JSX.Element => {
         <Text>
           {props.description}
         </Text>
+        
+        <Flex
+          mt={'2'}
+        >
+          {
+            props.tags.map((tag, index) => <Tag key={index} tag={tag} color={'white'} _hover={{ bg: 'none' }}/>)
+          }
+        </Flex>
       </Link>
     </NextLink>
   )

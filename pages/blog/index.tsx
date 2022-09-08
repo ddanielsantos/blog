@@ -2,53 +2,27 @@ import { COLORS } from '../../theme'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostCard } from '../../src/components/PostCard'
+import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
+import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
 
 type Data = {
   title: string
   description: string
   date: string
   slug: string
+  tags: string[]
 }
 
 export const getStaticProps: GetStaticProps<{ data: Data[] }> = async () => {
-  const data = [
-    {
-      title: 'Porque eu acho que Jair Messias Bolsonaro está preparado para governar 200 milhoes de brasileiros e algumas outras coisas',
-      description: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
-    },
-    {
-      title: 'Porque eu acho que Jair Messias Bolsonaro está preparado para governar 200 milhoes de brasileiros e algumas outras coisas',
-      description: 'Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
-    },
-    {
-      title: 'primeiro',
-      description: 'primeiro post aqui eeee',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
-    },
-    {
-      title: 'primeiro',
-      description: 'primeiro post aqui eeee',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
-    },
-    {
-      title: 'primeiro',
-      description: 'primeiro post aqui eeee',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
-    },
-    {
-      title: 'primeiro',
-      description: 'primeiro post aqui eeee',
-      date: '04 Sep, 2022',
-      slug: 'primeiro-post'
+  const data: Data[] = getPostsFilenames().map(filename => {
+    return {
+      slug: getSlugFromFilename(filename),
+      title: filename,
+      tags: ['a', 'b', 'c'],
+      date: '08 Sep, 2022',
+      description: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'
     }
-  ]
+  }) 
 
   if (!data) {
     return {
@@ -115,6 +89,7 @@ export default function Blog({ data }: InferGetStaticPropsType<typeof getStaticP
               return (
                 <PostCard
                   key={index}
+                  tags={post.tags}
                   date={post.date}
                   slug={post.slug}
                   title={post.title}
