@@ -135,7 +135,7 @@ export default function Home() {
             fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}
             color={COLORS.paneIndicator.main.blue}
           >
-            Hi, I'm Daniel Santos. I like to code and drink coffee, sometimes I blog about random stuff.
+            Hi, I&apos;m Daniel Santos. I like to code and drink coffee, sometimes I blog about random stuff.
           </Text>
           <ExcaliArrow width={40} h={40} color={'white'}/>
           <Image
