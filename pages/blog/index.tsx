@@ -3,26 +3,14 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostCard } from '../../src/components/PostCard'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
-import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
+import { getPostData } from '../../src/lib/getPostData'
 
-type Data = {
-  title: string
-  description: string
-  date: string
-  slug: string
-  tags: string[]
-}
+type Data = Awaited<ReturnType<typeof getPostData>>
 
 export const getStaticProps: GetStaticProps<{ data: Data[] }> = async () => {
-  const data: Data[] = getPostsFilenames().map(filename => {
-    return {
-      slug: getSlugFromFilename(filename),
-      title: filename,
-      tags: ['a', 'b', 'c'],
-      date: '08 Sep, 2022',
-      description: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'
-    }
-  }) 
+  const filenames = getPostsFilenames()
+  const promises = filenames.map(filename => getPostData(filename))
+  const data = await Promise.all(promises)
 
   if (!data) {
     return {
