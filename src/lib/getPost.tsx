@@ -10,10 +10,14 @@ type PostData = {
   description: string
 }
 
-export const getPostData = async (filename: string): Promise<PostData> => {
+export const getPost = async (filename: string) => {
   const contentPath = path.join(process.cwd(), 'content', filename)
   const file = await fs.readFile(contentPath, 'utf8')
-  const { data } = matter(file)
+  const { data, content } = matter(file)
+  console.log('contnt: ', content)
 
-  return data as PostData
+  return {
+    data: data as PostData,
+    content
+  }
 }
