@@ -16,7 +16,11 @@
     "gray-matter": "^4.0.3",
     "next": "12.2.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-syntax-highlighter": "^15.5.0",
+    "remark-emoji": "^3.0.2",
+    "remark-gfm": "^3.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.6.3",
