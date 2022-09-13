@@ -105,7 +105,7 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
             h1: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' }}/>,
             h2: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' }}>{props.children}</MarkdownText>,
             p: props => <MarkdownText {...props} level={1} chakra={{ mb: '1em', as: 'p', fontWeight: 'normal' }} />,
-            a: props => <a href={props.href} target={'_blank'} style={{ textDecoration: 'underline' }} >{props.children}</a>
+            a: props => <a href={props.href} target={'_blank'} rel={'noreferrer'} style={{ textDecoration: 'underline' }} >{props.children}</a>
           }}
         >
           {data.content}
