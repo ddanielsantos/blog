@@ -1,5 +1,5 @@
 import { COLORS } from '../../theme'
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostCard } from '../../src/components/PostCard'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
@@ -39,8 +39,9 @@ export default function Blog({ data }: InferGetStaticPropsType<typeof getStaticP
         shadow={'2xl'}
         w={['100%', '100%', '100%', '60em']}
         minH={'100vh'}
+        py={'1.5rem'}
         h={'100%'}
-        p={['1rem', '1rem', '2rem']}
+        px={['1rem', '5rem', '8rem']}
         bg={COLORS.backgrounds.blue}
         css={{
           '&::-webkit-scrollbar': {
@@ -59,16 +60,23 @@ export default function Blog({ data }: InferGetStaticPropsType<typeof getStaticP
         color={COLORS.paneIndicator.main.blue}
         lineHeight={1}
         fontWeight={'extrabold'}
+        mb={'1rem'}
        >
-        BLOG
+        Blog
       </Heading>
         <Text
           color={COLORS.paneIndicator.main.blue}
-          fontWeight='medium'
-          fontSize={'xl'}
+          fontWeight='normal'
+          fontSize={'md'}
+          mb={'1rem'}
         >
-          Welcome to my blog, here I wrote about tech, career or some other cool topics
+          welcome to my blog, here I wrote about tech, career or some other cool topics
         </Text>
+
+        <Divider
+          mb={'1rem'}
+        />
+
         <Flex
           flexDir={'column'}
           gap={'2'}

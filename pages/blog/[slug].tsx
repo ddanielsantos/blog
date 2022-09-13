@@ -78,12 +78,14 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
       >
         <Flex
           w='100%'
+          flexDir={['column', 'column', 'row']}
           justifyContent={'space-between'}
-          alignItems={'center'}
+          alignItems={['start', 'start','center']}
           mb={'3rem'}
         >
           <Text
             as='h1'
+            textAlign={'left'}
             fontWeight='extrabold'
             color={COLORS.paneIndicator.main.blue}
             fontSize='3xl'
@@ -91,6 +93,7 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
             {data.meta.title}
           </Text>
           <Text
+            textAlign={'right'}
             color={COLORS.paneIndicator.main.blue}
           >
             {data.meta.date}
