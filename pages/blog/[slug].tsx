@@ -51,11 +51,59 @@ export const getStaticProps: GetStaticProps<{ data: { content: string, meta: Pos
 
 export default function BlogPost({ data }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <ReactMarkdown
-      remarkPlugins={[emoji, github]}
-      components={{ code: CodeBlock }}
+    <Flex
+      w={'100%'}
+      flexDir='column'
+      alignItems='center'
+      bg={COLORS.backgrounds.blue}
+
+      h={'100vh'}
     >
-      {data.content}
-    </ReactMarkdown>
+      <Box
+        overflowY={'scroll'}
+        shadow={'2xl'}
+        w={['100%', '100%', '100%', '60em']}
+        minH={'100vh'}
+        h={'100%'}
+        textAlign="justify"
+        py={'1.5rem'}
+        px={['1rem', '5rem', '8rem']}
+        bg={COLORS.backgrounds.blue}
+        css={{
+          '&::-webkit-scrollbar': {
+            width: '10px',
+          },
+          '&::-webkit-scrollbar-track': {
+            width: '6px',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: '#ffffffcc',
+            borderRadius: '6px',
+          },
+        }}
+      >
+        <Flex
+          w='100%'
+          justifyContent={'space-between'}
+          alignItems={'center'}
+          mb={'3rem'}
+        >
+          <Text
+            as='h1'
+            fontWeight='extrabold'
+            color={COLORS.paneIndicator.main.blue}
+            fontSize='3xl'
+          >
+            {data.meta.title}
+          </Text>
+          <Text
+            color={COLORS.paneIndicator.main.blue}
+          >
+            {data.meta.date}
+          </Text>
+        </Flex>
+
+      </Box>
+    </Flex>
   )
 }
