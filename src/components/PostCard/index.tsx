@@ -31,6 +31,7 @@ export const PostCard = (props: Props): JSX.Element => {
         >
           <Text
             fontWeight={'bold'}
+            fontSize={'lg'}
           >
             {props.title}
           </Text>
@@ -49,7 +50,15 @@ export const PostCard = (props: Props): JSX.Element => {
           mt={'2'}
         >
           {
-            props.tags.map((tag, index) => <Tag key={index} tag={tag} color={'white'} _hover={{ bg: 'none' }}/>)
+            props.tags.map((tag, index) => 
+            <Tag 
+              key={index} 
+              tag={tag}
+              fontSize={['md']}
+              color={'white'} 
+              _hover={{ bg: 'none' }}
+            />
+            )
           }
         </Flex>
       </Link>
