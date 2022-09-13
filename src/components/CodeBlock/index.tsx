@@ -11,10 +11,11 @@ function Code({ language, children }: Props) {
   return (
     <SyntaxHighlighter
       language={language}
-      children={children}
       customStyle={{ borderRadius: '4px', marginTop: '1em' }}
       style={dracula}
-    />
+    >
+      {children}
+    </SyntaxHighlighter>
   )
 }
 
@@ -23,7 +24,9 @@ const CodeBlock: CodeComponent = ({ children, inline, className }) => {
   if (inline) return <code style={{ padding: '2px 6px 2px 6px', backgroundColor: '#FFFFFF33', borderRadius: '4px' }}>{children}</code>
 
   return (
-    <Code language={language} children={String(children)}/>
+    <Code language={language}>
+      {String(children)}
+    </Code>
   )
 }
 
