@@ -1,14 +1,16 @@
 import github from 'remark-gfm'
 import emoji from 'remark-emoji'
 import dynamic from 'next/dynamic'
+import { COLORS } from '../../theme'
 import ReactMarkdown from 'react-markdown'
 import { getPost } from "../../src/lib/getPost"
-import { CodeComponent } from 'react-markdown/lib/ast-to-react'
+import { Box, Flex, UnorderedList, Text } from '@chakra-ui/react'
 import { getPostsFilenames } from "../../src/lib/getPostsFileNames"
 import { getSlugFromFilename } from "../../src/lib/getSlugFromFilename"
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next"
 
-const Code = dynamic(() => import('./Code'), { ssr: false })
+const CodeBlock = dynamic(() => import('../../src/components/CodeBlock/index'), { ssr: false })
+const MarkdownText = dynamic(() => import('../../src/components/MarkdownText/index'))
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const filenames = getPostsFilenames()
@@ -23,14 +25,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-const CodeBlock: CodeComponent = ({ children, inline, className }) => {
-  const language = !className ? 'bash' : className.split('-')[1]
-  if (inline) return <code>{children}</code>
-
-  return (
-    <Code language={language} children={String(children)}/>
-  )
-}
 type PostData = Awaited<ReturnType<typeof getPost>>['data']
 
 export const getStaticProps: GetStaticProps<{ data: { content: string, meta: PostData } }> = async (context) => {
@@ -103,6 +97,19 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
           </Text>
         </Flex>
 
+        <ReactMarkdown
+          remarkPlugins={[emoji, github]}
+          components={{ 
+            code: CodeBlock,
+            ul: props => <UnorderedList color={COLORS.paneIndicator.main.blue} mb={'1em'}>{props.children}</UnorderedList>,
+            h1: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' }}/>,
+            h2: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' }}>{props.children}</MarkdownText>,
+            p: props => <MarkdownText {...props} level={1} chakra={{ mb: '1em', as: 'p', fontWeight: 'normal' }} />,
+            a: props => <a href={props.href} target={'_blank'} style={{ textDecoration: 'underline' }} >{props.children}</a>
+          }}
+        >
+          {data.content}
+        </ReactMarkdown>
       </Box>
     </Flex>
   )
