@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import { COLORS } from '../../theme'
 import ReactMarkdown from 'react-markdown'
 import { getPost } from "../../src/lib/getPost"
-import { Box, Flex, UnorderedList, Text } from '@chakra-ui/react'
+import { Box, Flex, UnorderedList, Text, Heading } from '@chakra-ui/react'
 import { getPostsFilenames } from "../../src/lib/getPostsFileNames"
 import { getSlugFromFilename } from "../../src/lib/getSlugFromFilename"
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next"
@@ -49,32 +49,30 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
       w={'100%'}
       flexDir='column'
       alignItems='center'
-      bg={COLORS.backgrounds.blue}
-
+      bg={'gray.50'}
       h={'100vh'}
     >
       <Box
         overflowY={'scroll'}
-        shadow={'2xl'}
         w={['100%', '100%', '100%', '60em']}
         minH={'100vh'}
         h={'100%'}
+        color={'gray.700'}
         textAlign="justify"
-        py={'1.5rem'}
-        px={['1rem', '5rem', '8rem']}
-        bg={COLORS.backgrounds.blue}
+        p={'1.5rem'}
         css={{
           '&::-webkit-scrollbar': {
-            width: '10px',
+            width: '4px',
           },
           '&::-webkit-scrollbar-track': {
-            width: '6px',
+            width: '4px',
           },
           '&::-webkit-scrollbar-thumb': {
-            background: '#ffffffcc',
-            borderRadius: '6px',
+            background: 'black',
+            borderRadius: '0px',
           },
         }}
+
       >
         <Flex
           w='100%'
@@ -83,18 +81,18 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
           alignItems={['start', 'start','center']}
           mb={'3rem'}
         >
-          <Text
-            as='h1'
-            textAlign={'left'}
-            fontWeight='extrabold'
-            color={COLORS.paneIndicator.main.blue}
-            fontSize='3xl'
-          >
+          <Heading
+            as={'h1'}
+            color={'gray.700'}
+            lineHeight={1}
+            fontWeight={'extrabold'}
+            mb={'1rem'}
+           >
             {data.meta.title}
-          </Text>
+          </Heading>
           <Text
             textAlign={'right'}
-            color={COLORS.paneIndicator.main.blue}
+            color={'gray.700'}
           >
             {data.meta.date}
           </Text>
@@ -104,11 +102,25 @@ export default function BlogPost({ data }: InferGetStaticPropsType<typeof getSta
           remarkPlugins={[emoji, github]}
           components={{ 
             code: CodeBlock,
-            ul: props => <UnorderedList color={COLORS.paneIndicator.main.blue} mb={'1em'}>{props.children}</UnorderedList>,
-            h1: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' }}/>,
-            h2: props => <MarkdownText {...props} chakra={{ mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' }}>{props.children}</MarkdownText>,
-            p: props => <MarkdownText {...props} level={1} chakra={{ mb: '1em', as: 'p', fontWeight: 'normal' }} />,
-            a: props => <a href={props.href} target={'_blank'} rel={'noreferrer'} style={{ textDecoration: 'underline' }} >{props.children}</a>
+            ul: props => <UnorderedList {...props} mb={'1em'}/>,
+            h1: props => <MarkdownText {...props} variant={'h1'}/>,
+            h2: props => <MarkdownText {...props} variant={'h2'}/>,
+            p: props => <MarkdownText {...props} variant={'p'}/>,
+            a: props => {
+              return (
+                <a 
+                  href={props.href} 
+                  target={'_blank'} 
+                  rel={'noreferrer'} 
+                  style={{ 
+                    textDecoration: 'underline', 
+                    textDecorationThickness: '2px'
+                  }}
+                >
+                  {props.children}
+                </a>
+              )
+            }
           }}
         >
           {data.content}
