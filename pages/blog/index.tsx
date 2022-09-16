@@ -1,4 +1,3 @@
-import { COLORS } from '../../theme'
 import { Box, Divider, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostCard } from '../../src/components/PostCard'
@@ -30,34 +29,31 @@ export default function Blog({ data }: InferGetStaticPropsType<typeof getStaticP
       w={'100%'}
       flexDir='column'
       alignItems='center'
-      bg={COLORS.backgrounds.blue}
-
+      bg={'gray.50'}
       h={'100vh'}
     >
       <Box
         overflowY={'scroll'}
-        shadow={'2xl'}
+        overflowX={'hidden'}
         w={['100%', '100%', '100%', '60em']}
-        minH={'100vh'}
-        py={'1.5rem'}
         h={'100%'}
-        px={['1rem', '5rem', '8rem']}
-        bg={COLORS.backgrounds.blue}
+        p={'1.5rem'}
         css={{
           '&::-webkit-scrollbar': {
-            width: '10px',
+            width: '4px',
           },
           '&::-webkit-scrollbar-track': {
-            width: '6px',
+            width: '4px',
           },
           '&::-webkit-scrollbar-thumb': {
-            background: '#ffffffcc',
-            borderRadius: '6px',
+            background: 'black',
+            borderRadius: '0px',
           },
         }}
       >
       <Heading
-        color={COLORS.paneIndicator.main.blue}
+        as={'h1'}
+        color={'gray.700'}
         lineHeight={1}
         fontWeight={'extrabold'}
         mb={'1rem'}
@@ -65,16 +61,21 @@ export default function Blog({ data }: InferGetStaticPropsType<typeof getStaticP
         Blog
       </Heading>
         <Text
-          color={COLORS.paneIndicator.main.blue}
-          fontWeight='normal'
+          color={'gray.700'}
           fontSize={'md'}
           mb={'1rem'}
         >
           welcome to my blog, here I wrote about tech, career or some other cool topics
         </Text>
 
-        <Divider
-          mb={'1rem'}
+        <hr
+          style={{
+            backgroundColor: '#2D3748',
+            borderColor: '#2D3748',
+            borderRadius: 2,
+            borderWidth: '2px',
+            marginBottom: '1em'
+          }}
         />
 
         <Flex

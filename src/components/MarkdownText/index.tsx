@@ -1,18 +1,22 @@
-import { Heading as CHeading, HeadingProps as CHeadingProps } from '@chakra-ui/react'
-import { COLORS } from '../../../theme'
+import { Heading as CHeading } from '@chakra-ui/react'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 
-type Props = HeadingProps & {
-  chakra?: CHeadingProps
+type Props = Omit<HeadingProps, 'level'> & {
+  variant: 'h1' | 'h2' | 'p'
 }
 
-const MarkdownText = ({ chakra, ...props }: Props) => {
+const MarkdownText = (props: Props) => {
+  const styles = {
+    h1: { mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' },
+    h2: { mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' },
+    p: { mb: '1em', as: 'p', fontWeight: 'normal', lineHeight: 1.4 }
+  }
   return (
     <CHeading
-      color={COLORS.paneIndicator.main.blue}
-      fontWeight={'extrabold'}
+      lineHeight={1.4}
       fontSize={['md']}
-      {...chakra}
+      {...styles[props.variant]}
+      as={props.variant}
     >
       {props.children}
     </CHeading>
