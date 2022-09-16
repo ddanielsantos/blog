@@ -14,14 +14,16 @@ export const PostCard = (props: Props): JSX.Element => {
   return (
     <NextLink href={`blog/${props.slug}`} passHref>
       <Link
-        bg={'whiteAlpha.300'}
-        color={'white'}
-        transition={'ease 0.5s'}
+        bg={'gray.50'}
+        color={'gray.900'}
+        border={'3px solid #CBD5E0'}
+        transition={'border ease 0.4s'}
         _hover={{
-          bg: 'whiteAlpha.500'
+          border: '3px solid black',
+          translateX: '10'
         }}
         w={'100%'}
-        borderRadius='md'
+        borderRadius='4px'
         p={'3'}
       >
         <Box
@@ -30,6 +32,7 @@ export const PostCard = (props: Props): JSX.Element => {
           mb={'0.5em'}
         >
           <Text
+            as={'h2'}
             fontWeight={'bold'}
             fontSize={'lg'}
           >
@@ -54,8 +57,9 @@ export const PostCard = (props: Props): JSX.Element => {
             <Tag 
               key={index} 
               tag={tag}
+              fontWeight={'normal'}
+              color={'black'}
               fontSize={['md']}
-              color={'white'} 
               _hover={{ bg: 'none' }}
             />
             )
