@@ -12,6 +12,7 @@
     "@chakra-ui/react": "^2.2.4",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@fontsource/teko": "^4.5.9",
     "framer-motion": "^6.5.1",
     "gray-matter": "^4.0.3",
     "next": "12.2.3",

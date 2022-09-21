@@ -1,5 +1,6 @@
+import '@fontsource/teko'
 import React from 'react'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 const Fonts = () => (
@@ -16,10 +17,17 @@ const Fonts = () => (
   />
 )
 
+const theme = extendTheme({
+  fonts: {
+    heading: `'Teko', sans-serif`,
+    body: `'Teko', sans-serif`,
+  },
+})
+
 export function Providers({ children }) {
   return (
-    <ChakraProvider>
-    <Fonts/>
+    <ChakraProvider theme={theme}>
+      <Fonts />
       {children}
     </ChakraProvider>
   )
