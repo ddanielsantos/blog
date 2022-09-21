@@ -9,7 +9,7 @@ const MarkdownText = (props: Props) => {
   const styles = {
     h1: { mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' },
     h2: { mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' },
-    p: { mb: '1em', as: 'p', fontWeight: 'normal', lineHeight: 1.4 }
+    p: { mb: '1em', as: 'p', fontWeight: 'light', fontSize: 'lg' },
   }
   return (
     <CHeading

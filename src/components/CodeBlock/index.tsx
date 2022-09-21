@@ -11,7 +11,8 @@ function Code({ language, children }: Props) {
   return (
     <SyntaxHighlighter
       language={language}
-      customStyle={{ borderRadius: '4px', marginTop: '1em' }}
+      showLineNumbers
+      customStyle={{ borderRadius: '4px', marginBottom: '1em' }}
       style={dracula}
     >
       {children}
