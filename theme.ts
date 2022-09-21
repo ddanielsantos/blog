@@ -7,11 +7,11 @@ export const COLORS = {
   paneIndicator: {
     main: {
       red: '#FFEEEE',
-      blue: '#EEEEFF'
+      blue: '#EEEEFF',
     },
     secondary: {
       red: '#CC0707',
-      blue: '#1414CC'
-    }
-  }
+      blue: '#1414CC',
+    },
+  },
 }
