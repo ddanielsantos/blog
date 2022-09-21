@@ -11,15 +11,15 @@ export const Tag = (props: Props) => {
       cursor={'default'}
       px={'2'}
       py={'1'}
-      transitionDuration='0.5s'
+      transitionDuration="0.5s"
       borderRadius={'5'}
       _hover={{
         bg: 'whiteAlpha.200',
-        textDecor: 'underline'
+        textDecor: 'underline',
       }}
       color={props.color}
       fontSize={['sm', 'sm', 'md', 'md', 'lg', 'xl']}
-      fontWeight='bold'
+      fontWeight="bold"
       {...props}
     >
       #{props.tag}

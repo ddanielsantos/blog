@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Box, Flex, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Link, Text } from '@chakra-ui/react'
 import { Tag } from '../Tag'
 
 type Props = {
@@ -20,50 +20,32 @@ export const PostCard = (props: Props): JSX.Element => {
         transition={'border ease 0.4s'}
         _hover={{
           border: '3px solid black',
-          translateX: '10'
+          translateX: '10',
         }}
         w={'100%'}
-        borderRadius='4px'
+        borderRadius="4px"
         p={'3'}
       >
-        <Box
-          display={'flex'}
-          justifyContent='space-between'
-          mb={'0.5em'}
-        >
-          <Text
-            as={'h2'}
-            fontWeight={'bold'}
-            fontSize={'lg'}
-          >
+        <Box display={'flex'} justifyContent="space-between" mb={'0.5em'}>
+          <Text as={'h2'} fontWeight={'bold'} fontSize={'lg'}>
             {props.title}
           </Text>
-          <Text
-            whiteSpace={'nowrap'}
-          >
-            {props.date}
-          </Text>
+          <Text whiteSpace={'nowrap'}>{props.date}</Text>
         </Box>
 
-        <Text>
-          {props.description}
-        </Text>
-        
-        <Flex
-          mt={'2'}
-        >
-          {
-            props.tags.map((tag, index) => 
-            <Tag 
-              key={index} 
+        <Text>{props.description}</Text>
+
+        <Flex mt={'2'}>
+          {props.tags.map((tag, index) => (
+            <Tag
+              key={index}
               tag={tag}
               fontWeight={'normal'}
               color={'black'}
               fontSize={['md']}
               _hover={{ bg: 'none' }}
             />
-            )
-          }
+          ))}
         </Flex>
       </Link>
     </NextLink>

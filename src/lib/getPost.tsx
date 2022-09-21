@@ -17,6 +17,6 @@ export const getPost = async (filename: string) => {
 
   return {
     data: data as PostData,
-    content
+    content,
   }
 }
