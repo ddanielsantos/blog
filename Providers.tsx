@@ -4,8 +4,8 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
 
 const Fonts = () => (
-  <Global
-    styles={`
+	<Global
+		styles={`
       @font-face {
         font-family: 'Virgil';
         font-display: optional;
@@ -14,21 +14,21 @@ const Fonts = () => (
         src: url(/fonts/Virgil.woff2) format('woff2')
       }
     `}
-  />
+	/>
 )
 
 const theme = extendTheme({
-  fonts: {
-    heading: `'Teko', sans-serif`,
-    body: `'Teko', sans-serif`,
-  },
+	fonts: {
+		heading: `'Teko', sans-serif`,
+		body: `'Teko', sans-serif`
+	}
 })
 
 export function Providers({ children }) {
-  return (
-    <ChakraProvider theme={theme}>
-      <Fonts />
-      {children}
-    </ChakraProvider>
-  )
+	return (
+		<ChakraProvider theme={theme}>
+			<Fonts />
+			{children}
+		</ChakraProvider>
+	)
 }
