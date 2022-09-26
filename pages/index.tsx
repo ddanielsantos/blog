@@ -1,5 +1,4 @@
 import NextLink from 'next/link'
-import { ExcaliArrow } from '../src/icons/Me'
 import { Timeline } from '../src/components/Timeline'
 import { JobResume } from '../src/components/JobResume'
 import { Text, Flex, Image, Link } from '@chakra-ui/react'
@@ -96,7 +95,6 @@ export default function Home() {
 						Hi, I&apos;m Daniel Santos. I like to code and drink coffee,
 						sometimes I blog about random stuff.
 					</Text>
-					<ExcaliArrow width={40} h={40} color={'white'} />
 					<Image
 						src={'/Happy-Person-Free-Download-PNG.png'}
 						alt='me'
