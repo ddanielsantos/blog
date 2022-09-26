@@ -1,0 +1,6 @@
+{
+	"*.{ts,tsx}": [
+		"pnpm format:fix",
+		"pnpm eslint --fix ."
+	]
+}

@@ -10,11 +10,11 @@ const circleKeyframes = keyframes`
 const animation = `${circleKeyframes} 8s linear infinite`
 
 type Props = IconProps & {
-  focused: boolean
+	focused: boolean
 }
 
 export const TimelineIndicator = ({ focused, ...props }: Props) => {
-  if (focused) return <FocusedIndicator animation={animation} {...props} />
+	if (focused) return <FocusedIndicator animation={animation} {...props} />
 
-  return <UnfocusedIndicator {...props} />
+	return <UnfocusedIndicator {...props} />
 }
