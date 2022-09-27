@@ -1,8 +1,10 @@
+import Head from 'next/head'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { PostCard } from '../../src/components/PostCard'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getPost } from '../../src/lib/getPost'
+import { Header } from '../../src/components/Header'
 
 type Data = Awaited<ReturnType<typeof getPost>>['data']
 
@@ -27,71 +29,71 @@ export default function Blog({
 	data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<Flex
-			w={'100%'}
-			flexDir='column'
-			alignItems='center'
-			bg={'gray.50'}
-			h={'100vh'}
-		>
-			<Box
-				overflowY={'scroll'}
-				overflowX={'hidden'}
-				w={['100%', '100%', '100%', '60em']}
-				h={'100%'}
-				p={'1.5rem'}
-				css={{
-					'&::-webkit-scrollbar': {
-						width: '4px'
-					},
-					'&::-webkit-scrollbar-track': {
-						width: '4px'
-					},
-					'&::-webkit-scrollbar-thumb': {
-						background: 'black',
-						borderRadius: '0px'
-					}
-				}}
-			>
-				<Heading
-					as={'h1'}
-					color={'gray.700'}
-					lineHeight={1}
-					fontWeight={'extrabold'}
-					mb={'1rem'}
-				>
-					Blog
-				</Heading>
-				<Text color={'gray.700'} fontSize={'md'} mb={'1rem'}>
-					welcome to my blog, here I wrote about tech, career or some other cool
-					topics
-				</Text>
+		<div>
+			<Head>
+				<title>blog</title>
+			</Head>
 
-				<hr
-					style={{
-						backgroundColor: '#2D3748',
-						borderColor: '#2D3748',
-						borderRadius: 2,
-						borderWidth: '2px',
-						marginBottom: '1em'
+			<Flex w={'100%'} flexDir='column' alignItems='center' h={'100vh'}>
+				<Header />
+				<Box
+					overflowY={'scroll'}
+					overflowX={'hidden'}
+					w={['100%', '100%', '100%', '60em']}
+					h={'100%'}
+					p={'1.5rem'}
+					css={{
+						'&::-webkit-scrollbar': {
+							width: '4px'
+						},
+						'&::-webkit-scrollbar-track': {
+							width: '4px'
+						},
+						'&::-webkit-scrollbar-thumb': {
+							background: 'black',
+							borderRadius: '0px'
+						}
 					}}
-				/>
+				>
+					<Heading
+						as={'h1'}
+						lineHeight={1}
+						fontWeight={'extrabold'}
+						mb={'1rem'}
+					>
+						Blog
+					</Heading>
+					<Text fontSize={'lg'} mb={'1rem'}>
+						welcome to my blog, here I wrote about tech, career or some other
+						cool topics
+					</Text>
 
-				<Flex flexDir={'column'} gap={'2'}>
-					{data.map((post, index) => {
-						return (
-							<PostCard
-								key={index}
-								tags={post.tags}
-								date={post.date}
-								slug={post.slug}
-								title={post.title}
-								description={post.description}
-							/>
-						)
-					})}
-				</Flex>
-			</Box>
-		</Flex>
+					<hr
+						style={{
+							backgroundColor: '#1A202C',
+							borderColor: '#1A202C',
+							borderRadius: 2,
+							borderWidth: '1px',
+							marginBottom: '1em'
+						}}
+					/>
+
+					<Flex flexDir={'column'}>
+						{data.map((post, index) => {
+							return (
+								<PostCard
+									key={index}
+									tags={post.tags}
+									date={post.date}
+									slug={post.slug}
+									title={post.title}
+									description={post.description}
+								/>
+							)
+						})}
+					</Flex>
+				</Box>
+			</Flex>
+		</div>
 	)
 }

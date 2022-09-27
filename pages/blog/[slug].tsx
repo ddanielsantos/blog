@@ -1,21 +1,13 @@
-import github from 'remark-gfm'
-import emoji from 'remark-emoji'
-import dynamic from 'next/dynamic'
-import ReactMarkdown from 'react-markdown'
+import Head from 'next/head'
+import NextLink from 'next/link'
 import { getPost } from '../../src/lib/getPost'
-import { Box, Flex, UnorderedList, Text, Heading } from '@chakra-ui/react'
+import { Header } from '../../src/components/Header'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
-import Image from 'next/image'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-
-const CodeBlock = dynamic(
-	() => import('../../src/components/CodeBlock/index'),
-	{ ssr: false }
-)
-const MarkdownText = dynamic(
-	() => import('../../src/components/MarkdownText/index')
-)
+import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react'
+// import { Markdown } from '../../src/components/Markdown'
+import dynamic from 'next/dynamic'
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const filenames = getPostsFilenames()
@@ -53,86 +45,68 @@ export const getStaticProps: GetStaticProps<{
 export default function BlogPost({
 	data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	return (
-		<Flex
-			w={'100%'}
-			flexDir='column'
-			alignItems='center'
-			bg={'gray.50'}
-			h={'100vh'}
-		>
-			<Box
-				overflowY={'scroll'}
-				w={['100%', '100%', '100%', '60em']}
-				minH={'100vh'}
-				h={'100%'}
-				color={'gray.700'}
-				textAlign='justify'
-				p={'1.5rem'}
-				css={{
-					'&::-webkit-scrollbar': {
-						width: '4px'
-					},
-					'&::-webkit-scrollbar-track': {
-						width: '4px'
-					},
-					'&::-webkit-scrollbar-thumb': {
-						background: 'black',
-						borderRadius: '0px'
-					}
-				}}
-			>
-				<Flex
-					w='100%'
-					flexDir={['column', 'column', 'row']}
-					justifyContent={'space-between'}
-					alignItems={['start', 'start', 'center']}
-					mb={'3rem'}
-				>
-					<Heading
-						as={'h1'}
-						color={'gray.700'}
-						lineHeight={1}
-						fontWeight={'extrabold'}
-					>
-						{data.meta.title}
-					</Heading>
-					<Text textAlign={'right'} color={'gray.700'}>
-						{data.meta.date}
-					</Text>
-				</Flex>
+	const Markdown = dynamic(() => import('../../src/components/Markdown/index'))
 
-				<ReactMarkdown
-					remarkPlugins={[emoji, github]}
-					components={{
-						code: CodeBlock,
-						img: props => {
-							return <Image src={props.src} alt={props.alt} />
+	return (
+		<div>
+			<Head>
+				<title>{data.meta.title}</title>
+			</Head>
+			<Flex w={'100%'} flexDir='column' alignItems='center' h={'100vh'}>
+				<Header />
+				<Box
+					overflowY={'scroll'}
+					w={['100%', '100%', '100%', '60em']}
+					h={'100%'}
+					textAlign='justify'
+					p={'1.5rem'}
+					css={{
+						'&::-webkit-scrollbar': {
+							width: '4px'
 						},
-						ul: props => <UnorderedList {...props} mb={'1em'} />,
-						h1: props => <MarkdownText {...props} variant={'h1'} />,
-						h2: props => <MarkdownText {...props} variant={'h2'} />,
-						p: props => <MarkdownText {...props} variant={'p'} />,
-						a: props => {
-							return (
-								<a
-									href={props.href}
-									target={'_blank'}
-									rel={'noreferrer'}
-									style={{
-										textDecoration: 'underline',
-										textDecorationThickness: '2px'
-									}}
-								>
-									{props.children}
-								</a>
-							)
+						'&::-webkit-scrollbar-track': {
+							width: '4px'
+						},
+						'&::-webkit-scrollbar-thumb': {
+							background: 'black'
 						}
 					}}
 				>
-					{data.content}
-				</ReactMarkdown>
-			</Box>
-		</Flex>
+					<div style={{ marginBottom: '24px' }}>
+						<NextLink href='/blog' passHref>
+							<Link
+								position={'relative'}
+								padding={'2'}
+								borderRadius={'7px'}
+								fontSize='sm'
+								transition={'background-color 0.3s'}
+								border={`2px solid black`}
+								_hover={{
+									color: 'white',
+									bg: 'black'
+								}}
+							>
+								go back
+							</Link>
+						</NextLink>
+					</div>
+
+					<Flex
+						w='100%'
+						flexDir={['column', 'column', 'row']}
+						justifyContent={'space-between'}
+						alignItems={['start', 'start', 'center']}
+						mb={'3rem'}
+					>
+						<Heading as={'h1'} lineHeight={1} fontWeight={'extrabold'}>
+							{data.meta.title}
+						</Heading>
+						<Text textAlign={'right'}>{data.meta.date}</Text>
+					</Flex>
+
+					<Markdown content={data.content} />
+				</Box>
+			</Flex>
+		</div>
 	)
 }
