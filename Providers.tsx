@@ -1,4 +1,5 @@
 import '@fontsource/teko'
+import '@fontsource/titillium-web'
 import React from 'react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { Global } from '@emotion/react'
@@ -20,7 +21,7 @@ const Fonts = () => (
 const theme = extendTheme({
 	fonts: {
 		heading: `'Teko', sans-serif`,
-		body: `'Teko', sans-serif`
+		body: `'Titillium Web', sans-serif`
 	}
 })
 
