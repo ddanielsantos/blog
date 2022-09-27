@@ -14,7 +14,13 @@ type Props = IconProps & {
 }
 
 export const TimelineIndicator = ({ focused, ...props }: Props) => {
-	if (focused) return <FocusedIndicator animation={animation} {...props} />
-
-	return <UnfocusedIndicator {...props} />
+	return (
+		<button>
+			{focused ? (
+				<FocusedIndicator animation={animation} {...props} />
+			) : (
+				<UnfocusedIndicator {...props} />
+			)}
+		</button>
+	)
 }

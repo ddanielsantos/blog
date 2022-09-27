@@ -1,4 +1,4 @@
-import { Heading as CHeading } from '@chakra-ui/react'
+import { Text } from '@chakra-ui/react'
 import { HeadingProps } from 'react-markdown/lib/ast-to-react'
 
 type Props = Omit<HeadingProps, 'level'> & {
@@ -7,19 +7,33 @@ type Props = Omit<HeadingProps, 'level'> & {
 
 const MarkdownText = (props: Props) => {
 	const styles = {
-		h1: { mb: '1em', fontWeight: 'extrabold', fontSize: '3xl', as: 'h1' },
-		h2: { mb: '1em', fontWeight: 'extrabold', fontSize: 'lg' },
-		p: { mb: '1em', as: 'p', fontWeight: 'light', fontSize: 'lg' }
+		h1: {
+			fontFamily: 'Teko',
+			mb: '1em',
+			tabIndex: 0,
+			fontWeight: 'extrabold',
+			fontSize: '3xl',
+			as: 'h1'
+		},
+		h2: {
+			fontFamily: 'Teko',
+			tabIndex: 0,
+			mb: '1em',
+			fontSize: '2xl',
+			fontWeight: 'bold'
+		},
+		p: {
+			mb: '1em',
+			as: 'p',
+			fontWeight: 'light',
+			fontSize: 'lg',
+			fontFamily: 'Titillium Web'
+		}
 	}
 	return (
-		<CHeading
-			lineHeight={1.4}
-			fontSize={['md']}
-			{...styles[props.variant]}
-			as={props.variant}
-		>
+		<Text {...styles[props.variant]} as={props.variant}>
 			{props.children}
-		</CHeading>
+		</Text>
 	)
 }
 

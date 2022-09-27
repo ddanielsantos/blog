@@ -1,7 +1,6 @@
 import { Text, TextProps } from '@chakra-ui/react'
 
 type Props = {
-	color: string
 	tag: string
 } & TextProps
 
@@ -19,7 +18,7 @@ export const Tag = (props: Props) => {
 			}}
 			color={props.color}
 			fontSize={['sm', 'sm', 'md', 'md', 'lg', 'xl']}
-			fontWeight='bold'
+			fontWeight={'normal'}
 			{...props}
 		>
 			#{props.tag}

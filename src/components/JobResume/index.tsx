@@ -15,7 +15,6 @@ export const JobResume = (props: Props) => {
 			<Text
 				fontSize={['xl', 'xl', '2xl', '2xl', '3xl', '4xl']}
 				fontWeight='bold'
-				color={props.color}
 			>
 				{props.title}
 			</Text>
@@ -23,7 +22,6 @@ export const JobResume = (props: Props) => {
 				fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}
 				textAlign='justify'
 				wordBreak={'break-all'}
-				color={props.color}
 			>
 				{props.resume}
 			</Text>

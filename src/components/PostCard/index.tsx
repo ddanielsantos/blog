@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import { Box, Flex, Link, Text } from '@chakra-ui/react'
+import { Box, Flex, Link, Text, Heading } from '@chakra-ui/react'
 import { Tag } from '../Tag'
 
 type Props = {
@@ -14,37 +14,38 @@ export const PostCard = (props: Props): JSX.Element => {
 	return (
 		<NextLink href={`blog/${props.slug}`} passHref>
 			<Link
-				bg={'gray.50'}
-				color={'gray.900'}
-				border={'3px solid #CBD5E0'}
+				outline={'3px solid #CBD5E0'}
+				mb={'0.75rem'}
+				boxSizing={'border-box'}
+				textDecor={'none'}
 				transition={'border ease 0.4s'}
+				_focus={{
+					outline: '3px solid #63B3ED'
+				}}
 				_hover={{
-					border: '3px solid black',
-					translateX: '10'
+					outline: '3px solid black'
 				}}
 				w={'100%'}
 				borderRadius='4px'
 				p={'3'}
+				sx={{
+					'&:hover h2': {
+						textDecoration: 'underline'
+					}
+				}}
 			>
 				<Box display={'flex'} justifyContent='space-between' mb={'0.5em'}>
-					<Text as={'h2'} fontWeight={'bold'} fontSize={'lg'}>
+					<Heading as={'h2'} fontWeight={'medium'} fontSize={'xl'}>
 						{props.title}
-					</Text>
+					</Heading>
 					<Text whiteSpace={'nowrap'}>{props.date}</Text>
 				</Box>
 
-				<Text>{props.description}</Text>
+				<Text fontSize={'medium'}>{props.description}</Text>
 
 				<Flex mt={'2'}>
 					{props.tags.map((tag, index) => (
-						<Tag
-							key={index}
-							tag={tag}
-							fontWeight={'normal'}
-							color={'black'}
-							fontSize={['md']}
-							_hover={{ bg: 'none' }}
-						/>
+						<Tag key={index} tag={tag} _hover={{ bg: 'none' }} />
 					))}
 				</Flex>
 			</Link>
