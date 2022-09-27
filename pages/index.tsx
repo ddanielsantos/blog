@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import Head from 'next/head'
 import { Timeline } from '../src/components/Timeline'
 import { JobResume } from '../src/components/JobResume'
-import { Text, Flex, Image, Link } from '@chakra-ui/react'
+import { Text, Flex, Image, Link, Heading } from '@chakra-ui/react'
 
 export default function Home() {
 	return (
@@ -22,10 +22,10 @@ export default function Home() {
 				h='100vh'
 				css={{
 					'&::-webkit-scrollbar': {
-						width: '4px'
+						width: '6px'
 					},
 					'&::-webkit-scrollbar-track': {
-						width: '4px'
+						width: '6px'
 					},
 					'&::-webkit-scrollbar-thumb': {
 						background: 'black'
@@ -83,18 +83,18 @@ export default function Home() {
 					scrollSnapAlign='start'
 					minH={'100vh'}
 				>
-					<Text
+					<Heading
 						lineHeight={1}
 						textTransform={'uppercase'}
 						fontWeight='extrabold'
 						fontSize={['2.5em', '3em', '3.5em']}
 					>
 						me
-					</Text>
+					</Heading>
 
 					<Flex flexDir={'column'} mt={'1'} gap={'2'}>
 						<Text
-							fontWeight='semibold'
+							// fontWeight='semibold'
 							fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}
 						>
 							Hi, I&apos;m Daniel Santos. I like to code and drink coffee.
@@ -140,37 +140,29 @@ export default function Home() {
 					scrollSnapAlign='start'
 					minH={'100vh'}
 				>
-					<Text
+					<Heading
 						lineHeight={1}
 						flexShrink={0}
 						textTransform={'uppercase'}
-						fontWeight='extrabold'
+						fontWeight='semibold'
 						fontSize={['2.5em', '3em', '3.5em']}
 					>
 						Previous works
-					</Text>
+					</Heading>
 					<Timeline>
 						<JobResume
-							title='Lorem ipsum'
-							role='intern'
-							resume='Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.'
-							tags={['sql', 'nodejs']}
+							title={'React Native Developer'}
+							resume={`Worked on the planning, the development, and the deploy
+              of Dica60+, a mobile web focused on helping elderly people of 
+              Belém to find social and health services`}
+							tags={['react-native', 'google-play-console', 'expo']}
 						/>
 						<JobResume
-							title={"Noah's ark"}
-							role='intern'
-							resume={
-								"Friday night tryna make it into the city Breakneck speeds, passenger seat something pretty Thinking back to how I got here in the first place Second class bitches wouldn't let me on first base A backpack  with luxury taste buds"
-							}
-							tags={[
-								'sql',
-								'nodejs',
-								'sap',
-								'mongodb',
-								'graphql',
-								'irineu',
-								'weebs'
-							]}
+							title={'Software developer - Intern'}
+							resume='Built and maintained many SQL queries and Crystal Report
+              files inside SAP Business One. I also started the development of
+              a Rest API to communicate between Power BI and the ERP, using NodeJS'
+							tags={['sql', 'sap', 'nodejs', 'crystal-reports']}
 						/>
 					</Timeline>
 				</Flex>

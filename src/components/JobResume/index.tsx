@@ -1,9 +1,8 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import { Tag } from '../Tag'
 
 type Props = {
 	title: string
-	role?: string
 	resume: string
 	tags?: string[]
 	color?: string
@@ -12,16 +11,15 @@ type Props = {
 export const JobResume = (props: Props) => {
 	return (
 		<Box py={['1rem']}>
-			<Text
+			<Heading
 				fontSize={['xl', 'xl', '2xl', '2xl', '3xl', '4xl']}
-				fontWeight='bold'
+				fontWeight='normal'
 			>
 				{props.title}
-			</Text>
+			</Heading>
 			<Text
 				fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}
 				textAlign='justify'
-				wordBreak={'break-all'}
 			>
 				{props.resume}
 			</Text>
