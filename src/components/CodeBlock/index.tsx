@@ -1,24 +1,5 @@
-import SyntaxHighlighter from 'react-syntax-highlighter'
+import dynamic from 'next/dynamic'
 import { CodeComponent } from 'react-markdown/lib/ast-to-react'
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/hljs'
-
-type Props = {
-	language: string
-	children: string
-}
-
-function Code({ language, children }: Props) {
-	return (
-		<SyntaxHighlighter
-			language={language}
-			showLineNumbers
-			customStyle={{ borderRadius: '4px', marginBottom: '1em' }}
-			style={dracula}
-		>
-			{children}
-		</SyntaxHighlighter>
-	)
-}
 
 const CodeBlock: CodeComponent = ({ children, inline, className }) => {
 	const language = !className ? 'bash' : className.split('-')[1]
@@ -34,6 +15,7 @@ const CodeBlock: CodeComponent = ({ children, inline, className }) => {
 				{children}
 			</code>
 		)
+	const Code = dynamic(() => import('./Code/index'))
 
 	return <Code language={language}>{String(children)}</Code>
 }
