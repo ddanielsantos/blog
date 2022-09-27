@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { Timeline } from '../src/components/Timeline'
 import { JobResume } from '../src/components/JobResume'
 import { Text, Flex, Image, Link, Heading } from '@chakra-ui/react'
+import { Footer } from '../src/components/Footer'
 
 export default function Home() {
 	return (
@@ -19,18 +20,6 @@ export default function Home() {
 				flexDir={'column'}
 				alignItems='center'
 				overflowY='scroll'
-				h='100vh'
-				css={{
-					'&::-webkit-scrollbar': {
-						width: '6px'
-					},
-					'&::-webkit-scrollbar-track': {
-						width: '6px'
-					},
-					'&::-webkit-scrollbar-thumb': {
-						background: 'black'
-					}
-				}}
 			>
 				<Flex
 					as={'section'}
@@ -44,7 +33,7 @@ export default function Home() {
 					scrollSnapAlign='start'
 					h={'100vh'}
 				>
-					<Text
+					<Heading
 						lineHeight={0.9}
 						textTransform={'uppercase'}
 						fontWeight='extrabold'
@@ -52,8 +41,8 @@ export default function Home() {
 						textAlign='right'
 					>
 						Daniel
-					</Text>
-					<Text
+					</Heading>
+					<Heading
 						lineHeight={0.9}
 						textTransform={'uppercase'}
 						fontWeight='extrabold'
@@ -61,7 +50,7 @@ export default function Home() {
 						textAlign='right'
 					>
 						Santos
-					</Text>
+					</Heading>
 					<Text
 						textTransform={'uppercase'}
 						fontSize={['1.25em', '1.25em']}
@@ -167,6 +156,7 @@ export default function Home() {
 					</Timeline>
 				</Flex>
 			</Flex>
+			<Footer />
 		</div>
 	)
 }

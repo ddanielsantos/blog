@@ -5,6 +5,7 @@ import { PostCard } from '../../src/components/PostCard'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getPost } from '../../src/lib/getPost'
 import { Header } from '../../src/components/Header'
+import { Footer } from '../../src/components/Footer'
 
 type Data = Awaited<ReturnType<typeof getPost>>['data']
 
@@ -33,27 +34,14 @@ export default function Blog({
 			<Head>
 				<title>blog</title>
 			</Head>
-
-			<Flex w={'100%'} flexDir='column' alignItems='center' h={'100vh'}>
-				<Header />
+			<Header />
+			<Flex w={'100%'} flexDir='column' alignItems='center'>
 				<Box
 					overflowY={'scroll'}
 					overflowX={'hidden'}
 					w={['100%', '100%', '100%', '60em']}
-					h={'100%'}
 					p={'1.5rem'}
-					css={{
-						'&::-webkit-scrollbar': {
-							width: '4px'
-						},
-						'&::-webkit-scrollbar-track': {
-							width: '4px'
-						},
-						'&::-webkit-scrollbar-thumb': {
-							background: 'black',
-							borderRadius: '0px'
-						}
-					}}
+					pb={0}
 				>
 					<Heading
 						as={'h1'}
@@ -94,6 +82,7 @@ export default function Blog({
 					</Flex>
 				</Box>
 			</Flex>
+			<Footer />
 		</div>
 	)
 }

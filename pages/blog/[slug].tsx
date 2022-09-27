@@ -6,8 +6,8 @@ import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react'
-// import { Markdown } from '../../src/components/Markdown'
 import dynamic from 'next/dynamic'
+import { Footer } from '../../src/components/Footer'
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const filenames = getPostsFilenames()
@@ -55,22 +55,11 @@ export default function BlogPost({
 			<Flex w={'100%'} flexDir='column' alignItems='center' h={'100vh'}>
 				<Header />
 				<Box
-					overflowY={'scroll'}
+					// overflowY={'scroll'}
 					w={['100%', '100%', '100%', '60em']}
 					h={'100%'}
 					textAlign='justify'
 					p={'1.5rem'}
-					css={{
-						'&::-webkit-scrollbar': {
-							width: '4px'
-						},
-						'&::-webkit-scrollbar-track': {
-							width: '4px'
-						},
-						'&::-webkit-scrollbar-thumb': {
-							background: 'black'
-						}
-					}}
 				>
 					<div style={{ marginBottom: '24px' }}>
 						<NextLink href='/blog' passHref>
@@ -105,6 +94,7 @@ export default function BlogPost({
 					</Flex>
 
 					<Markdown content={data.content} />
+					<Footer />
 				</Box>
 			</Flex>
 		</div>
