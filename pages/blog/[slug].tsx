@@ -52,10 +52,9 @@ export default function BlogPost({
 			<Head>
 				<title>{data.meta.title}</title>
 			</Head>
-			<Flex w={'100%'} flexDir='column' alignItems='center' h={'100vh'}>
+			<Flex w={'100%'} flexDir='column' alignItems='center' minH={'100vh'}>
 				<Header />
 				<Box
-					// overflowY={'scroll'}
 					w={['100%', '100%', '100%', '60em']}
 					h={'100%'}
 					textAlign='justify'
@@ -94,8 +93,8 @@ export default function BlogPost({
 					</Flex>
 
 					<Markdown content={data.content} />
-					<Footer />
 				</Box>
+				<Footer />
 			</Flex>
 		</div>
 	)

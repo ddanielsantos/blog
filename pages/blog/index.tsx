@@ -30,59 +30,52 @@ export default function Blog({
 	data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
-		<div>
+		<Flex minH={'100vh'} flexDir='column' alignItems='center'>
 			<Head>
 				<title>blog</title>
 			</Head>
 			<Header />
-			<Flex w={'100%'} flexDir='column' alignItems='center'>
-				<Box
-					overflowY={'scroll'}
-					overflowX={'hidden'}
-					w={['100%', '100%', '100%', '60em']}
-					p={'1.5rem'}
-					pb={0}
-				>
-					<Heading
-						as={'h1'}
-						lineHeight={1}
-						fontWeight={'extrabold'}
-						mb={'1rem'}
-					>
-						Blog
-					</Heading>
-					<Text fontSize={'lg'} mb={'1rem'}>
-						welcome to my blog, here I wrote about tech, career or some other
-						cool topics
-					</Text>
+			<Box
+				overflowY={'scroll'}
+				overflowX={'hidden'}
+				w={['100%', '100%', '100%', '60em']}
+				p={'1.5rem'}
+				pb={0}
+			>
+				<Heading as={'h1'} lineHeight={1} fontWeight={'extrabold'} mb={'1rem'}>
+					Blog
+				</Heading>
+				<Text fontSize={'lg'} mb={'1rem'}>
+					welcome to my blog, here I wrote about tech, career or some other cool
+					topics
+				</Text>
 
-					<hr
-						style={{
-							backgroundColor: '#1A202C',
-							borderColor: '#1A202C',
-							borderRadius: 2,
-							borderWidth: '1px',
-							marginBottom: '1em'
-						}}
-					/>
+				<hr
+					style={{
+						backgroundColor: '#1A202C',
+						borderColor: '#1A202C',
+						borderRadius: 2,
+						borderWidth: '1px',
+						marginBottom: '1em'
+					}}
+				/>
 
-					<Flex flexDir={'column'}>
-						{data.map((post, index) => {
-							return (
-								<PostCard
-									key={index}
-									tags={post.tags}
-									date={post.date}
-									slug={post.slug}
-									title={post.title}
-									description={post.description}
-								/>
-							)
-						})}
-					</Flex>
-				</Box>
-			</Flex>
+				<Flex flexDir={'column'}>
+					{data.map((post, index) => {
+						return (
+							<PostCard
+								key={index}
+								tags={post.tags}
+								date={post.date}
+								slug={post.slug}
+								title={post.title}
+								description={post.description}
+							/>
+						)
+					})}
+				</Flex>
+			</Box>
 			<Footer />
-		</div>
+		</Flex>
 	)
 }
