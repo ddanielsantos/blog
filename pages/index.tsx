@@ -1,9 +1,15 @@
 import NextLink from 'next/link'
 import Head from 'next/head'
-import { Timeline } from '../src/components/Timeline'
-import { JobResume } from '../src/components/JobResume'
 import { Text, Flex, Image, Link, Heading } from '@chakra-ui/react'
 import { Footer } from '../src/components/Footer'
+// import { PreviousWorksCarousel } from '../src/components/PreviousWorksCarousel'
+import dynamic from 'next/dynamic'
+
+const PreviousWorksCarousel = dynamic(() =>
+	import('../src/components/PreviousWorksCarousel/index').then(
+		v => v.PreviousWorksCarousel
+	)
+)
 
 export default function Home() {
 	return (
@@ -138,22 +144,7 @@ export default function Home() {
 					>
 						Previous works
 					</Heading>
-					<Timeline>
-						<JobResume
-							title={'React Native Developer'}
-							resume={`Worked on the planning, the development, and the deploy
-              of Dica60+, a mobile web focused on helping elderly people of 
-              Belém to find social and health services`}
-							tags={['react-native', 'google-play-console', 'expo']}
-						/>
-						<JobResume
-							title={'Software developer - Intern'}
-							resume='Built and maintained many SQL queries and Crystal Report
-              files inside SAP Business One. I also started the development of
-              a Rest API to communicate between Power BI and the ERP, using NodeJS'
-							tags={['sql', 'sap', 'nodejs', 'crystal-reports']}
-						/>
-					</Timeline>
+					<PreviousWorksCarousel />
 				</Flex>
 			</Flex>
 			<Footer />

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@chakra-ui/icons': ^2.0.10
   '@chakra-ui/react': ^2.2.4
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
@@ -24,6 +25,7 @@ specifiers:
   husky: ^8.0.1
   lint-staged: ^13.0.3
   next: 12.2.3
+  nuka-carousel: ^5.4.0
   prettier: ^2.7.1
   react: 18.2.0
   react-dom: 18.2.0
@@ -34,6 +36,7 @@ specifiers:
   typescript: ^4.7.4
 
 dependencies:
+  '@chakra-ui/icons': 2.0.10_react@18.2.0
   '@chakra-ui/react': 2.2.4_bdbj5fmnflsx5dx2nipfb2qkou
   '@emotion/react': 11.10.0_3hx2ussxxho4jajbwrd6gq34qe
   '@emotion/styled': 11.10.0_osjhb3oyc3dn55vkfbzx4nrkfi
@@ -41,6 +44,7 @@ dependencies:
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
+  nuka-carousel: 5.4.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-markdown: 8.0.3_3hx2ussxxho4jajbwrd6gq34qe
@@ -358,6 +362,16 @@ packages:
       react: 18.2.0
     dev: false
 
+  /@chakra-ui/icon/3.0.10_react@18.2.0:
+    resolution: {integrity: sha512-utO569d9bptEraJrEhuImfNzQ8v+a8PsQh8kTsodCzg8B16R3t5TTuoqeJqS6Nq16Vq6w87QbX3/4A73CNK5fw==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/shared-utils': 2.0.1
+      react: 18.2.0
+    dev: false
+
   /@chakra-ui/icon/3.0.4_yvhl5ql2jypczm6naccxme2hbi:
     resolution: {integrity: sha512-9Ry+fa6EKRYUexffvgOJ9dRIkxCSnASgdSnb09EbQTgCTeM+47LUsxR2+r8pbY6ZT5D4m2zRLkTrv7O7icoyOw==}
     peerDependencies:
@@ -366,6 +380,16 @@ packages:
     dependencies:
       '@chakra-ui/system': 2.2.2_rq3l25qc4qpq3j4w6o4x7hatzy
       '@chakra-ui/utils': 2.0.4
+      react: 18.2.0
+    dev: false
+
+  /@chakra-ui/icons/2.0.10_react@18.2.0:
+    resolution: {integrity: sha512-hxMspvysOay2NsJyadM611F/Y4vVzJU/YkXTxsyBjm6v/DbENhpVmPnUf+kwwyl7dINNb9iOF+kuGxnuIEO1Tw==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+    dependencies:
+      '@chakra-ui/icon': 3.0.10_react@18.2.0
       react: 18.2.0
     dev: false
 
@@ -684,6 +708,10 @@ packages:
       '@chakra-ui/system': 2.2.2_rq3l25qc4qpq3j4w6o4x7hatzy
       '@chakra-ui/utils': 2.0.4
       react: 18.2.0
+    dev: false
+
+  /@chakra-ui/shared-utils/2.0.1:
+    resolution: {integrity: sha512-NXDBl/u4wrSNp0ON5R3r3evkRurrAz2yuO7neooaG+O5HEenVouGqm4CsXd6lUAPmjwiGzA0LQFNCt0Hj92dXg==}
     dev: false
 
   /@chakra-ui/skeleton/2.0.9_iayg3lsyilxalkewu7lmxcpql4:
@@ -4215,6 +4243,17 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
+
+  /nuka-carousel/5.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-y0GRUl94y5CmwjFcPIssY2FV2UEUmiJ4Zui15lgpqzfNPKXbr/10xqPpFAb1Gs3e8jqi5WE3V3CVCb3Rvtd9CQ==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      react: ^15.3.0 || ^16.0.0 || ^17.0.1 || ^18.0.0
+      react-dom: ^15.3.0 || ^16.0.0 || ^17.0.1 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
