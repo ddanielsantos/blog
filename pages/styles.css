@@ -1,8 +1,8 @@
 *::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 *::-webkit-scrollbar-track {
-  width: 6px;
+  width: 8px;
 }
 *::-webkit-scrollbar-thumb {
   background-color: black;
