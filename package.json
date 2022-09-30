@@ -17,14 +17,13 @@
 		"@fontsource/teko": "^4.5.9",
 		"framer-motion": "^6.5.1",
 		"gray-matter": "^4.0.3",
+		"markdown-to-jsx": "^7.1.7",
 		"next": "12.2.3",
 		"nuka-carousel": "^5.4.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
 		"react-markdown": "^8.0.3",
-		"react-syntax-highlighter": "^15.5.0",
-		"remark-emoji": "^3.0.2",
-		"remark-gfm": "^3.0.1"
+		"react-syntax-highlighter": "^15.5.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^17.1.2",
