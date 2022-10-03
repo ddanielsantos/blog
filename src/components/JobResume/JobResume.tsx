@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
-import { Tag } from '../Tag'
+import { Tag } from '../Tag/Tag'
 
 type Props = {
 	title: string

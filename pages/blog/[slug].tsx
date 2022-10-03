@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { getPost } from '../../src/lib/getPost'
-import { Header } from '../../src/components/Header'
+import { Header } from '../../src/components/Header/Header'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import { Footer } from '../../src/components/Footer'
+import { Footer } from '../../src/components/Footer/Footer'
+import { ChevronLeftIcon } from '@chakra-ui/icons'
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const filenames = getPostsFilenames()
@@ -45,7 +46,9 @@ export const getStaticProps: GetStaticProps<{
 export default function BlogPost({
 	data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-	const Markdown = dynamic(() => import('../../src/components/Markdown/index'))
+	const Markdown = dynamic(
+		() => import('../../src/components/Markdown/Markdown')
+	)
 
 	return (
 		<div>
@@ -74,6 +77,7 @@ export default function BlogPost({
 									bg: 'black'
 								}}
 							>
+								<ChevronLeftIcon />
 								go back
 							</Link>
 						</NextLink>

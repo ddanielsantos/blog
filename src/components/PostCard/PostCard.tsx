@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
 import { Box, Flex, Link, Text, Heading } from '@chakra-ui/react'
-import { Tag } from '../Tag'
+import { Tag } from '../Tag/Tag'
 
 type Props = {
 	slug: string
