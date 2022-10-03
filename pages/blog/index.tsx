@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { Box, Flex, Heading, Text } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { PostCard } from '../../src/components/PostCard'
+import { PostCard } from '../../src/components/PostCard/PostCard'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getPost } from '../../src/lib/getPost'
-import { Header } from '../../src/components/Header'
-import { Footer } from '../../src/components/Footer'
+import { Header } from '../../src/components/Header/Header'
+import { Footer } from '../../src/components/Footer/Footer'
 
 type Data = Awaited<ReturnType<typeof getPost>>['data']
 

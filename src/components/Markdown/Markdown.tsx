@@ -3,13 +3,10 @@ import dynamic from 'next/dynamic'
 import ReactMarkdown from 'markdown-to-jsx'
 import { UnorderedList } from '@chakra-ui/react'
 
-const CodeBlock = dynamic(
-	() => import('../../../src/components/CodeBlock/index'),
-	{ ssr: false }
-)
-const MarkdownText = dynamic(
-	() => import('../../../src/components/MarkdownText/index')
-)
+const CodeBlock = dynamic(() => import('../CodeBlock/CodeBlock'), {
+	ssr: false
+})
+const MarkdownText = dynamic(() => import('../MarkdownText/MarkdownText'))
 
 type Props = {
 	content: string

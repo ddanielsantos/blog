@@ -15,7 +15,7 @@ const CodeBlock: CodeComponent = ({ children, inline, className }) => {
 				{children}
 			</code>
 		)
-	const Code = dynamic(() => import('./Code/index'))
+	const Code = dynamic(() => import('./Code/Code'))
 
 	return <Code language={language}>{String(children)}</Code>
 }

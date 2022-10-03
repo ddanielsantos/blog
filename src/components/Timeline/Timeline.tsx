@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
-import { TimelineIndicator } from '../TimelineIndicator'
+import { TimelineIndicator } from '../TimelineIndicator/TimelineIndicator'
 
 type Props = {
 	children: ReactElement[]
