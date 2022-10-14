@@ -47,3 +47,5 @@ export const ContactsSection = () => {
 		</Box>
 	)
 }
+
+export {}
