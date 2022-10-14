@@ -1,10 +1,16 @@
+@font-face {
+	font-family: Arial;
+	src: local('Arial');
+	font-display: swap;
+}
+
 *::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 *::-webkit-scrollbar-track {
-  width: 8px;
+	width: 8px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: black;
-  border-radius: 0;
+	background-color: black;
+	border-radius: 0;
 }
