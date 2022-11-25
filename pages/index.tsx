@@ -28,7 +28,7 @@ export default function Home() {
 				alignItems='center'
 				overflowY='scroll'
 			>
-				<ThemeToggler top='unset' bottom={'10px'} />
+				<ThemeToggler top='10px' left={'10px'} pos='absolute' />
 				<Flex
 					as={'section'}
 					tabIndex={0}

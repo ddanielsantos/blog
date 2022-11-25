@@ -4,7 +4,7 @@ import ts from 'react-syntax-highlighter/dist/esm/languages/prism/typescript'
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx'
 import md from 'react-syntax-highlighter/dist/esm/languages/prism/markdown'
 import rs from 'react-syntax-highlighter/dist/esm/languages/prism/rust'
-import { useColorMode } from '@chakra-ui/color-mode'
+import { useColorMode } from '@chakra-ui/react'
 
 type Props = {
 	language: string
