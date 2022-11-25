@@ -25,7 +25,7 @@ export const JobResume = (props: Props) => {
 			</Text>
 			<Flex mt='1.25rem' gap='1rem' flexWrap={'wrap'}>
 				{props.tags?.map((tag, index) => (
-					<Tag key={index} tag={tag} color={props.color} />
+					<Tag key={index} content={tag} color={props.color} />
 				))}
 			</Flex>
 		</Box>

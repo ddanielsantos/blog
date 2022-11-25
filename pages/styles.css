@@ -4,6 +4,11 @@
 	font-display: swap;
 }
 
+* {
+	scrollbar-color: black transparent;
+	scrollbar-width: 10px;
+}
+
 *::-webkit-scrollbar {
 	width: 8px;
 }

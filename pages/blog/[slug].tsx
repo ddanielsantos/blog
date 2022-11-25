@@ -1,14 +1,13 @@
 import Head from 'next/head'
-import NextLink from 'next/link'
 import { getPost } from '../../src/lib/getPost'
-import { Header } from '../../src/components/Header/Header'
+import { Header, BackButton, TagGroup, Footer } from '../../src/components/'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Box, Flex, Text, Heading, Link } from '@chakra-ui/react'
+import { Flex, Text, Heading } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
-import { Footer } from '../../src/components/Footer/Footer'
-import { ChevronLeftIcon } from '@chakra-ui/icons'
+
+type PostData = Awaited<ReturnType<typeof getPost>>['data']
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const filenames = getPostsFilenames()
@@ -22,8 +21,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 		fallback: false
 	}
 }
-
-type PostData = Awaited<ReturnType<typeof getPost>>['data']
 
 export const getStaticProps: GetStaticProps<{
 	data: { content: string; meta: PostData }
@@ -57,31 +54,15 @@ export default function BlogPost({
 			</Head>
 			<Flex w={'100%'} flexDir='column' alignItems='center' minH={'100vh'}>
 				<Header />
-				<Box
+				<Flex
+					direction={'column'}
 					w={['100%', '100%', '100%', '60em']}
 					h={'100%'}
+					gap='3'
 					textAlign='justify'
 					p={'1.5rem'}
 				>
-					<div style={{ marginBottom: '24px' }}>
-						<NextLink href='/blog' passHref>
-							<Link
-								position={'relative'}
-								padding={'2'}
-								borderRadius={'7px'}
-								fontSize='sm'
-								transition={'background-color 0.3s'}
-								border={`2px solid black`}
-								_hover={{
-									color: 'white',
-									bg: 'black'
-								}}
-							>
-								<ChevronLeftIcon />
-								go back
-							</Link>
-						</NextLink>
-					</div>
+					<BackButton />
 
 					<Flex
 						w='100%'
@@ -95,9 +76,9 @@ export default function BlogPost({
 						</Heading>
 						<Text textAlign={'right'}>{data.meta.date}</Text>
 					</Flex>
-
+					<TagGroup tags={data.meta.tags} />
 					<Markdown content={data.content} />
-				</Box>
+				</Flex>
 				<Footer />
 			</Flex>
 		</div>

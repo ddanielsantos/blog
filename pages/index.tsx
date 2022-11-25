@@ -1,17 +1,11 @@
-import NextLink from 'next/link'
 import Head from 'next/head'
-import { Text, Flex, Image, Link, Heading } from '@chakra-ui/react'
-import { Footer } from '../src/components/Footer/Footer'
+import { Text, Flex, Image, Heading, useColorMode } from '@chakra-ui/react'
+import { Footer, Link, ThemeToggler } from '../src/components'
 import dynamic from 'next/dynamic'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export default function Home() {
-	const PreviousWorksCarousel = dynamic(() =>
-		import(
-			'../src/components/PreviousWorksCarousel/PreviousWorksCarousel'
-		).then(v => v.PreviousWorksCarousel)
-	)
-
+	const { colorMode } = useColorMode()
 	const ContactsSection = dynamic(() =>
 		import('../src/components/ContactsSection/ContactsSection').then(
 			v => v.ContactsSection
@@ -29,10 +23,12 @@ export default function Home() {
 				transition={'ease-out'}
 				transitionDuration={'0.3s'}
 				w='100%'
+				bg={colorMode === 'light' ? 'gray.50' : 'gray.800'}
 				flexDir={'column'}
 				alignItems='center'
 				overflowY='scroll'
 			>
+				<ThemeToggler top='unset' bottom={'10px'} />
 				<Flex
 					as={'section'}
 					tabIndex={0}
@@ -97,51 +93,12 @@ export default function Home() {
 							Hi, I&apos;m Daniel Santos. I like to code and drink coffee.
 							Sometimes I blog about random stuff.
 						</Text>
-						<NextLink href='/blog' passHref>
-							<Link
-								position={'relative'}
-								padding={'2'}
-								alignSelf={'flex-end'}
-								borderRadius={'7px'}
-								paddingInline={'4'}
-								textAlign={'right'}
-								fontSize='sm'
-								fontWeight='bold'
-								transition={'background-color 0.3s'}
-								border={`2px solid black`}
-								_hover={{
-									color: 'white',
-									bg: 'black'
-								}}
-							>
-								read the blog <ChevronRightIcon />
-							</Link>
-						</NextLink>
+						<Link
+							href={'/blog'}
+							title={'read the blog'}
+							rightIcon={<ChevronRightIcon />}
+						/>
 					</Flex>
-				</Flex>
-
-				<Flex
-					as='section'
-					w={['100%', '100%', '100%', '60em']}
-					flexDir='column'
-					tabIndex={0}
-					alignItems='flex-start'
-					justifyContent={'flex-start'}
-					p={['1rem', '1rem', '2rem']}
-					flexShrink={0}
-					overflow='hidden'
-					scrollSnapAlign='start'
-					minH={'100vh'}
-				>
-					<Heading
-						lineHeight={1}
-						flexShrink={0}
-						fontWeight='semibold'
-						fontSize={['2.5em', '3em', '3.5em']}
-					>
-						my latest works
-					</Heading>
-					<PreviousWorksCarousel />
 				</Flex>
 
 				<Flex

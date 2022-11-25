@@ -1,6 +1,6 @@
 import NextLink from 'next/link'
-import { Box, Flex, Link, Text, Heading } from '@chakra-ui/react'
-import { Tag } from '../Tag/Tag'
+import { Box, Link, Text, Heading, useColorMode } from '@chakra-ui/react'
+import { TagGroup } from '../index'
 
 type Props = {
 	slug: string
@@ -11,23 +11,32 @@ type Props = {
 }
 
 export const PostCard = (props: Props): JSX.Element => {
+	const { colorMode } = useColorMode()
+	const shadowColor = colorMode === 'light' ? '0deg 0% 66%' : '220deg 40% 4%'
+	const s = `
+  0px 0.3px 0.4px hsl(${shadowColor} / 0.25),
+      0px 1.6px 2.1px -0.7px hsl(${shadowColor} / 0.38),
+      0.1px 5.3px 6.8px -1.4px hsl(${shadowColor} / 0.5)
+  `
 	return (
 		<NextLink href={`blog/${props.slug}`} passHref>
 			<Link
-				outline={'3px solid #CBD5E0'}
+				outline={`1px solid hsl(${shadowColor})`}
 				mb={'0.75rem'}
 				boxSizing={'border-box'}
 				textDecor={'none'}
-				transition={'border ease 0.4s'}
+				transition={'ease 0.3s'}
 				_focus={{
+					boxShadow: s,
 					outline: '3px solid #63B3ED'
 				}}
 				_hover={{
-					outline: '3px solid black'
+					boxShadow: s
 				}}
 				w={'100%'}
 				borderRadius='4px'
 				p={'3'}
+				pb='0'
 				sx={{
 					'&:hover h2': {
 						textDecoration: 'underline'
@@ -43,11 +52,7 @@ export const PostCard = (props: Props): JSX.Element => {
 
 				<Text fontSize={'medium'}>{props.description}</Text>
 
-				<Flex mt={'2'}>
-					{props.tags.map((tag, index) => (
-						<Tag key={index} tag={tag} _hover={{ bg: 'none' }} />
-					))}
-				</Flex>
+				<TagGroup tags={props.tags} />
 			</Link>
 		</NextLink>
 	)

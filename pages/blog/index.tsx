@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import { Box, Flex, Heading, Text } from '@chakra-ui/react'
+import { Box, Flex, Heading, Text, useColorMode } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { PostCard } from '../../src/components/PostCard/PostCard'
+import { Divider, Header, Footer, PostCard } from '../../src/components'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getPost } from '../../src/lib/getPost'
-import { Header } from '../../src/components/Header/Header'
-import { Footer } from '../../src/components/Footer/Footer'
 
 type Data = Awaited<ReturnType<typeof getPost>>['data']
 
@@ -29,8 +27,14 @@ export const getStaticProps: GetStaticProps<{ data: Data[] }> = async () => {
 export default function Blog({
 	data
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+	const { colorMode } = useColorMode()
 	return (
-		<Flex minH={'100vh'} flexDir='column' alignItems='center'>
+		<Flex
+			minH={'100vh'}
+			flexDir='column'
+			alignItems='center'
+			bg={colorMode === 'light' ? 'whiteAlpha.800' : 'blackAlpha.50'}
+		>
 			<Head>
 				<title>blog</title>
 			</Head>
@@ -50,15 +54,7 @@ export default function Blog({
 					topics
 				</Text>
 
-				<hr
-					style={{
-						backgroundColor: '#1A202C',
-						borderColor: '#1A202C',
-						borderRadius: 2,
-						borderWidth: '1px',
-						marginBottom: '1em'
-					}}
-				/>
+				<Divider colorMode={colorMode} />
 
 				<Flex flexDir={'column'}>
 					{data.map((post, index) => {

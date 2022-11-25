@@ -1,7 +1,7 @@
 import { Text, TextProps } from '@chakra-ui/react'
 
 type Props = {
-	tag: string
+	content: string
 } & TextProps
 
 export const Tag = (props: Props) => {
@@ -10,18 +10,19 @@ export const Tag = (props: Props) => {
 			cursor={'default'}
 			px={'2'}
 			py={'1'}
+			w={'fit-content'}
 			transitionDuration='0.5s'
 			borderRadius={'5'}
 			_hover={{
-				bg: 'whiteAlpha.200',
+				bg: 'blackAlpha.300',
 				textDecor: 'underline'
 			}}
 			color={props.color}
-			fontSize={['sm', 'sm', 'md', 'md', 'lg', 'xl']}
+			fontSize={'sm'}
 			fontWeight={'normal'}
 			{...props}
 		>
-			#{props.tag}
+			#{props.content}
 		</Text>
 	)
 }
