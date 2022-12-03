@@ -1,12 +1,12 @@
-import '@fontsource/teko'
-import '@fontsource/titillium-web'
+import '@fontsource/montserrat'
+import '@fontsource/noto-sans'
 import React from 'react'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
 	fonts: {
-		heading: `'Teko', sans-serif`,
-		body: `'Titillium Web', sans-serif`
+		heading: `'Montserrat Black', sans-serif`,
+		body: `'Noto Sans', sans-serif`
 	}
 })
 

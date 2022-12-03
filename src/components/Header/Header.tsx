@@ -9,7 +9,6 @@ export const Header = () => {
 			w={'100%'}
 			p={'4'}
 			bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
-			outline={'2px solid gainsboro'}
 			as='header'
 			align={'center'}
 			justify='space-between'

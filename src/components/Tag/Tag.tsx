@@ -18,7 +18,7 @@ export const Tag = (props: Props) => {
 				textDecor: 'underline'
 			}}
 			color={props.color}
-			fontSize={'sm'}
+			fontSize={'xs'}
 			fontWeight={'normal'}
 			{...props}
 		>

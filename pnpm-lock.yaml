@@ -7,8 +7,8 @@ specifiers:
   '@commitlint/config-conventional': ^17.3.0
   '@emotion/react': ^11.10.5
   '@emotion/styled': ^11.10.5
-  '@fontsource/teko': ^4.5.9
-  '@fontsource/titillium-web': ^4.5.9
+  '@fontsource/montserrat': ^4.5.9
+  '@fontsource/noto-sans': ^4.5.9
   '@next/bundle-analyzer': ^12.3.4
   '@types/node': ^18.11.9
   '@types/react': ^18.0.25
@@ -26,7 +26,6 @@ specifiers:
   lint-staged: ^13.0.3
   markdown-to-jsx: ^7.1.7
   next: 12.2.3
-  nuka-carousel: ^5.4.1
   prettier: ^2.8.0
   react: 18.2.0
   react-dom: 18.2.0
@@ -40,12 +39,12 @@ dependencies:
   '@chakra-ui/react': 2.4.1_6yp524rlfdss46amjfzanoyjh4
   '@emotion/react': 11.10.5_fan5qbzahqtxlm5dzefqlqx5ia
   '@emotion/styled': 11.10.5_otcjdfkheatawhug6fwk7ldzni
-  '@fontsource/teko': 4.5.9
+  '@fontsource/montserrat': 4.5.13
+  '@fontsource/noto-sans': 4.5.11
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   gray-matter: 4.0.3
   markdown-to-jsx: 7.1.7_react@18.2.0
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
-  nuka-carousel: 5.4.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.6.0_react@18.2.0
@@ -55,7 +54,6 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 17.3.0
   '@commitlint/config-conventional': 17.3.0
-  '@fontsource/titillium-web': 4.5.9
   '@next/bundle-analyzer': 12.3.4
   '@types/node': 18.11.9
   '@types/react': 18.0.25
@@ -1519,13 +1517,13 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/teko/4.5.9:
-    resolution: {integrity: sha512-dU6kD7Zxutjf2uWNFhuquJuVVEuahW7S/Fv6otnHvOrG1J7pOEKexPQVkNdZQALgjdyJqLi5BZC87E1m7fk3pw==}
+  /@fontsource/montserrat/4.5.13:
+    resolution: {integrity: sha512-/XlcNsMFjdWX4Away8Ax/4NgND8Ckk9gVDwgz1sfxF6h+gFHChLOV0IvPrUfCQjZ1F35igg+nR9bSxmjsYEskQ==}
     dev: false
 
-  /@fontsource/titillium-web/4.5.9:
-    resolution: {integrity: sha512-C9bkYCeelkLcom4dHcT3/sM6CmlPwisyRbHUNGAt5LtF3XBdxqOW/R3cB6IaHWjqQvLYb93bTQpJu8X+KfggGA==}
-    dev: true
+  /@fontsource/noto-sans/4.5.11:
+    resolution: {integrity: sha512-lBX7FCjIjSrQ+iMuXUuO+mbjbnUsJyZANg/04PgkeeAYe+cwnX81ibbgrAk1F56M6/btIrWQoDjxsK6Sz8KoVQ==}
+    dev: false
 
   /@humanwhocodes/config-array/0.10.7:
     resolution: {integrity: sha512-MDl6D6sBsaV452/QSdX+4CXIjZhIcI0PELsxUjk4U828yd58vk3bTIvk/6w5FY+4hIy9sLW0sfrV7K7Kc++j/w==}
@@ -4355,17 +4353,6 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
-
-  /nuka-carousel/5.4.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-pdF8FrlUxmHrv5luEK5lGTnpxTzIX34hVKJ/S/Ywi1YOtCDhjL1dFJnuBmJ6yHn29jU/xwnsWszKVluZbstaaQ==}
-    engines: {node: '>=12.0.0'}
-    peerDependencies:
-      react: ^15.3.0 || ^16.0.0 || ^17.0.1 || ^18.0.0
-      react-dom: ^15.3.0 || ^16.0.0 || ^17.0.1 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
 
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}

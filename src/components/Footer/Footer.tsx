@@ -7,8 +7,8 @@ export const Footer = () => {
 			as={'footer'}
 			display={'flex'}
 			w={'100%'}
-			p={'1.5rem'}
-			bg={colorMode === 'light' ? 'gray.200' : 'gray.900'}
+			p={'6'}
+			bg={colorMode === 'light' ? 'gray.50' : 'gray.900'}
 			marginTop={'auto'}
 		>
 			<span style={{ textAlign: 'center', flex: 1 }}>

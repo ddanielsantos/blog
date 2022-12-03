@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Box, Flex, Heading, Text, useColorMode } from '@chakra-ui/react'
+import { Flex, Heading, useColorMode } from '@chakra-ui/react'
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { Divider, Header, Footer, PostCard } from '../../src/components'
+import { Header, Footer, PostCard } from '../../src/components'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getPost } from '../../src/lib/getPost'
 
@@ -39,24 +39,20 @@ export default function Blog({
 				<title>blog</title>
 			</Head>
 			<Header />
-			<Box
+			<Flex
 				overflowY={'scroll'}
 				overflowX={'hidden'}
-				w={['100%', '100%', '100%', '60em']}
-				p={'1.5rem'}
-				pb={0}
+				direction='column'
+				w={['100%', '100%', '40em']}
+				mt='3rem'
+				p={'6'}
+				gap='3rem'
 			>
-				<Heading as={'h1'} lineHeight={1} fontWeight={'extrabold'} mb={'1rem'}>
-					Blog
+				<Heading as={'h1'} lineHeight={1} fontWeight={'black'} fontSize='2xl'>
+					Welcome to my blog!
 				</Heading>
-				<Text fontSize={'lg'} mb={'1rem'}>
-					welcome to my blog, here I wrote about tech, career or some other cool
-					topics
-				</Text>
 
-				<Divider colorMode={colorMode} />
-
-				<Flex flexDir={'column'}>
+				<Flex flexDir={'column'} gap='0.75rem'>
 					{data.map((post, index) => {
 						return (
 							<PostCard
@@ -70,7 +66,7 @@ export default function Blog({
 						)
 					})}
 				</Flex>
-			</Box>
+			</Flex>
 			<Footer />
 		</Flex>
 	)

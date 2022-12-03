@@ -8,7 +8,7 @@ type Props = Omit<HeadingProps, 'level'> & {
 const MarkdownText = (props: Props) => {
 	const styles = {
 		h1: {
-			fontFamily: 'Teko',
+			fontFamily: 'Montserrat',
 			mb: '1em',
 			tabIndex: 0,
 			fontWeight: 'extrabold',
@@ -16,18 +16,18 @@ const MarkdownText = (props: Props) => {
 			as: 'h1'
 		},
 		h2: {
-			fontFamily: 'Teko',
+			fontFamily: `'Montserrat Black', sans-serif`,
 			tabIndex: 0,
 			mb: '1em',
-			fontSize: '2xl',
-			fontWeight: 'bold'
+			fontSize: 'xl',
+			fontWeight: 900
 		},
 		p: {
 			mb: '1em',
 			as: 'p',
-			fontWeight: 'light',
-			fontSize: 'lg',
-			fontFamily: 'Titillium Web'
+			fontWeight: 400,
+			fontSize: 'md',
+			fontFamily: `'Noto Sans', sans-serif`
 		}
 	}
 	return (

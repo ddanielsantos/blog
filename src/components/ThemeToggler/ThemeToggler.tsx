@@ -14,8 +14,6 @@ export function ThemeToggler(props: ThemeTogglerProps) {
 			size='sm'
 			bg={colorMode === 'light' ? 'gray.50' : 'gray.800'}
 			transition={'0.3s all'}
-			outline={`2px solid`}
-			outlineColor={colorMode === 'light' ? 'gainsboro' : 'gray.50'}
 			_hover={{}}
 			_focus={{
 				outline: '3px solid #63B3ED'

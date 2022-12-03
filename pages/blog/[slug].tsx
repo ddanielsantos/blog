@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { getPost } from '../../src/lib/getPost'
-import { Header, BackButton, TagGroup, Footer } from '../../src/components/'
+import { Header, TagGroup, Footer } from '../../src/components/'
 import { getPostsFilenames } from '../../src/lib/getPostsFileNames'
 import { getSlugFromFilename } from '../../src/lib/getSlugFromFilename'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
@@ -56,26 +56,23 @@ export default function BlogPost({
 				<Header />
 				<Flex
 					direction={'column'}
-					w={['100%', '100%', '100%', '60em']}
+					w={['100%', '100%', '40em']}
 					h={'100%'}
-					gap='3'
+					my='3rem'
+					gap='5'
 					textAlign='justify'
-					p={'1.5rem'}
+					p={'6'}
 				>
-					<BackButton />
-
-					<Flex
-						w='100%'
-						flexDir={['column', 'column', 'row']}
-						justifyContent={'space-between'}
-						alignItems={['start', 'start', 'center']}
-						mb={'3rem'}
+					<Heading
+						as={'h1'}
+						textAlign='left'
+						lineHeight={1}
+						fontWeight={'black'}
+						fontSize='3xl'
 					>
-						<Heading as={'h1'} lineHeight={1} fontWeight={'extrabold'}>
-							{data.meta.title}
-						</Heading>
-						<Text textAlign={'right'}>{data.meta.date}</Text>
-					</Flex>
+						{data.meta.title}
+					</Heading>
+					<Text textAlign={'right'}>{data.meta.date}</Text>
 					<TagGroup tags={data.meta.tags} />
 					<Markdown content={data.content} />
 				</Flex>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { Text, Flex, Image, Heading, useColorMode } from '@chakra-ui/react'
-import { Footer, Link, ThemeToggler } from '../src/components'
+import { Text, Flex, Heading, useColorMode } from '@chakra-ui/react'
+import { Footer, Header, Link } from '../src/components'
 import dynamic from 'next/dynamic'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
@@ -17,6 +17,7 @@ export default function Home() {
 			<Head>
 				<title>ddaniel.me</title>
 			</Head>
+			<Header />
 			<Flex
 				id='main'
 				as='main'
@@ -28,76 +29,44 @@ export default function Home() {
 				alignItems='center'
 				overflowY='scroll'
 			>
-				<ThemeToggler top='10px' left={'10px'} pos='absolute' />
-				<Flex
-					as={'section'}
-					tabIndex={0}
-					w={['100%', '100%', '100%', '60em']}
-					flexDir='column'
-					alignItems='flex-end'
-					justifyContent={'flex-end'}
-					padding={'1em'}
-					flexShrink={0}
-					scrollSnapAlign='start'
-					h={'100vh'}
-				>
-					<Heading
-						lineHeight={0.9}
-						textTransform={'uppercase'}
-						fontWeight='extrabold'
-						fontSize={['3.5em', '4em']}
-						textAlign='right'
-					>
-						Daniel
-					</Heading>
-					<Heading
-						lineHeight={0.9}
-						textTransform={'uppercase'}
-						fontWeight='extrabold'
-						fontSize={['3.5em', '4em']}
-						textAlign='right'
-					>
-						Santos
-					</Heading>
-					<Text
-						textTransform={'uppercase'}
-						fontSize={['1.25em', '1.25em']}
-						textAlign='right'
-					>
-						PASSIONATE DEVELOPER
-					</Text>
-				</Flex>
-
 				<Flex
 					as='section'
 					w={['100%', '100%', '100%', '60em']}
 					tabIndex={0}
-					justifyContent={'flex-start'}
 					p={['1rem', '1rem', '2rem']}
 					flexShrink={0}
 					scrollSnapAlign='start'
 					minH={'100vh'}
-					flexDir={['column', 'row']}
+					flexDir={['column']}
 					mt={'1'}
-					gap={'3'}
+					// gap={'3'}
 					margin='auto'
-					alignItems={'center'}
+					justifyContent={'center'}
+					alignItems={'start'}
 				>
-					<Image
-						src={'/Happy-Person-Free-Download-PNG.png'}
-						alt='me'
-						boxSize={'250px'}
-					/>
-					<Flex wrap={'wrap'} flexDir={'column'}>
-						<Text fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}>
-							Hi, I&apos;m Daniel Santos. I like to code and drink coffee.
-							Sometimes I blog about random stuff.
-						</Text>
-						<Link
-							href={'/blog'}
-							title={'read the blog'}
-							rightIcon={<ChevronRightIcon />}
-						/>
+					<Heading as='h1' fontWeight='black'>
+						Yo!
+					</Heading>
+					<Flex alignItems={'center'} gap={'3'}>
+						{/* TODO: a good looking photo of me here  */}
+						<Flex
+							sx={{
+								aspectRatio: '16 / 10'
+							}}
+							height={'200px'}
+							border='1px solid red'
+						></Flex>
+						<Flex wrap={'wrap'} flexDir={'column'}>
+							<Text fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}>
+								My name is Daniel Santos. I&apos;m a brazilian software
+								developer.
+							</Text>
+							<Link
+								href={'/blog'}
+								title={'read the blog'}
+								rightIcon={<ChevronRightIcon />}
+							/>
+						</Flex>
 					</Flex>
 				</Flex>
 
@@ -114,12 +83,7 @@ export default function Home() {
 					scrollSnapAlign='start'
 					minH={'100vh'}
 				>
-					<Heading
-						lineHeight={1}
-						flexShrink={0}
-						fontWeight='semibold'
-						fontSize={['2.5em', '3em', '3.5em']}
-					>
+					<Heading lineHeight={1} flexShrink={0} fontWeight='semibold'>
 						contact me
 					</Heading>
 					<ContactsSection />
