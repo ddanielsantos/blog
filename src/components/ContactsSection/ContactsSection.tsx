@@ -1,4 +1,4 @@
-import { Box, Icon, Link } from '@chakra-ui/react'
+import { Icon, Link } from '@chakra-ui/react'
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
 import { RiDiscordLine } from 'react-icons/ri'
 import NextLink from 'next/link'
@@ -34,7 +34,7 @@ const handlers: Handler[] = [
 
 export const ContactsSection = () => {
 	return (
-		<Box>
+		<>
 			{handlers.map((handler, index) => {
 				return (
 					<NextLink key={index} passHref href={handler.href}>
@@ -44,7 +44,7 @@ export const ContactsSection = () => {
 					</NextLink>
 				)
 			})}
-		</Box>
+		</>
 	)
 }
 

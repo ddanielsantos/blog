@@ -9,6 +9,8 @@ export function ThemeToggler(props: ThemeTogglerProps) {
 		<IconButton
 			onClick={toggleColorMode}
 			aria-label='theme toggler'
+			border={`2px solid`}
+			borderColor={colorMode === 'light' ? 'gray.800' : 'gray.50'}
 			borderRadius={'7px'}
 			fontSize='sm'
 			size='sm'

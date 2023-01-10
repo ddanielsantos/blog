@@ -22,6 +22,7 @@ export function Link(props: LinkProps) {
 				fontSize='sm'
 				display={'flex'}
 				gap={'1'}
+				outlineOffset={'2px'}
 				alignItems='center'
 				fontWeight='bold'
 				transition={'0.3s all'}

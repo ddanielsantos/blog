@@ -1,16 +1,10 @@
 import Head from 'next/head'
 import { Text, Flex, Heading, useColorMode } from '@chakra-ui/react'
-import { Footer, Header, Link } from '../src/components'
-import dynamic from 'next/dynamic'
+import { ContactsSection, Header, Link } from '../src/components'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export default function Home() {
 	const { colorMode } = useColorMode()
-	const ContactsSection = dynamic(() =>
-		import('../src/components/ContactsSection/ContactsSection').then(
-			v => v.ContactsSection
-		)
-	)
 
 	return (
 		<div>
@@ -32,34 +26,28 @@ export default function Home() {
 				<Flex
 					as='section'
 					w={['100%', '100%', '100%', '60em']}
-					tabIndex={0}
 					p={['1rem', '1rem', '2rem']}
 					flexShrink={0}
-					scrollSnapAlign='start'
-					minH={'100vh'}
+					gap={'6'}
 					flexDir={['column']}
-					mt={'1'}
-					// gap={'3'}
-					margin='auto'
-					justifyContent={'center'}
 					alignItems={'start'}
 				>
 					<Heading as='h1' fontWeight='black'>
 						Yo!
 					</Heading>
-					<Flex alignItems={'center'} gap={'3'}>
+					<Flex gap={'6'} flexDir={['column', 'row']}>
 						{/* TODO: a good looking photo of me here  */}
 						<Flex
 							sx={{
 								aspectRatio: '16 / 10'
 							}}
-							height={'200px'}
-							border='1px solid red'
-						></Flex>
-						<Flex wrap={'wrap'} flexDir={'column'}>
+							height={'180px'}
+						/>
+						<Flex wrap={'wrap'} flexDir={'column'} gap={'6'}>
 							<Text fontSize={['md', 'md', 'lg', 'lg', 'xl', '2xl']}>
 								My name is Daniel Santos. I&apos;m a brazilian software
-								developer.
+								developer, here I post some articles about technology and
+								software development.
 							</Text>
 							<Link
 								href={'/blog'}
@@ -69,27 +57,16 @@ export default function Home() {
 						</Flex>
 					</Flex>
 				</Flex>
-
 				<Flex
-					as='section'
-					w={['100%', '100%', '100%', '60em']}
-					flexDir='column'
-					tabIndex={0}
-					alignItems='flex-start'
-					justifyContent={'flex-start'}
+					w='100%'
+					mt={'5'}
 					p={['1rem', '1rem', '2rem']}
-					flexShrink={0}
-					overflow='hidden'
-					scrollSnapAlign='start'
-					minH={'100vh'}
+					justify={['space-around', 'center']}
+					gap={'3'}
 				>
-					<Heading lineHeight={1} flexShrink={0} fontWeight='semibold'>
-						contact me
-					</Heading>
 					<ContactsSection />
 				</Flex>
 			</Flex>
-			<Footer />
 		</div>
 	)
 }
