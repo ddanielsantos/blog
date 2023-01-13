@@ -13,7 +13,7 @@ export const Header = () => {
 			align={'center'}
 			justify='space-between'
 		>
-			<NextLink href='/' passHref>
+			<NextLink href='/' passHref legacyBehavior>
 				<Link fontSize={'xl'}>ddaniel.me</Link>
 			</NextLink>
 
