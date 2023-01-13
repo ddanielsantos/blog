@@ -35,25 +35,28 @@ export default function Markdown(props: Props) {
 							variant: 'p'
 						}
 					},
-					a: {
-						props: {
-							rel: 'noreferrer',
-							target: '_blank',
-							style: {
-								textDecoration: 'underline'
-							}
-						}
-					},
-					img: {
-						component: Image
-					},
 					ul: {
 						component: UnorderedList,
 						props: {
-							mb: '1em'
+							mb: '1em',
+							display: 'flex',
+							flexDirection: 'column',
+							gap: '0.25rem'
 						}
 					},
-					code: CodeBlock
+					img: {
+						component: props => (
+							<Image
+								width={300}
+								height={300}
+								{...props}
+								alt={props.alt || ''}
+							/>
+						)
+					},
+					code: {
+						component: CodeBlock
+					}
 				}
 			}}
 		>
