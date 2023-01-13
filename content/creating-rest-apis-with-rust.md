@@ -155,7 +155,3 @@ And finally, if we go to `http://127.0.0.1:8000/swagger-ui/`, we'll see the Swag
 From Utoipa, we have a range of possibilities, we can define the body and header of the requests, the HTTP codes to be returned, the format of the responses, and so on, it is worth taking some time in the library documentation to extract the maximum of OpenApi.
 
 The post ends here, but in the next one, we will have some improvements, such as connection to a database and integration tests.
-
----
-
-Thank you for reading this far, any doubts or questions can be asked in the comments section, if you want to contact me more easily, you can send me a message on [Twitter](https://twitter.com/renat0sp), I am always available there.
