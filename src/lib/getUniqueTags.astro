@@ -1,8 +1,8 @@
 ---
-import type { PostCardProps } from "../components/post-card.astro";
+import type { MarkdownInstance } from "astro";
+import type { PostCardProps } from "@types";
 
-export async function getUniqueTags() {
-  const posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
+export function getUniqueTags(posts: MarkdownInstance<PostCardProps>[]) {
   const differentTags = new Set();
 
   posts?.forEach((post) => {
