@@ -1,0 +1,23 @@
+---
+interface Props {
+  tag: string;
+  hasAnchor: boolean;
+}
+
+const { tag, hasAnchor } = Astro.props;
+---
+
+{
+  hasAnchor ? (
+    <a
+      class="text-xs py-1 px-2 rounded-md hover:bg-gray-200 hover:underline focus:outline-none tag"
+      href={"/blog/with/" + tag}
+    >
+      #{tag}
+    </a>
+  ) : (
+    <p class="text-xs py-1 px-2 rounded-md hover:bg-gray-200 hover:underline focus:outline-none tag">
+      #{tag}
+    </p>
+  )
+}

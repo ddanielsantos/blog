@@ -1,0 +1,29 @@
+---
+import TagGroup from "./tag-group.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  url: string | undefined;
+  date: string;
+  tags?: string[] | undefined;
+}
+
+const {
+  props: { title, date, description, tags, url },
+} = Astro;
+
+export type { Props as PostCardProps };
+---
+
+<a
+  href={url}
+  class="border-[1px] border-gray-300 transition-[box-shadow] duration-500 focus:shadow-lg hover:shadow-lg shadow-gray-500 rounded-lg py-2 px-4 flex flex-col gap-3 w-full group"
+>
+  <div class="flex flex-wrap justify-between">
+    <h4 class="group-hover:underline">{title}</h4>
+    <p>{date}</p>
+  </div>
+  <p>{description}</p>
+  <TagGroup tags={tags} hasAnchor={false} />
+</a>

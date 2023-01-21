@@ -1,0 +1,14 @@
+---
+import Layout from "../../layouts/layout.astro";
+import PostCard from "../../components/post-card.astro";
+import type { PostCardProps } from "../../components/post-card.astro";
+
+const posts = await Astro.glob<PostCardProps>("./*.md");
+---
+
+<Layout>
+  <h1>blog</h1>
+  <ul class="flex flex-col gap-3">
+    {posts && posts.map((p) => <PostCard {...p.frontmatter} url={p.url} />)}
+  </ul>
+</Layout>
