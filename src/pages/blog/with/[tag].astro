@@ -1,0 +1,29 @@
+---
+import type { PostCardProps } from "../../../components/post-card.astro";
+import PostCard from "../../../components/post-card.astro";
+
+import Layout from "../../../layouts/layout.astro";
+import { getUniqueTags } from "../../../lib/getUniqueTags.astro";
+
+const { tag } = Astro.params;
+
+export const getStaticPaths = async () => {
+  const uniqueTags = await getUniqueTags();
+
+  return uniqueTags.map((tag) => ({ params: { tag } }));
+};
+
+const postsWithTag = tag
+  ? (await Astro.glob<PostCardProps>("../../../pages/blog/*.md")).filter((v) =>
+      v.frontmatter.tags?.includes(tag)
+    )
+  : [];
+---
+
+<Layout title={"ddaniel.me | posts with " + tag}>
+  <h1>Posts with: {tag}</h1>
+  {
+    postsWithTag &&
+      postsWithTag.map((p) => <PostCard {...p.frontmatter} url={p.url} />)
+  }
+</Layout>

@@ -1,0 +1,72 @@
+---
+import Header from "../components/header.astro";
+import TagGroup from "../components/tag-group.astro";
+
+const { frontmatter } = Astro.props;
+const { url } = Astro;
+const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{"ddaniel.me | " + title}</title>
+  </head>
+  <body>
+    <Header />
+    <main class="w-full flex flex-col">
+      <div
+        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10"
+      >
+        {frontmatter?.title && <h1>{frontmatter.title}</h1>}
+        {
+          frontmatter?.tags ? (
+            <TagGroup hasAnchor={true} tags={frontmatter.tags} />
+          ) : null
+        }
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+  a {
+    outline-offset: 2px;
+  }
+  a:focus {
+    outline: 3px solid #63b3ed;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  code {
+    padding: 0.25rem;
+  }
+  pre.astro-code {
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+</style>

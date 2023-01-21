@@ -1,0 +1,14 @@
+---
+import type { PostCardProps } from "../components/post-card.astro";
+
+export async function getUniqueTags() {
+  const posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
+  const differentTags = new Set();
+
+  posts?.forEach((post) => {
+    post?.frontmatter?.tags?.forEach((tag) => differentTags.add(tag));
+  });
+
+  return [...differentTags];
+}
+---

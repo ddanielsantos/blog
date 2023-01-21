@@ -1,0 +1,23 @@
+---
+import Tag from "./tag.astro";
+
+interface Props {
+  hasAnchor: boolean;
+  tags?: string[] | undefined;
+}
+
+const { tags, hasAnchor } = Astro.props;
+---
+
+<ul role="list" class="flex gap-2">
+  {
+    tags &&
+      tags.map((tag) => {
+        return (
+          <li>
+            <Tag tag={tag} hasAnchor={hasAnchor} />
+          </li>
+        );
+      })
+  }
+</ul>
