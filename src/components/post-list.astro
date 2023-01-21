@@ -1,0 +1,15 @@
+---
+import type { MarkdownInstance } from "astro";
+import type { PostCardProps } from "@types";
+import PostCard from "@components/post-card.astro";
+
+interface Props {
+  posts?: MarkdownInstance<PostCardProps>[];
+}
+
+const {
+  props: { posts },
+} = Astro;
+---
+
+{posts && posts.map((p) => <PostCard {...p.frontmatter} url={p.url} />)}

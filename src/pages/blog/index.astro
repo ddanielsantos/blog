@@ -1,14 +1,15 @@
 ---
-import Layout from "../../layouts/layout.astro";
-import PostCard from "../../components/post-card.astro";
-import type { PostCardProps } from "../../components/post-card.astro";
+import Layout from "@layouts/layout.astro";
+import { sortPostByDate } from "@lib/sortPostByDate";
+import { getPosts } from "@lib/getPosts.astro";
+import Postlist from "@components/post-list.astro";
 
-const posts = await Astro.glob<PostCardProps>("./*.md");
+const posts = (await getPosts()).sort(sortPostByDate);
 ---
 
 <Layout>
   <h1>blog</h1>
   <ul class="flex flex-col gap-3">
-    {posts && posts.map((p) => <PostCard {...p.frontmatter} url={p.url} />)}
+    <Postlist posts={posts} />
   </ul>
 </Layout>
