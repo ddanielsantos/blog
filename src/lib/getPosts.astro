@@ -1,0 +1,21 @@
+---
+import type { PostCardProps } from "@types";
+
+interface Options {
+  filter?: {
+    tag: string;
+  };
+}
+
+export const getPosts = async ({ filter }: Options = {}) => {
+  let posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
+
+  if (filter?.tag !== undefined) {
+    posts = posts.filter((post) =>
+      post.frontmatter.tags?.includes(filter?.tag)
+    );
+  }
+
+  return posts;
+};
+---
