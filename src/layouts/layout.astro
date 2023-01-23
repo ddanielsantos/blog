@@ -14,13 +14,23 @@ const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <meta property="twitter:title" content={"ddaniel.me"} />
+    <meta
+      property="twitter:description"
+      content={frontmatter?.title ? frontmatter.title : "now and"}
+    />
+    <meta
+      property="twitter:image"
+      content={"https://www.ddaniel.me/api/og.svg"}
+    />
     <title>{"ddaniel.me | " + title}</title>
   </head>
   <body>
     <Header />
     <main class="w-full flex flex-col">
       <div
-        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10"
+        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10 font-"
       >
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
