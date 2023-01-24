@@ -1,12 +1,9 @@
 import satori from "satori";
 import { html } from "satori-html";
-
-const openSansBoldTTF = fetch(
-  new URL("../../../public/fonts/OpenSans-Bold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+import openSansBoldTTF from "../../../public/fonts/OpenSans-Bold.ttf";
 
 export async function get() {
-  const OpenSansBold = await openSansBoldTTF;
+  const OpenSansBold = Buffer.from(openSansBoldTTF);
 
   const element = html`
     <div tw="w-full h-full flex flex-col justify-center items-center">
