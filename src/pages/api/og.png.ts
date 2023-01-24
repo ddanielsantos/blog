@@ -1,5 +1,6 @@
 import satori from "satori";
 import { html } from "satori-html";
+import { Resvg } from "@resvg/resvg-js";
 import openSansBoldTTF from "../../../public/fonts/OpenSans-Bold.ttf";
 
 export async function get() {
@@ -25,10 +26,18 @@ export async function get() {
     width: 800,
   });
 
+  const img = new Resvg(svg, {
+    fitTo: {
+      mode: "width",
+      value: 800,
+    },
+  });
+  const png = img.render().asPng();
+
   return {
     headers: {
-      "Content-Type": "image/svg+xml",
+      "Content-Type": "image/png",
     },
-    body: svg,
+    body: png,
   };
 }

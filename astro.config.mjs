@@ -7,7 +7,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   vite: {
     plugins: [rawFonts([".ttf"])],
-    optimizeDeps: { exclude: ["satori", "yoga-wasm-web"] },
+    optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
   integrations: [tailwind()],
 });
