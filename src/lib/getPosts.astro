@@ -1,19 +1,27 @@
 ---
 import type { PostCardProps } from "@types";
+import type { MarkdownInstance } from "astro";
 
 interface Options {
   filter?: {
-    tag: string;
+    tag?: string;
+    slug?: string;
   };
 }
 
-export const getPosts = async ({ filter }: Options = {}) => {
+type Posts = MarkdownInstance<PostCardProps>[];
+
+export const getPosts = async ({ filter }: Options = {}): Promise<Posts> => {
   let posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
 
   if (filter?.tag !== undefined) {
     posts = posts.filter((post) =>
       post.frontmatter.tags?.includes(filter?.tag)
     );
+  }
+
+  if (filter?.slug !== undefined) {
+    posts = posts.filter((post) => post.url?.endsWith(filter.slug));
   }
 
   return posts;

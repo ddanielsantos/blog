@@ -1,0 +1,19 @@
+---
+import { getPosts } from "./getPosts.astro";
+
+interface Options {
+  filter?: {
+    title?: string;
+  };
+}
+
+export const getSlugs = async ({ filter }: Options = {}) => {
+  let posts = await getPosts();
+
+  if (filter?.title !== undefined) {
+    posts.filter((p) => p.frontmatter?.title === filter.title);
+  }
+
+  return posts.map((p) => p.url?.split("/").at(-1));
+};
+---

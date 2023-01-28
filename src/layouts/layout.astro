@@ -1,10 +1,13 @@
 ---
 import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
+import { getOgImageURL } from "@lib/getOgImageURL";
 
 const { frontmatter } = Astro.props;
 const { url } = Astro;
 const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
+
+const ogImageURL = await getOgImageURL(frontmatter);
 ---
 
 <!DOCTYPE html>
@@ -20,10 +23,7 @@ const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
       property="twitter:description"
       content={frontmatter?.title ? frontmatter.title : "now and"}
     />
-    <meta
-      property="twitter:image"
-      content={"https://www.ddaniel.me/api/og.svg"}
-    />
+    <meta property="twitter:image" content={ogImageURL} />
     <title>{"ddaniel.me | " + title}</title>
   </head>
   <body>
