@@ -46,10 +46,12 @@ export const get = async ({ params }: APIContext) => {
 
     element = html`
       <div
-        tw="bg-white w-full h-full flex flex-col justify-between items-start p-6"
+        tw="bg-white w-full h-full flex flex-col justify-around items-start p-10"
       >
         <span tw="text-7xl mb-7">${widthSafeTitle}</span>
-        <span tw="text-4xl text-gray-600">${p[0]?.frontmatter.date}</span>
+        <span tw="self-end text-4xl text-gray-600"
+          >${p[0]?.frontmatter.date}</span
+        >
       </div>
     `;
   }
@@ -67,7 +69,7 @@ export const get = async ({ params }: APIContext) => {
       },
     ],
     height: 400,
-    width: 700,
+    width: 800,
   });
 
   const img = new Resvg(svg, {
