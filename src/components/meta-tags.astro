@@ -1,17 +1,24 @@
 ---
+import type { PostCardProps } from "@types";
+
 interface Props {
   ogImageURL: string;
   href: string;
+  frontmatter: PostCardProps | undefined;
   title?: string;
+  description?: string;
 }
 
-const { ogImageURL, href, title } = Astro.props;
+const { ogImageURL, href, frontmatter, title, description } = Astro.props;
 ---
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="ddaniel.me" />
 <meta property="twitter:url" content={href} />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={title ?? "now and"} />
+<meta name="twitter:title" content={frontmatter?.title ?? title} />
+<meta
+  name="twitter:description"
+  content={frontmatter?.description ?? description}
+/>
 <meta name="twitter:image" content={ogImageURL} />

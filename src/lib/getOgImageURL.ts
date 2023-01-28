@@ -1,10 +1,12 @@
 import { getSlugs } from "./getSlugs.astro";
 
-interface PageInfo {
-  title?: string;
-}
+type Args =
+  | {
+      title: string;
+    }
+  | undefined;
 
-export async function getOgImageURL(frontmatter: PageInfo) {
+export async function getOgImageURL(frontmatter: Args) {
   let metaImageId = "";
 
   if (frontmatter?.title) {

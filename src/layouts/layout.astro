@@ -3,12 +3,11 @@ import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
 import { getOgImageURL } from "@lib/getOgImageURL";
+import type { PostCardProps } from "@types";
 
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props as { frontmatter?: PostCardProps };
 const { url } = Astro;
-const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
-
-console.log(url.pathname.split("/").at(-1));
+const title = frontmatter?.title;
 
 const ogImageURL = await getOgImageURL(frontmatter);
 ---
@@ -21,9 +20,14 @@ const ogImageURL = await getOgImageURL(frontmatter);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <MetaTags href={url.href} ogImageURL={ogImageURL} title={title} />
+    <MetaTags
+      href={url.href}
+      ogImageURL={ogImageURL}
+      title={title || "ddaniel.me"}
+      frontmatter={frontmatter}
+    />
 
-    <title>{"ddaniel.me | " + title}</title>
+    <title>{title || "ddaniel.me"}</title>
   </head>
   <body>
     <Header />
