@@ -8,6 +8,8 @@ const { frontmatter } = Astro.props;
 const { url } = Astro;
 const title = frontmatter?.title || url.pathname.split("/").at(-1) || "home";
 
+console.log(url.pathname.split("/").at(-1));
+
 const ogImageURL = await getOgImageURL(frontmatter);
 ---
 
