@@ -1,6 +1,7 @@
 ---
 import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
+import MetaTags from "@components/meta-tags.astro";
 import { getOgImageURL } from "@lib/getOgImageURL";
 
 const { frontmatter } = Astro.props;
@@ -18,12 +19,8 @@ const ogImageURL = await getOgImageURL(frontmatter);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <meta property="twitter:title" content={"ddaniel.me"} />
-    <meta
-      property="twitter:description"
-      content={frontmatter?.title ? frontmatter.title : "now and"}
-    />
-    <meta property="twitter:image" content={ogImageURL} />
+    <MetaTags href={url.href} ogImageURL={ogImageURL} title={title} />
+
     <title>{"ddaniel.me | " + title}</title>
   </head>
   <body>
@@ -41,42 +38,42 @@ const ogImageURL = await getOgImageURL(frontmatter);
         <slot />
       </div>
     </main>
+    <style is:global>
+      html {
+        font-family: system-ui, sans-serif;
+        background-color: #f6f6f6;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 800;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+      }
+      a {
+        outline-offset: 2px;
+      }
+      a:focus {
+        outline: 3px solid #63b3ed;
+      }
+      h4 {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      code {
+        padding: 0.25rem;
+      }
+      pre.astro-code {
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+    </style>
   </body>
 </html>
-<style is:global>
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: #f6f6f6;
-    margin: 0;
-    padding: 0;
-  }
-  h1 {
-    font-size: 2rem;
-    font-weight: 800;
-  }
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
-  h3 {
-    font-size: 1.25rem;
-    font-weight: 800;
-  }
-  a {
-    outline-offset: 2px;
-  }
-  a:focus {
-    outline: 3px solid #63b3ed;
-  }
-  h4 {
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  code {
-    padding: 0.25rem;
-  }
-  pre.astro-code {
-    border-radius: 0.5rem;
-    padding: 1rem;
-  }
-</style>
