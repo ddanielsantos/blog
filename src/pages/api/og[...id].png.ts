@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 
 export const get = async ({ params }: APIContext) => {
   let element = html`
-    <div tw="w-full h-full flex flex-col justify-center items-center">
+    <div tw="bg-white w-full h-full flex flex-col justify-center items-center">
       <span tw="text-7xl">ddaniel.me</span>
       <span tw="text-4xl text-gray-600">building and sharing</span>
     </div>
@@ -45,7 +45,9 @@ export const get = async ({ params }: APIContext) => {
         : p[0]?.frontmatter?.title;
 
     element = html`
-      <div tw="w-full h-full flex flex-col justify-between items-start p-6">
+      <div
+        tw="bg-white w-full h-full flex flex-col justify-between items-start p-6"
+      >
         <span tw="text-7xl mb-7">${widthSafeTitle}</span>
         <span tw="text-4xl text-gray-600">${p[0]?.frontmatter.date}</span>
       </div>
