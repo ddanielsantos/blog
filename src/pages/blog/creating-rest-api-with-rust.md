@@ -1,9 +1,9 @@
 ---
-layout: '../../layouts/layout.astro'
-title: 'Creating Rest APIs with Rust'
-description: 'how to create a well documented API with'
-date: '12 Dec, 2022'
-tags: ['rust', 'rest', 'api', 'openapi']
+layout: "../../layouts/layout.astro"
+title: "Creating Rest APIs with Rust"
+description: "How to create a well documented API with Rust"
+date: "12 Dec, 2022"
+tags: ["rust", "rest", "api", "openapi"]
 ---
 
 In this series, I'll share the learnings I got developing another personal project, today I bring a brief introduction to building Rest APIs with Rust.
