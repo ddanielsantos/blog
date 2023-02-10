@@ -6,7 +6,7 @@ specifiers:
   '@resvg/resvg-js': ^2.2.0
   '@types/node': ^18.11.18
   astro: ^1.9.0
-  satori: 0.0.45
+  satori: 0.2.3
   satori-html: ^0.3.2
   tailwindcss: ^3.0.24
 
@@ -15,7 +15,7 @@ dependencies:
   '@astrojs/vercel': 2.4.0
   '@resvg/resvg-js': 2.2.0
   astro: 1.9.2_@types+node@18.11.18
-  satori: 0.0.45
+  satori: 0.2.3
   satori-html: 0.3.2
   tailwindcss: 3.2.4
 
@@ -776,10 +776,6 @@ packages:
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
-    dev: false
-
-  /@types/yoga-layout/1.9.2:
-    resolution: {integrity: sha512-S9q47ByT2pPvD65IvrWp7qppVMpk9WGMbVq9wbWZOHg6tnXSD4vyhao6nOSBwwfDdV2p3Kx9evA9vI+XWTfDvw==}
     dev: false
 
   /@vercel/nft/0.22.6:
@@ -3496,8 +3492,8 @@ packages:
       ultrahtml: 1.2.0
     dev: false
 
-  /satori/0.0.45:
-    resolution: {integrity: sha512-jF7AAK5ddZQVE6r6gTG07YxOvhldev0wBrFqBXRNbPH/mEy15gfIqA4xjGfVHczcGYZvY/VWmKri6DzRJF8cgQ==}
+  /satori/0.2.3:
+    resolution: {integrity: sha512-jl/+sFkz3pBfGip7034Uvn/Hp1FZq4prKXIZO28rV90DS3jTU6uXBV0FRX4ooYoO27f3rGNXKhSKyDST5FdmQA==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
@@ -3506,7 +3502,7 @@ packages:
       css-to-react-native: 3.1.0
       emoji-regex: 10.2.1
       postcss-value-parser: 4.2.0
-      yoga-layout-prebuilt: 1.10.0
+      yoga-wasm-web: 0.3.1
     dev: false
 
   /section-matter/1.0.0:
@@ -4200,11 +4196,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /yoga-layout-prebuilt/1.10.0:
-    resolution: {integrity: sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==}
-    engines: {node: '>=8'}
-    dependencies:
-      '@types/yoga-layout': 1.9.2
+  /yoga-wasm-web/0.3.1:
+    resolution: {integrity: sha512-J74OxJtRb5GLW/GH+ibYpb0/0zixk9qp0EOIuKKkavk0w0cMHIQ76YPkca4cRBUW+d+r+GFSM9Q3a+HXQd4b8g==}
     dev: false
 
   /zod/3.20.2:
