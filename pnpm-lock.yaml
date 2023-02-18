@@ -6,7 +6,7 @@ specifiers:
   '@resvg/resvg-js': ^2.2.0
   '@types/node': ^18.11.18
   astro: ^2.0.0
-  satori: 0.3.1
+  satori: 0.3.2
   satori-html: ^0.3.2
   tailwindcss: ^3.0.24
 
@@ -15,7 +15,7 @@ dependencies:
   '@astrojs/vercel': 3.1.1_astro@2.0.10
   '@resvg/resvg-js': 2.2.0
   astro: 2.0.10_@types+node@18.11.18
-  satori: 0.3.1
+  satori: 0.3.2
   satori-html: 0.3.2
   tailwindcss: 3.2.4
 
@@ -3201,8 +3201,8 @@ packages:
       ultrahtml: 1.2.0
     dev: false
 
-  /satori/0.3.1:
-    resolution: {integrity: sha512-+Pw4tNclWT3RK9sa2IERxozB8Pz9qMkZlEgro9eUUsvBJTAwf1gKWhB9UVViPHZWOEN/xEKlj79GG44yVlfBCA==}
+  /satori/0.3.2:
+    resolution: {integrity: sha512-/CLmLk5rzHudMWrMt50UwjG81WOkKnMyVeDzx49jOQzYxwfmImPvf+oWTU703Gq2lE5GkLZ3e7xtTubIQ3IzQQ==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
