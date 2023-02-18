@@ -34,7 +34,7 @@ const ogImageURL = await getOgImageURL(frontmatter);
     <Header />
     <main class="w-full flex flex-col">
       <div
-        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10 font-"
+        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10"
       >
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
@@ -66,6 +66,9 @@ const ogImageURL = await getOgImageURL(frontmatter);
       }
       a {
         outline-offset: 2px;
+      }
+      main a:not(.tag, .shadow-gray-500) {
+        text-decoration: underline;
       }
       a:focus {
         outline: 3px solid #63b3ed;
