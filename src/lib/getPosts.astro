@@ -11,16 +11,16 @@ interface Options {
 
 type Posts = MarkdownInstance<PostCardProps>[];
 
-export const getPosts = async ({ filter }: Options = {}): Promise<Posts> => {
+export const getPosts = async ({ filter }: Options): Promise<Posts> => {
   let posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
 
-  if (filter?.tag !== undefined) {
+  if (filter?.tag) {
     posts = posts.filter((post) =>
-      post.frontmatter.tags?.includes(filter?.tag)
+      post.frontmatter.tags?.includes(filter.tag)
     );
   }
 
-  if (filter?.slug !== undefined) {
+  if (filter?.slug) {
     posts = posts.filter((post) => post.url?.endsWith(filter.slug));
   }
 
