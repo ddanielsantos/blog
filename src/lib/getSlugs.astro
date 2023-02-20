@@ -1,5 +1,5 @@
 ---
-import { getPosts } from "./getPosts.astro";
+import { CollectionEntry, getCollection } from "astro:content";
 
 interface Options {
   filter?: {
@@ -7,13 +7,15 @@ interface Options {
   };
 }
 
-export const getSlugs = async ({ filter }: Options = {}) => {
-  let posts = await getPosts();
+type Slug = CollectionEntry<"blog">['slug'];
+
+export const getSlugs = async ({ filter }: Options = {}): Promise<Slug[]> => {
+  let posts = await getCollection("blog");
 
   if (filter?.title !== undefined) {
-    posts.filter((p) => p.frontmatter?.title === filter.title);
+    posts.filter((p) => p.data.title === filter.title);
   }
 
-  return posts.map((p) => p.url?.split("/").at(-1));
+  return posts.map(p=> p.slug);
 };
 ---

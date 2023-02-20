@@ -1,8 +1,8 @@
 ---
 import TagGroup from "@components/tag-group.astro";
-import type { PostCardProps } from "@types";
+import { CollectionEntry } from "astro:content";
 
-type Props = PostCardProps;
+type Props = CollectionEntry<"blog">["data"] & { url: string };
 
 const {
   props: { title, date, description, tags, url },

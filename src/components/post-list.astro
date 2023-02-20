@@ -2,14 +2,24 @@
 import type { MarkdownInstance } from "astro";
 import type { PostCardProps } from "@types";
 import PostCard from "@components/post-card.astro";
+import { CollectionEntry } from "astro:content";
 
 interface Props {
-  posts?: MarkdownInstance<PostCardProps>[];
+  posts?: CollectionEntry<"blog">[];
 }
 
 const {
   props: { posts },
 } = Astro;
+
+function entryToURL(entry: CollectionEntry<"blog">) {
+  return `/blog/${entry.slug}`;
+}
 ---
 
-{posts && posts.map((p) => <PostCard {...p.frontmatter} url={p.url} />)}
+{
+  posts &&
+    posts.map((p) => {
+      return <PostCard {...p.data} url={entryToURL(p)} />;
+    })
+}

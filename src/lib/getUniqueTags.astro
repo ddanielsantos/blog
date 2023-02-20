@@ -1,12 +1,11 @@
 ---
-import type { MarkdownInstance } from "astro";
-import type { PostCardProps } from "@types";
+import { CollectionEntry } from "astro:content";
 
-export function getUniqueTags(posts: MarkdownInstance<PostCardProps>[]) {
+export function getUniqueTags(posts: CollectionEntry<"blog">[]) {
   const differentTags = new Set();
 
   posts?.forEach((post) => {
-    post?.frontmatter?.tags?.forEach((tag) => differentTags.add(tag));
+    post?.data?.tags?.forEach((tag) => differentTags.add(tag));
   });
 
   return [...differentTags];
