@@ -1,5 +1,4 @@
 ---
-layout: "../../layouts/layout.astro"
 title: "Revamping"
 description: "Moving to Astro and some other stuff"
 date: "18 Feb, 2023"
