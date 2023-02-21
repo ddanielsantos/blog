@@ -1,12 +1,11 @@
-import type { MarkdownInstance } from "astro";
-import type { PostCardProps } from "@types";
+import { CollectionEntry } from "astro:content";
 
 export const sortPostByDate = (
-  a: MarkdownInstance<PostCardProps>,
-  b: MarkdownInstance<PostCardProps>
+  a: CollectionEntry<"blog">,
+  b: CollectionEntry<"blog">
 ): number => {
-  const firstDate = new Date(a.frontmatter.date);
-  const secondDate = new Date(b.frontmatter.date);
+  const firstDate = new Date(a.data.date);
+  const secondDate = new Date(b.data.date);
 
   switch (true) {
     case firstDate > secondDate:

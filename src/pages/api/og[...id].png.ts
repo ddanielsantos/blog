@@ -40,18 +40,16 @@ export const get = async ({ params }: APIContext) => {
     });
 
     const widthSafeTitle =
-      p[0]?.frontmatter?.title && p[0].frontmatter.title.length > 29
-        ? p[0]?.frontmatter?.title.slice(0, 29) + "..."
-        : p[0]?.frontmatter?.title;
+      p[0]?.data?.title && p[0].data.title.length > 29
+        ? p[0]?.data?.title.slice(0, 29) + "..."
+        : p[0]?.data?.title;
 
     element = html`
       <div
         tw="bg-white w-full h-full flex flex-col justify-around items-start p-10"
       >
         <span tw="text-7xl mb-7">${widthSafeTitle}</span>
-        <span tw="self-end text-4xl text-gray-600"
-          >${p[0]?.frontmatter.date}</span
-        >
+        <span tw="self-end text-4xl text-gray-600">${p[0]?.data.date}</span>
       </div>
     `;
   }

@@ -1,6 +1,5 @@
 ---
-import type { PostCardProps } from "@types";
-import type { MarkdownInstance } from "astro";
+import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
 
 interface Options {
   filter?: {
@@ -9,17 +8,17 @@ interface Options {
   };
 }
 
-type Posts = MarkdownInstance<PostCardProps>[];
+type Posts = CollectionEntry<"blog">[];
 
 export const getPosts = async ({ filter }: Options = {}): Promise<Posts> => {
-  let posts = await Astro.glob<PostCardProps>("../pages/blog/*.md");
-
-  if (filter?.tag) {
-    posts = posts.filter((post) => post.frontmatter.tags?.includes(filter.tag));
+  if (filter?.slug) {
+    return [await getEntryBySlug("blog", filter.slug)];
   }
 
-  if (filter?.slug) {
-    posts = posts.filter((post) => post.url?.endsWith(filter.slug));
+  let posts = await getCollection("blog");
+
+  if (filter?.tag) {
+    posts = posts.filter((post) => post.data.tags?.includes(filter.tag));
   }
 
   return posts;

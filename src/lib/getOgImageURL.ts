@@ -10,13 +10,11 @@ export async function getOgImageURL(frontmatter: Args) {
   let metaImageId = "";
 
   if (frontmatter?.title) {
-    const slug = (
-      await getSlugs({
-        filter: {
-          title: frontmatter.title,
-        },
-      })
-    )[0];
+    const [{ slug }] = await getSlugs({
+      filter: {
+        title: frontmatter.title,
+      },
+    });
 
     if (slug) metaImageId = slug;
   }
