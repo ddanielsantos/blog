@@ -3,9 +3,11 @@ import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
 import { getOgImageURL } from "@lib/getOgImageURL";
-import type { PostCardProps } from "@types";
+import { CollectionEntry } from "astro:content";
 
-const { frontmatter } = Astro.props as { frontmatter?: PostCardProps };
+const { frontmatter } = Astro.props as {
+  frontmatter?: CollectionEntry<"blog">["data"];
+};
 const { url } = Astro;
 const title = frontmatter?.title;
 

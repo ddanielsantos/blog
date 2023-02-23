@@ -1,16 +1,14 @@
 import { getSlugs } from "./getSlugs.astro";
 
-type Args =
-  | {
-      title: string;
-    }
-  | undefined;
+type Args = {
+  title?: string;
+};
 
 export async function getOgImageURL(frontmatter: Args) {
   let metaImageId = "";
 
   if (frontmatter?.title) {
-    const [{ slug }] = await getSlugs({
+    const [slug] = await getSlugs({
       filter: {
         title: frontmatter.title,
       },

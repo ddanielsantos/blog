@@ -7,15 +7,15 @@ interface Options {
   };
 }
 
-type Slug = CollectionEntry<"blog">['slug'];
+type Slug = CollectionEntry<"blog">["slug"];
 
 export const getSlugs = async ({ filter }: Options = {}): Promise<Slug[]> => {
   let posts = await getCollection("blog");
 
-  if (filter?.title !== undefined) {
-    posts.filter((p) => p.data.title === filter.title);
+  if (filter?.title) {
+    posts = posts.filter((p) => p.data.title === filter.title);
   }
 
-  return posts.map(p=> p.slug);
+  return posts.map((p) => p.slug);
 };
 ---
