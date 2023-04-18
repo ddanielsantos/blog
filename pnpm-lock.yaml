@@ -14,8 +14,8 @@ dependencies:
     specifier: ^2.0.0
     version: 2.0.10(@types/node@18.11.18)
   satori:
-    specifier: 0.4.11
-    version: 0.4.11
+    specifier: 0.4.13
+    version: 0.4.13
   satori-html:
     specifier: ^0.3.2
     version: 0.3.2
@@ -1923,6 +1923,11 @@ packages:
       space-separated-tokens: 2.0.2
     dev: false
 
+  /hex-rgb@4.3.0:
+    resolution: {integrity: sha512-Ox1pJVrDCyGHMG9CFg1tmrRUMRPRsAWYc/PinY0XzJU4K7y7vjNoLKIQ7BR5UJMCxNN8EM1MNDmHWA/B3aZUuw==}
+    engines: {node: '>=6'}
+    dev: false
+
   /html-escaper@3.0.3:
     resolution: {integrity: sha512-RuMffC89BOWQoY0WKGpIhn5gX3iI54O6nRA0yC124NYVtzjmFWBIiFd8M0x+ZdX0P9R4lADg1mgP8C7PxGOWuQ==}
     dev: false
@@ -2806,6 +2811,13 @@ packages:
     resolution: {integrity: sha512-NUcwaKxUxWrZLpDG+z/xZaCgQITkA/Dv4V/T6bw7VON6l1Xz/VnrBqrYjZQ12TamKHzITTfOEIYUj48y2KXImA==}
     dev: false
 
+  /parse-css-color@0.2.1:
+    resolution: {integrity: sha512-bwS/GGIFV3b6KS4uwpzCFj4w297Yl3uqnSgIPsoQkx7GMLROXfMnWvxfNkL0oh8HVhZA4hvJoEoEIqonfJ3BWg==}
+    dependencies:
+      color-name: 1.1.4
+      hex-rgb: 4.3.0
+    dev: false
+
   /parse-latin@5.0.1:
     resolution: {integrity: sha512-b/K8ExXaWC9t34kKeDV8kGXBkXZ1HCSAZRYE7HR14eA1GlXX5L8iWhs8USJNhQU9q5ci413jCKF0gOyovvyRBg==}
     dependencies:
@@ -3223,8 +3235,8 @@ packages:
       ultrahtml: 1.2.0
     dev: false
 
-  /satori@0.4.11:
-    resolution: {integrity: sha512-Ev8xEkDkURnEz/qWeGLWss3BkbfeoSfB0tXTqijfLrdaOsUyTW4SQmEtvF5atoYw/8GgS1Nq2sJMXX4BXhyFPg==}
+  /satori@0.4.13:
+    resolution: {integrity: sha512-KVN7gZgyHLsLqV02r+tFD2yqeUw+jkR3vWC8kg9f8Ouym/KTjPaimUr1mNnJfYgxgspUvATMwaLqdf3VcySnsA==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
@@ -3233,6 +3245,7 @@ packages:
       css-to-react-native: 3.1.0
       emoji-regex: 10.2.1
       linebreak: 1.1.0
+      parse-css-color: 0.2.1
       postcss-value-parser: 4.2.0
       yoga-wasm-web: 0.3.3
     dev: false
