@@ -73,14 +73,14 @@ export const get = async ({ params }: APIContext) => {
         weight: 700,
       },
     ],
-    height: 400,
-    width: 800,
+    height: 630,
+    width: 1200,
   });
 
   const img = new Resvg(svg, {
     fitTo: {
       mode: "width",
-      value: 800,
+      value: 1200,
     },
   });
   const png = img.render().asPng();
