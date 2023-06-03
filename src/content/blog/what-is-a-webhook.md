@@ -1,7 +1,7 @@
 ---
 title: "What is a Webhook"
 description: "Small note about what is a Webhook and how it works"
-date: "06 Jun, 2023"
+date: "03 Jun, 2023"
 tags: ["http"]
 ---
 
