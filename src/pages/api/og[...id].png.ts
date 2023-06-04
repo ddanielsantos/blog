@@ -29,10 +29,17 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
   if (!params.id) {
     return html`
       <div
-        tw="bg-white w-full h-full flex flex-col justify-center items-center"
+        tw="flex bg-white w-full h-full border-red-600 px-14 py-48 justify-center items-center"
       >
-        <span tw="text-7xl">ddaniel.me</span>
-        <span tw="text-4xl text-gray-600">building and sharing</span>
+        <div tw="flex flex-col border-blue-600">
+          <div tw="flex border-red-600 items-center">
+            <div tw="bg-black w-[40px] h-full flex"></div>
+            <div tw="flex flex-col ml-15">
+              <h2 tw="text-7xl font-bold">ddaniel.me</h2>
+              <h3 tw="text-4xl font-bold">documenting my journey</h3>
+            </div>
+          </div>
+        </div>
       </div>
     `;
   }
