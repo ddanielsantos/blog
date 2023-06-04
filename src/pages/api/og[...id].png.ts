@@ -58,10 +58,11 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
       : p[0]?.data?.title;
 
   return html`
-    <div
-      tw="bg-white w-full h-full flex flex-col justify-around items-start p-10"
-    >
-      <span tw="text-7xl mb-7">${widthSafeTitle}</span>
+    <div tw="bg-white w-full h-full flex flex-col justify-around px-24 ">
+      <div tw="flex flex-col">
+        <span tw="text-7xl mb-20">${widthSafeTitle}</span>
+        <span tw="text-4xl">${p[0]?.data.description}</span>
+      </div>
       <span tw="self-end text-4xl text-gray-600">${p[0]?.data.date}</span>
     </div>
   `;
