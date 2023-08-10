@@ -10,6 +10,11 @@ export default defineConfig({
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
   integrations: [tailwind()],
+  markdown: {
+    shikiConfig: {
+        theme: 'poimandres'
+    }
+  }
 });
 
 function rawFonts(ext) {
