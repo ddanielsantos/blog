@@ -1,7 +1,7 @@
 ---
 title: "The astro-deck's CLI"
 description: "CLIs have always been an efficient way to provide powerful functionalitiy."
-date: "08 Aug, 2023"
+date: "09 Aug, 2023"
 tags: ["side-project", "astro"]
 ---
 
