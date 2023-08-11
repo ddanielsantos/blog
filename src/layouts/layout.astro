@@ -5,6 +5,8 @@ import MetaTags from "@components/meta-tags.astro";
 import { getOgImageURL } from "@lib/getOgImageURL";
 import { CollectionEntry } from "astro:content";
 
+import './global.css'
+
 const { frontmatter } = Astro.props as {
   frontmatter?: CollectionEntry<"blog">["data"];
 };
@@ -36,7 +38,7 @@ const ogImageURL = await getOgImageURL(frontmatter);
     <Header />
     <main class="w-full flex flex-col">
       <div
-        class="w-full max-w-3xl self-center flex flex-col p-4 gap-4 sm:my-20 my-10"
+        class="w-full max-w-3xl self-center flex flex-col p-4 gap-5 sm:my-20 my-10"
       >
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
@@ -47,45 +49,5 @@ const ogImageURL = await getOgImageURL(frontmatter);
         <slot />
       </div>
     </main>
-    <style is:global>
-      html {
-        font-family: system-ui, sans-serif;
-        background-color: #f6f6f6;
-        margin: 0;
-        padding: 0;
-      }
-      h1 {
-        font-size: 2rem;
-        font-weight: 800;
-      }
-      h2 {
-        font-size: 1.5rem;
-        font-weight: 800;
-      }
-      h3 {
-        font-size: 1.25rem;
-        font-weight: 800;
-      }
-      a {
-        outline-offset: 2px;
-      }
-      main a:not(.tag, .shadow-gray-500) {
-        text-decoration: underline;
-      }
-      a:focus {
-        outline: 3px solid #63b3ed;
-      }
-      h4 {
-        font-size: 1rem;
-        font-weight: 600;
-      }
-      code {
-        padding: 0.25rem;
-      }
-      pre.astro-code {
-        border-radius: 0.5rem;
-        padding: 1rem;
-      }
-    </style>
   </body>
 </html>
