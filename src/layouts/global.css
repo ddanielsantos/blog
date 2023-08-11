@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-family: 'Open Sans', system-ui, sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+a {
+    outline-offset: 2px;
+}
+
+main a:not(.tag, .shadow-gray-500) {
+    border-bottom: 2px solid;
+}
+
+a:focus {
+    outline: 3px solid #63b3ed;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+code {
+    padding: 0.25rem;
+}
+
+code:not(pre.astro-code code, a code) {
+    border: 1px solid;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0.375rem;
+    border-color: #D1D5DB;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    transition-duration: 500ms;
+    border-color: 1px;
+}
+
+ul:not([role="list"]) {
+    list-style-type: disc;
+}
+
+pre.astro-code {
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
