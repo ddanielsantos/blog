@@ -1,4 +1,3 @@
----
 import { CollectionEntry } from "astro:content";
 
 export function getUniqueTags(posts: CollectionEntry<"blog">[]) {
@@ -10,4 +9,3 @@ export function getUniqueTags(posts: CollectionEntry<"blog">[]) {
 
   return [...differentTags];
 }
----

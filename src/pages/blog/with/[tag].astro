@@ -1,8 +1,8 @@
 ---
 import Postlist from "@components/post-list.astro";
 import Layout from "@layouts/layout.astro";
-import { getPosts } from "@lib/getPosts.astro";
-import { getUniqueTags } from "@lib/getUniqueTags.astro";
+import { getPosts } from "@lib/getPosts";
+import { getUniqueTags } from "@lib/getUniqueTags";
 
 let { tag } = Astro.params;
 tag ??= "";

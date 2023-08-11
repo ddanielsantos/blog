@@ -1,4 +1,4 @@
-import { getSlugs } from "./getSlugs.astro";
+import { getSlugs } from "./getSlugs";
 
 type Args = {
   title?: string;

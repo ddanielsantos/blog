@@ -1,9 +1,9 @@
 import satori from "satori";
-import { getSlugs } from "@lib/getSlugs.astro";
+import { getSlugs } from "@lib/getSlugs";
 import { html } from "satori-html";
 import { Resvg } from "@resvg/resvg-js";
 import openSansBoldTTF from "../../../public/fonts/OpenSans-Bold.ttf";
-import { getPosts } from "@lib/getPosts.astro";
+import { getPosts } from "@lib/getPosts";
 import type { APIContext, Params } from "astro";
 
 const toPrefixed = (value: string | undefined) => {
