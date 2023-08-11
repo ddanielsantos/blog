@@ -18,8 +18,8 @@ dependencies:
     specifier: ^2.10.4
     version: 2.10.4(@types/node@18.17.4)
   satori:
-    specifier: 0.10.2
-    version: 0.10.2
+    specifier: 0.10.3
+    version: 0.10.3
   satori-html:
     specifier: ^0.3.2
     version: 0.3.2
@@ -3680,8 +3680,8 @@ packages:
       ultrahtml: 1.2.0
     dev: false
 
-  /satori@0.10.2:
-    resolution: {integrity: sha512-38povLat5QMuKiKBudM/oIk+a0Z5tEfHh8oD/bsh58L0jlOXxfuhAVpDtlG3M0g5FGLajIV0LaKQftXtaYoSUQ==}
+  /satori@0.10.3:
+    resolution: {integrity: sha512-8tZPu7AGiRWimbOyja1s2HK0hEC4DacZ8cAKDITxlVI5tKQZbOuMiVgSB50CABwc0I4Imgtkq7o9Egj1WOJTKg==}
     engines: {node: '>=16'}
     dependencies:
       '@shuding/opentype.js': 1.4.0-beta.0
