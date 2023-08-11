@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
-    font-family: system-ui, sans-serif;
+    font-family: 'Open Sans', system-ui, sans-serif;
     background-color: #f6f6f6;
     margin: 0;
     padding: 0;
@@ -55,8 +63,8 @@ code:not(pre.astro-code code, a code) {
     border-color: 1px;
 }
 
-code:not(pre.astro-code code, a code):hover {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+ul:not([role="list"]) {
+    list-style-type: disc;
 }
 
 pre.astro-code {
