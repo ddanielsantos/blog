@@ -9,7 +9,7 @@ const posts = (await getPosts()).sort(sortPostByDate);
 
 <Layout>
   <h1>blog</h1>
-  <ul class="flex flex-col gap-3">
+  <ul class="flex flex-col gap-4">
     <Postlist posts={posts} />
   </ul>
 </Layout>
