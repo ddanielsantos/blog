@@ -1,4 +1,3 @@
----
 import { CollectionEntry, getCollection } from "astro:content";
 
 interface Options {
@@ -18,4 +17,3 @@ export const getSlugs = async ({ filter }: Options = {}): Promise<Slug[]> => {
 
   return posts.map((p) => p.slug);
 };
----

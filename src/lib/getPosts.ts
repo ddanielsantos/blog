@@ -1,4 +1,3 @@
----
 import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
 
 interface Options {
@@ -23,4 +22,3 @@ export const getPosts = async ({ filter }: Options = {}): Promise<Posts> => {
 
   return posts;
 };
----
