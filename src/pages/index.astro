@@ -1,21 +1,16 @@
 ---
 import Layout from "@layouts/layout.astro";
+import Link from "@components/link.astro";
 ---
 
 <Layout>
-  <h1>yo!</h1>
-  <p>
-    my name is Daniel Santos. I'm a brazilian software developer, here I post
-    some articles about technology and the stuff that I'm studying at the
-    moment.
-  </p>
-  <span class="flex justify-end">
-    <a
-      href="/blog"
-      class="border-[1px] border-gray-300 duration-500 focus:shadow-md hover:shadow-md shadow-gray-500 rounded-lg w-fit py-2 px-3 flex gap-2 hover:gap-4 transition-[gap,box-shadow] no-underline"
-    >
-      read the blog
-      <span>&gt;</span>
-    </a>
-  </span>
+    <h1>yo!</h1>
+    <p>
+        my name is Daniel Santos. I'm a brazilian software developer, here I
+        post some articles about technology and the stuff that I'm studying at
+        the moment.
+    </p>
+    <span class="flex justify-end">
+        <Link href="/blog" content="read the blog" arrow />
+    </span>
 </Layout>
