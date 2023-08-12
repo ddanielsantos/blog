@@ -3,21 +3,23 @@ import PostCard from "@components/post-card.astro";
 import { CollectionEntry } from "astro:content";
 
 interface Props {
-  posts?: CollectionEntry<"blog">[];
+    posts?: CollectionEntry<"blog">[];
 }
 
 const {
-  props: { posts },
+    props: { posts },
 } = Astro;
 
-function entryToURL(entry: CollectionEntry<"blog">) {
-  return `/blog/${entry.slug}`;
+function entryToURL(entry: { slug: string }) {
+    return `/blog/${entry.slug}`;
 }
 ---
 
-{
-  posts &&
-    posts.map((p) => {
-      return <PostCard {...p.data} url={entryToURL(p)} />;
-    })
-}
+<ul class="flex flex-col gap-4 post-list">
+    {
+        posts &&
+            posts.map((p) => {
+                return <PostCard {...p.data} url={entryToURL(p)} />;
+            })
+    }
+</ul>

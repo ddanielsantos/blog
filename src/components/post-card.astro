@@ -1,22 +1,22 @@
 ---
 import TagGroup from "@components/tag-group.astro";
+import LinkButton from "@components/link.astro";
 import { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"] & { url: string };
 
 const {
-  props: { title, date, description, tags, url },
+    props: { title, date, description, tags, url },
 } = Astro;
 ---
 
-<a
-  href={url}
-  class="border-[1px] border-gray-300 transition-[box-shadow] duration-500 focus:shadow-lg hover:shadow-lg shadow-gray-500 rounded-lg py-2 px-4 flex flex-col gap-3 w-full group"
->
-  <div class="flex flex-wrap justify-between">
-    <h4 class="group-hover:underline">{title}</h4>
-    <p>{date}</p>
-  </div>
-  <p>{description}</p>
-  <TagGroup tags={tags} hasAnchor={false} />
-</a>
+<LinkButton href={url} class="w-full p-4">
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-wrap justify-between">
+            <h4 class="group-hover:underline">{title}</h4>
+            <p>{date}</p>
+        </div>
+        <p>{description}</p>
+        <TagGroup tags={tags} hasAnchor={false} />
+    </div>
+</LinkButton>
