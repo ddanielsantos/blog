@@ -1,10 +1,10 @@
 ---
-import type { PostCardProps } from "@types";
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   ogImageURL: string;
   href: string;
-  frontmatter: PostCardProps | undefined;
+  frontmatter: CollectionEntry<"blog">["data"] | undefined;
   title?: string;
   description?: string;
 }
