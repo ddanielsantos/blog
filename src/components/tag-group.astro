@@ -9,7 +9,7 @@ interface Props {
 const { tags, hasAnchor } = Astro.props;
 ---
 
-<ul role="list" class="flex gap-2">
+<ul class="flex gap-2 tag-group">
   {
     tags &&
       tags.map((tag) => {

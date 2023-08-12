@@ -1,17 +1,21 @@
 ---
-interface Props {
+import { twMerge } from "tailwind-merge";
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
     href: string;
-    content: string;
     arrow?: boolean;
 }
 
-const { href, content, arrow } = Astro.props;
+const { href, arrow, class: c, target } = Astro.props;
 ---
 
 <a
     href={href}
-    class="border-[1px] border-gray-300 duration-500 focus:shadow-md hover:shadow-md shadow-gray-500 rounded-lg w-fit py-2 px-3 flex gap-2 hover:gap-4 transition-[gap,box-shadow] no-underline"
+    class={twMerge(
+        "border-[1px] border-gray-300 duration-500 focus:shadow-md hover:shadow-md shadow-gray-500 rounded-lg w-fit py-2 px-3 gap-2 transition-[box-shadow] no-underline",
+        c
+    )}
+    target={target ?? "_self"}
 >
-    {content}
+    <slot />
     {arrow && <span>&gt;</span>}
 </a>

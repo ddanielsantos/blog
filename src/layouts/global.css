@@ -63,9 +63,13 @@ code:not(pre.astro-code code, a code) {
     border-color: 1px;
 }
 
-ul:not([role="list"]) {
+ul:not(.tag-group, .post-list) {
     list-style-type: disc;
     padding: 0 1rem;
+}
+
+ul:not(.tag-group, .post-list) li {
+    padding: 0.75rem;
 }
 
 pre.astro-code {

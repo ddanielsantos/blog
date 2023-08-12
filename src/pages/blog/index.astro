@@ -8,8 +8,6 @@ const posts = (await getPosts()).sort(sortPostByDate);
 ---
 
 <Layout>
-  <h1>blog</h1>
-  <ul class="flex flex-col gap-4" role="list">
+    <h1>blog</h1>
     <Postlist posts={posts} />
-  </ul>
 </Layout>
