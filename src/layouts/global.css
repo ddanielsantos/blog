@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
-    font-weight: 700;
+    src: url('/fonts/OpenSans.ttf') format('truetype');
+    font-weight: 400 800;
     font-style: normal;
     font-display: swap;
 }
@@ -65,6 +65,7 @@ code:not(pre.astro-code code, a code) {
 
 ul:not([role="list"]) {
     list-style-type: disc;
+    padding: 0 1rem;
 }
 
 pre.astro-code {
