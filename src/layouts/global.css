@@ -65,6 +65,7 @@ code:not(pre.astro-code code, a code) {
 
 ul:not([role="list"]) {
     list-style-type: disc;
+    padding: 0 1rem;
 }
 
 pre.astro-code {
