@@ -2,7 +2,7 @@ import satori from "satori";
 import { getSlugs } from "@lib/getSlugs";
 import { html } from "satori-html";
 import { Resvg } from "@resvg/resvg-js";
-import openSansBoldTTF from "../../../public/fonts/OpenSans-Bold.ttf";
+import openSansFile from "../../../public/fonts/OpenSans-Bold.ttf";
 import { getPosts } from "@lib/getPosts";
 import type { APIContext, Params } from "astro";
 
@@ -70,12 +70,12 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
 
 export const get = async ({ params }: APIContext) => {
   const element = await getHmtlForOGImage(params);
-  const OpenSansBold = Buffer.from(openSansBoldTTF);
+  const OpenSans = Buffer.from(openSansFile);
 
   const svg = await satori(element, {
     fonts: [
       {
-        data: OpenSansBold,
+        data: OpenSans,
         name: "Open Sans Bold",
         style: "normal",
         weight: 700,
