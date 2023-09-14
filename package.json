@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.0",
-    "@astrojs/vercel": "^4.0.0",
+    "@astrojs/vercel": "^5.0.0",
     "@resvg/resvg-js": "^2.4.1",
     "astro": "^3.0.0",
     "satori": "0.10.4",
