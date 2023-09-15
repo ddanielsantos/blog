@@ -1,7 +1,7 @@
 ---
 import TagGroup from "@components/tag-group.astro";
 import LinkButton from "@components/link.astro";
-import { CollectionEntry } from "astro:content";
+import { type CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">["data"] & { url: string };
 
@@ -10,7 +10,7 @@ const {
 } = Astro;
 ---
 
-<LinkButton href={url} class="w-full p-4">
+<LinkButton href={url} class="w-full p-4 dark:border-transparent">
     <div class="flex flex-col gap-4">
         <div class="flex flex-wrap justify-between">
             <h4 class="group-hover:underline">{title}</h4>
