@@ -1,0 +1,78 @@
+---
+---
+
+<button id="themeToggle">
+    <svg width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+        <path
+            class="sun"
+            fill-rule="evenodd"
+            d="M6 0.5V1.5M6 10.5V11.5M2.11 2.11L2.82 2.82M9.18 9.18L9.89 9.89M0.5 6H1.5M10.5 6H11.5M2.11 9.89L2.82 9.18M9.18 2.82L9.89 2.11M8.5 6C8.5 7.38071 7.38071 8.5 6 8.5C4.61929 8.5 3.5 7.38071 3.5 6C3.5 4.61929 4.61929 3.5 6 3.5C7.38071 3.5 8.5 4.61929 8.5 6Z"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        <path
+            class="moon"
+            fill-rule="evenodd"
+            d="M9.98091 5.895C9.90225 6.7461 9.58284 7.5572 9.06003 8.23339C8.53722 8.90958 7.83265 9.4229 7.02876 9.71327C6.22487 10.0036 5.3549 10.0591 4.52066 9.87305C3.68642 9.68703 2.9224 9.26727 2.31802 8.66289C1.71364 8.0585 1.29388 7.29449 1.10786 6.46025C0.921845 5.62601 0.977266 4.75604 1.26764 3.95215C1.55801 3.14825 2.07132 2.44368 2.74751 1.92088C3.42371 1.39807 4.23481 1.07865 5.08591 1C4.58761 1.67413 4.34783 2.50472 4.41017 3.34071C4.47252 4.17669 4.83284 4.96253 5.42561 5.5553C6.01838 6.14807 6.80422 6.50839 7.6402 6.57073C8.47618 6.63308 9.30677 6.39329 9.98091 5.895Z"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+    </svg>
+</button>
+
+<style>
+    #themeToggle {
+        border: 0;
+        background: none;
+    }
+    .sun {
+        fill: black;
+        stroke: black;
+    }
+    .moon {
+        fill: transparent;
+        stroke: transparent;
+    }
+
+    :global(.dark) .sun {
+        fill: transparent;
+        stroke: transparent;
+    }
+    :global(.dark) .moon {
+        fill: white;
+        stroke: white;
+    }
+</style>
+
+<script is:inline>
+const theme = (() => {
+    if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("theme")
+    ) {
+        return localStorage.getItem("theme");
+    }
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        return "dark";
+    }
+    return "light";
+})();
+
+if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+} else {
+    document.documentElement.classList.add("dark");
+}
+
+window.localStorage.setItem("theme", theme);
+
+const handleToggleClick = () => {
+    const element = document.documentElement;
+    element.classList.toggle("dark");
+
+    const isDark = element.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+};
+
+    document
+        .getElementById("themeToggle")
+        .addEventListener("click", handleToggleClick);
+</script>

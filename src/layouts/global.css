@@ -13,6 +13,11 @@ html {
     padding: 0;
 }
 
+html.dark {
+    background-color: #222222;
+    color: #fff;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 800;
