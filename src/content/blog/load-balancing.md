@@ -1,3 +1,10 @@
+---
+title: "Load balancing"
+description: "A small note on what is load balancing"
+date: "18 Oct, 2023"
+tags: ["system-design"]
+---
+
 ![traffic guard](https://media.giphy.com/media/3o6Zt7GpxX0bBvRDgs/giphy.gif)
 
 When your traffic grows, it's common to take the [horizontal scaling](https://www.ddaniel.me/blog/scaling#horizontally) strategy, but with many servers running your business, how to distribute the incoming load? that's when load balancers come in handy.
