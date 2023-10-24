@@ -16,7 +16,7 @@ dependencies:
     version: 2.4.1
   astro:
     specifier: ^3.0.0
-    version: 3.0.2(@types/node@18.17.4)
+    version: 3.0.2(@types/node@20.8.7)
   satori:
     specifier: 0.10.9
     version: 0.10.9
@@ -32,8 +32,8 @@ dependencies:
 
 devDependencies:
   '@types/node':
-    specifier: ^18.17.4
-    version: 18.17.4
+    specifier: ^20.0.0
+    version: 20.8.7
 
 packages:
 
@@ -64,7 +64,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.0.2(@types/node@18.17.4)
+      astro: 3.0.2(@types/node@20.8.7)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       rehype-raw: 6.1.1
@@ -94,7 +94,7 @@ packages:
       astro: ^3.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 3.0.2(@types/node@18.17.4)
+      astro: 3.0.2(@types/node@20.8.7)
       autoprefixer: 10.4.15(postcss@8.4.29)
       postcss: 8.4.29
       postcss-load-config: 4.0.1(postcss@8.4.29)
@@ -127,7 +127,7 @@ packages:
       '@astrojs/internal-helpers': 0.2.0
       '@vercel/analytics': 1.0.2
       '@vercel/nft': 0.23.1
-      astro: 3.0.2(@types/node@18.17.4)
+      astro: 3.0.2(@types/node@20.8.7)
       esbuild: 0.19.2
       fast-glob: 3.3.1
       set-cookie-parser: 2.6.0
@@ -1037,8 +1037,10 @@ packages:
       '@types/unist': 2.0.7
     dev: false
 
-  /@types/node@18.17.4:
-    resolution: {integrity: sha512-ATL4WLgr7/W40+Sp1WnNTSKbgVn6Pvhc/2RHAdt8fl6NsQyp4oPCi2eKcGOvA494bwf1K/W6nGgZ9TwDqvpjdw==}
+  /@types/node@20.8.7:
+    resolution: {integrity: sha512-21TKHHh3eUHIi2MloeptJWALuCu5H7HQTdTrWIFReA8ad+aggoX+lRes3ex7/FtpC+sVUpFMQ+QTfYr74mruiQ==}
+    dependencies:
+      undici-types: 5.25.3
 
   /@types/parse5@6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -1170,7 +1172,7 @@ packages:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
     dev: false
 
-  /astro@3.0.2(@types/node@18.17.4):
+  /astro@3.0.2(@types/node@20.8.7):
     resolution: {integrity: sha512-7ytwERK1CN7LBA/BgUrA9/ktbn0WDRwvkpxZZkIPlbjp3Ojlp6e12L2ZkNIYyIsGzFqXAZZz58pFwy7KG2Qz5g==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -1226,7 +1228,7 @@ packages:
       undici: 5.23.0
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.9(@types/node@18.17.4)
+      vite: 4.4.9(@types/node@20.8.7)
       vitefu: 0.2.4(vite@4.4.9)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -3888,6 +3890,9 @@ packages:
     resolution: {integrity: sha512-vxZM2yNvajRmCj/SknRYGNXk2tqiy6kRNvZjJLaleG3zJbSh/aNkOqD1/CVzypw8tyHyhpzYuwQgMMhUB4ZVNQ==}
     dev: false
 
+  /undici-types@5.25.3:
+    resolution: {integrity: sha512-Ga1jfYwRn7+cP9v8auvEXN1rX3sWqlayd4HP7OKk4mZWylEmu3KzXDUGrQUN6Ol7qo1gPvB2e5gX6udnyEPgdA==}
+
   /undici@5.23.0:
     resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
     engines: {node: '>=14.0'}
@@ -4017,7 +4022,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.4.9(@types/node@18.17.4):
+  /vite@4.4.9(@types/node@20.8.7):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4045,7 +4050,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 18.17.4
+      '@types/node': 20.8.7
       esbuild: 0.18.20
       postcss: 8.4.29
       rollup: 3.28.0
@@ -4061,7 +4066,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9(@types/node@18.17.4)
+      vite: 4.4.9(@types/node@20.8.7)
     dev: false
 
   /vscode-oniguruma@1.7.0:
