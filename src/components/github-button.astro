@@ -11,7 +11,7 @@ const { id } = Astro.props;
 <LinkButton
     href={`https://github.com/ddanielsantos/blog/blob/main/src/content/blog/${id}`}
     target="_blank"
-    class="flex text-xs"
+    class="flex text-sm items-center gap-2 border-2 dark:border-transparent dark:bg-white dark:text-[#222222]"
 >
     edit this on github <svg
         width="12"
@@ -31,9 +31,5 @@ const { id } = Astro.props;
 <style>
     .github {
         stroke: black;
-    }
-
-    :global(.dark) .github {
-        stroke: white;
     }
 </style>

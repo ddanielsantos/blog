@@ -20,7 +20,7 @@ html.dark {
 
 h1 {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 900;
 }
 
 h2 {
@@ -30,15 +30,11 @@ h2 {
 
 h3 {
     font-size: 1.25rem;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 a {
     outline-offset: 2px;
-}
-
-main a:not(.tag, .shadow-gray-500) {
-    border-bottom: 2px solid;
 }
 
 a:focus {
@@ -47,7 +43,7 @@ a:focus {
 
 h4 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 code {

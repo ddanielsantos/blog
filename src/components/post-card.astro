@@ -10,13 +10,12 @@ const {
 } = Astro;
 ---
 
-<LinkButton href={url} class="w-full p-4 dark:border-transparent">
+<LinkButton href={url} class="w-full p-0">
     <div class="flex flex-col gap-4">
         <div class="flex flex-wrap justify-between">
             <h4 class="group-hover:underline">{title}</h4>
             <p>{date}</p>
         </div>
         <p>{description}</p>
-        <TagGroup tags={tags} hasAnchor={false} />
     </div>
 </LinkButton>
