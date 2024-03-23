@@ -17,8 +17,7 @@ At its early days, astro-deck was nothing more than scripts inside ``package.jso
 	"dev": "astro dev",
 	"build": "astro build",
 	"preview": "astro preview",
-}
-```
+}```
 
 Everything was working fine, but I was testing the wrong way, I was creating a deck file inside the project and running these npm script. This is not the way users interact with tools like astro, nextjs and etc, they interact directly with a CLI.
 
