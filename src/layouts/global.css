@@ -60,8 +60,11 @@ code:not(pre.astro-code code, a code) {
     border-color: #D1D5DB;
     font-size: 0.75rem;
     line-height: 1rem;
-    transition-duration: 500ms;
     border-color: 1px;
+}
+
+pre > code {
+	all: unset;
 }
 
 ul:not(.tag-group, .post-list) {
