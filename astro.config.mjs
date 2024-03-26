@@ -12,8 +12,15 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     shikiConfig: {
-        theme: 'poimandres'
-    }
+      theme: "poimandres",
+      transformers: [
+        {
+          pre(node) {
+            delete node.properties.tabindex;
+          }
+        }
+      ]
+    },
   }
 });
 

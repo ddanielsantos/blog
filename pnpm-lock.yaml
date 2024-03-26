@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@astrojs/tailwind':
-    specifier: ^5.0.0
+    specifier: ^5.1.0
     version: 5.1.0(astro@4.5.8)(tailwindcss@3.4.1)
   '@astrojs/vercel':
     specifier: ^7.0.0
@@ -15,7 +15,7 @@ dependencies:
     specifier: ^2.4.1
     version: 2.6.1
   astro:
-    specifier: ^4.0.0
+    specifier: ^4.5.0
     version: 4.5.8(@types/node@20.11.30)
   satori:
     specifier: 0.10.13
@@ -97,9 +97,9 @@ packages:
       tailwindcss: ^3.0.24
     dependencies:
       astro: 4.5.8(@types/node@20.11.30)
-      autoprefixer: 10.4.17(postcss@8.4.35)
-      postcss: 8.4.35
-      postcss-load-config: 4.0.2(postcss@8.4.35)
+      autoprefixer: 10.4.17(postcss@8.4.37)
+      postcss: 8.4.37
+      postcss-load-config: 4.0.2(postcss@8.4.37)
       tailwindcss: 3.4.1
     transitivePeerDependencies:
       - ts-node
@@ -1432,7 +1432,7 @@ packages:
     resolution: {integrity: sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==}
     dev: false
 
-  /autoprefixer@10.4.17(postcss@8.4.35):
+  /autoprefixer@10.4.17(postcss@8.4.37):
     resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -1440,11 +1440,11 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.23.0
-      caniuse-lite: 1.0.30001589
+      caniuse-lite: 1.0.30001597
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.35
+      postcss: 8.4.37
       postcss-value-parser: 4.2.0
     dev: false
 
@@ -1614,10 +1614,6 @@ packages:
 
   /camelize@1.0.1:
     resolution: {integrity: sha512-dU+Tx2fsypxTgtLoE36npi3UqcjSSMNYfkqgmoEhtZrraP5VWq0K7FkWVTYa8eMPtnU/G2txVsfdCJTn9uzpuQ==}
-    dev: false
-
-  /caniuse-lite@1.0.30001589:
-    resolution: {integrity: sha512-vNQWS6kI+q6sBlHbh71IIeC+sRwK2N3EDySc/updIGhIee2x5z00J4c1242/5/d6EpEMdOnk/m+6tuk4/tcsqg==}
     dev: false
 
   /caniuse-lite@1.0.30001597:
@@ -3525,6 +3521,23 @@ packages:
     dependencies:
       lilconfig: 3.1.1
       postcss: 8.4.35
+      yaml: 2.4.0
+    dev: false
+
+  /postcss-load-config@4.0.2(postcss@8.4.37):
+    resolution: {integrity: sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==}
+    engines: {node: '>= 14'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 3.1.1
+      postcss: 8.4.37
       yaml: 2.4.0
     dev: false
 
