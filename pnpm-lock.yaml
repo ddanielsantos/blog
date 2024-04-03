@@ -10,7 +10,7 @@ dependencies:
     version: 5.1.0(astro@4.5.14)(tailwindcss@3.4.3)
   '@astrojs/vercel':
     specifier: ^7.0.0
-    version: 7.5.1(astro@4.5.14)
+    version: 7.5.2(astro@4.5.14)
   '@resvg/resvg-js':
     specifier: ^2.4.1
     version: 2.6.2
@@ -120,8 +120,8 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/vercel@7.5.1(astro@4.5.14):
-    resolution: {integrity: sha512-jYGGddRY7QruazIfV+jFrfv0vAYY5tzTfG7YsCGDxZJXx3MOwcNeFjIkv3SJ4C2h+jecxnBiPk7gRxQcVS5KXw==}
+  /@astrojs/vercel@7.5.2(astro@4.5.14):
+    resolution: {integrity: sha512-Wvz5wCvmc1iu22KcVEpEAXsyzAWrVIkcXOReqd6QAUTJ5Kj1oYsZdZqJuibjbM6hDfnhTF78W64XXUKH+Wb0cg==}
     peerDependencies:
       astro: ^4.2.0
     dependencies:
@@ -2268,7 +2268,7 @@ packages:
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 2.3.6
-      minimatch: 9.0.3
+      minimatch: 9.0.4
       minipass: 7.0.4
       path-scurry: 1.10.1
     dev: false
@@ -3171,8 +3171,8 @@ packages:
       brace-expansion: 1.1.11
     dev: false
 
-  /minimatch@9.0.3:
-    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
+  /minimatch@9.0.4:
+    resolution: {integrity: sha512-KqWh+VchfxcMNRAJjj2tnsSJdNbHsVgnkBhTNrW7AjVo6OvLtxw8zfT9oLw1JSohlFzJ8jCoTgaoXvJ+kHt6fw==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       brace-expansion: 2.0.1
