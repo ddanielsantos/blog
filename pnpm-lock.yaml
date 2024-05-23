@@ -10,16 +10,16 @@ importers:
     dependencies:
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.9.0(@types/node@20.12.11))(tailwindcss@3.4.3)
+        version: 5.1.0(astro@4.9.1(@types/node@20.12.11))(tailwindcss@3.4.3)
       '@astrojs/vercel':
         specifier: ^7.0.0
-        version: 7.6.0(astro@4.9.0(@types/node@20.12.11))
+        version: 7.6.0(astro@4.9.1(@types/node@20.12.11))
       '@resvg/resvg-js':
         specifier: ^2.4.1
         version: 2.6.2
       astro:
         specifier: ^4.5.0
-        version: 4.9.0(@types/node@20.12.11)
+        version: 4.9.1(@types/node@20.12.11)
       satori:
         specifier: 0.10.13
         version: 0.10.13
@@ -1060,8 +1060,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@4.9.0:
-    resolution: {integrity: sha512-beb3go5Oh5QDjns7YVxG1r40Flt/cuXB+YFTnVRqbh2NuMpYRoXZqIT+ZNaorleEfrLjLFXfsn1AAKVP+XZ2KA==}
+  astro@4.9.1:
+    resolution: {integrity: sha512-9TsoAu0WBPiqyAIj9H0JW7R+tIjPjFsPKo70Nja6WL3imTTuUJQmnCre4ZVmoNV3oicTTlb+N4zjRYANW0Ty9A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2639,9 +2639,9 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/tailwind@5.1.0(astro@4.9.0(@types/node@20.12.11))(tailwindcss@3.4.3)':
+  '@astrojs/tailwind@5.1.0(astro@4.9.1(@types/node@20.12.11))(tailwindcss@3.4.3)':
     dependencies:
-      astro: 4.9.0(@types/node@20.12.11)
+      astro: 4.9.1(@types/node@20.12.11)
       autoprefixer: 10.4.17(postcss@8.4.37)
       postcss: 8.4.37
       postcss-load-config: 4.0.2(postcss@8.4.37)
@@ -2661,13 +2661,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@7.6.0(astro@4.9.0(@types/node@20.12.11))':
+  '@astrojs/vercel@7.6.0(astro@4.9.1(@types/node@20.12.11))':
     dependencies:
       '@astrojs/internal-helpers': 0.4.0
       '@vercel/analytics': 1.2.2
       '@vercel/edge': 1.1.1
       '@vercel/nft': 0.26.5
-      astro: 4.9.0(@types/node@20.12.11)
+      astro: 4.9.1(@types/node@20.12.11)
       esbuild: 0.21.1
       fast-glob: 3.3.2
       set-cookie-parser: 2.6.0
@@ -3419,7 +3419,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.9.0(@types/node@20.12.11):
+  astro@4.9.1(@types/node@20.12.11):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
