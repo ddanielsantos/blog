@@ -10,10 +10,8 @@ const {
 ---
 
 <LinkButton href={url} class="w-full p-0 group">
-    <div class="flex flex-col gap-4">
-        <div class="flex flex-wrap justify-between">
-            <h4 class="group-hover:underline">{title}</h4>
-            <p>{date}</p>
-        </div>
+    <div class="flex flex-wrap gap-3">
+        <p class="w-24">{date}</p>
+        <p class="group-hover:underline">{title}</p>
     </div>
 </LinkButton>
