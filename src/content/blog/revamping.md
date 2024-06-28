@@ -1,5 +1,5 @@
 ---
-title: "Revamping"
+title: "revamping"
 description: "Moving to Astro and some other stuff"
 date: "18 Feb, 2023"
 tags: ["astro", "blog"]
