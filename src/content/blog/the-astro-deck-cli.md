@@ -1,5 +1,5 @@
 ---
-title: "The astro-deck's CLI"
+title: "the astro-deck's CLI"
 description: "CLIs have always been an efficient way to provide powerful functionality."
 date: "09 Aug, 2023"
 tags: ["side-project", "astro"]
@@ -7,7 +7,7 @@ tags: ["side-project", "astro"]
 
 Last month I wrote about the [beginning of astro-deck](./i-started-astro-deck), a couple things happened since then, and today I want to talk about its CLI.
 
-I didn't know right from the beginning how to distribute astro-deck, I was just building some functionalities on top of Astro, and hoping to someday find out a better way to organize it. 
+I didn't know right from the beginning how to distribute astro-deck, I was just building some functionalities on top of Astro, and hoping to someday find out a better way to organize it.
 
 At its early days, astro-deck was nothing more than scripts inside ``package.json`` that just pointed to astro CLI commands:
 

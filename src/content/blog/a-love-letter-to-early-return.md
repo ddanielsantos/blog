@@ -1,5 +1,5 @@
 ---
-title: "A love letter to early return"
+title: "a love letter to early return"
 description: "Embrace early return"
 date: "17 Jun, 2023"
 tags: ["refactoring", "basics"]

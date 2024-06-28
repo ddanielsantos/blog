@@ -1,6 +1,7 @@
 ---
 import MarkdownPostLayout from "@layouts/layout.astro";
 import GithubButton from "@components/github-button.astro";
+import Prose from "@components/prose.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -16,6 +17,8 @@ const { Content } = await entry.render();
 ---
 
 <MarkdownPostLayout frontmatter={entry.data}>
-    <Content />
-    <GithubButton id={entry.id}/>
+    <Prose>
+        <Content />
+    </Prose>
+    <GithubButton id={entry.id} />
 </MarkdownPostLayout>

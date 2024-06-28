@@ -1,5 +1,5 @@
 ---
-title: "Load balancing"
+title: "load balancing"
 description: "A small note on what is load balancing"
 date: "18 Oct, 2023"
 tags: ["system-design"]

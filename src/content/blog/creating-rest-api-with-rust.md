@@ -1,5 +1,5 @@
 ---
-title: "Creating Rest APIs with Rust"
+title: "creating Rest APIs with Rust"
 description: "How to create a well documented API with Rust"
 date: "12 Dec, 2022"
 tags: ["rust", "rest", "api", "openapi"]
