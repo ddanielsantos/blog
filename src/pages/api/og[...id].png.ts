@@ -68,7 +68,7 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
   `;
 };
 
-export const get = async ({ params }: APIContext) => {
+export const GET = async ({ params }: APIContext) => {
   const element = await getHmtlForOGImage(params);
   const OpenSans = Buffer.from(openSansFile);
 
@@ -91,12 +91,11 @@ export const get = async ({ params }: APIContext) => {
       value: 1200,
     },
   });
-  const png = img.render().asPng();
+  const buffer = img.render().asPng();
 
-  return {
+  return new Response(buffer, {
     headers: {
       "Content-Type": "image/png",
     },
-    body: png,
-  };
+  });
 };
