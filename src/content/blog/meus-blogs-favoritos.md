@@ -1,11 +1,11 @@
 ---
 title: "meus blogs favoritos"
 description: ""
-date: "28 Sep, 2024"
+date: "29 Jul, 2024"
 tags: ["list"]
 ---
 
-vou tentar manter essa lista atualizada, são blogs que eu adoraria copiar na cara de pau
+vou tentar manter essa lista atualizada, são blogs/newsletters/whatever que eu admiro e que me motivam a escrever melhor
 
 - hillel wayne https://www.hillelwayne.com/
 - without boats https://without.boats/
