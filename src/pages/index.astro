@@ -1,9 +1,11 @@
 ---
 import Layout from "@layouts/layout.astro";
 import Link from "@components/link.astro";
+import Prose from "@components/prose.astro";
 ---
 
 <Layout>
+    <Prose>
     <h1>yo!</h1>
     <p>
         meu nome é Daniel Santos, sou um desenvolvedor de software brasileiro.
@@ -15,6 +17,7 @@ import Link from "@components/link.astro";
         todo o conteúdo deste site está disponível no Github, a quem se interessar em propor sugestões e debates (sejam eles sobre o site ou o conteúdo das postagens em si). Issues são bem vindas!!!
     </p>
     <a href="https://x.com/ddanieu_">twitter</a>
+    </Prose>
     <span class="flex justify-end">
         <Link href="/blog" class="border-2 dark:bg-white dark:text-[#18181b]"
             >ir para o blog</Link
