@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/layout.astro";
+import Link from "@components/link.astro";
+import Prose from "@components/prose.astro";
+---
+
+<Layout>
+    <Prose>
+        <h1>yo!</h1>
+        <p>my name is Daniel Santos, I'm a brazilian software developer.</p>
+        <p>
+            I created this space to store blog posts, currently I see this site
+            more as a way to mark my online presence. Although most of the
+            content here is indeed about software development, I don't feel that
+            it is restricted to just that.
+        </p>
+        <p>
+            all content on this site is available on <a
+                href="https://github.com/ddanielsantos/blog/">github</a
+            >, to anyone interested in proposing suggestions and discussions
+            (whether about the site or the content of the posts themselves).
+            Issues are welcome!!!
+        </p>
+        <a href="https://x.com/ddanieu_">twitter</a>
+    </Prose>
+    <span class="flex justify-end">
+        <Link href="/blog" class="border-2 dark:bg-white dark:text-[#18181b]"
+            >ir para o blog</Link
+        >
+    </span>
+</Layout>

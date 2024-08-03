@@ -5,6 +5,13 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "pt-br",
+    routing: {
+      prefixDefaultLocale: true,
+    },
+    locales: ["pt-br", "en"],
+  },
   vite: {
     plugins: [rawFonts([".ttf"])],
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
@@ -17,11 +24,11 @@ export default defineConfig({
         {
           pre(node) {
             delete node.properties.tabindex;
-          }
-        }
-      ]
+          },
+        },
+      ],
     },
-  }
+  },
 });
 
 function rawFonts(ext) {
