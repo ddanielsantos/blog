@@ -1,0 +1,13 @@
+---
+import Layout from "@layouts/layout.astro";
+import { sortPostByDate } from "@lib/sortPostByDate";
+import { getPosts } from "@lib/getPosts";
+import Postlist from "@components/post-list.astro";
+
+const posts = (await getPosts()).sort(sortPostByDate);
+---
+
+<Layout>
+    <h1>blog</h1>
+    <Postlist posts={posts} />
+</Layout>

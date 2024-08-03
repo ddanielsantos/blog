@@ -1,7 +1,10 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "@layouts/layout.astro";
 import Link from "@components/link.astro";
 import Prose from "@components/prose.astro";
+
+const blogURL = getRelativeLocaleUrl("en", "blog");
 ---
 
 <Layout>
@@ -24,8 +27,8 @@ import Prose from "@components/prose.astro";
         <a href="https://x.com/ddanieu_">twitter</a>
     </Prose>
     <span class="flex justify-end">
-        <Link href="/blog" class="border-2 dark:bg-white dark:text-[#18181b]"
-            >ir para o blog</Link
+        <Link href={blogURL} class="border-2 dark:bg-white dark:text-[#18181b]"
+            >read the blog</Link
         >
     </span>
 </Layout>
