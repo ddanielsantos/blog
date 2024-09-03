@@ -13,3 +13,4 @@ vou tentar manter essa lista atualizada, são blogs/newsletters/whatever que eu 
 - martin fowler https://martinfowler.com/tags/index.html
 - engineering leadership https://newsletter.eng-leadership.com/
 - mitchell hashimoto https://mitchellh.com/writing
+- fidelissauro https://fidelissauro.dev/
