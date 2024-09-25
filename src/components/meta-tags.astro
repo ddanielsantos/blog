@@ -13,6 +13,12 @@ const { ogImageURL, href, frontmatter, title, description } = Astro.props;
 ---
 
 <!-- TWITTER -->
+<meta property="og:description" content="Link preview description" />
+<meta property="og:url" content={href}>
+<meta property="og:title" content="Link preview title">
+<meta property="og:site_name" content="Link preview site name">
+<meta property="og:image" content={ogImageURL}>
+<meta property="description" {frontmatter?.description ?? description} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="ddaniel.me" />
 <meta property="twitter:url" content={href} />
