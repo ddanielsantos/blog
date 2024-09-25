@@ -2,6 +2,9 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 import tailwind from "@astrojs/tailwind";
+import react from '@astrojs/react';
+
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,10 +12,10 @@ export default defineConfig({
     plugins: [rawFonts([".ttf"])],
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
-  integrations: [tailwind()],
+  integrations: [tailwind(), mdx(), react()],
   markdown: {
     shikiConfig: {
-      theme: "poimandres",
+      themes: { light: 'one-light', dark: 'min-dark' },
       transformers: [
         {
           pre(node) {
