@@ -16,6 +16,7 @@ a similar scenario happens when you're choosing an approach to handle real time 
 
 webhook is a common feature on products that heavily depends on integrations, like payment services providers, monitoring systems, CI/CD stuff and so on.
 
-![webhook](https://media.discordapp.net/attachments/1048420478685028392/1114367074224050256/webhook.png?width=770&height=650)
+![webhook](https://github.com/user-attachments/assets/8d0c0c32-ba21-44b1-9be6-a281a46e1e16)
+
 
 this is how a webhook works, as simple as adding an endpoint to your application that listens to POST calls and reporting its address to the application where the events occur. Despite being simple, the possibilities from there are countless, providing a powerful integration.
