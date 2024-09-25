@@ -9,10 +9,6 @@ const { href, class: c, target } = Astro.props;
 
 <a
     href={href}
-    class={twMerge(
-        "rounded-lg w-fit py-2 px-3 gap-2 no-underline",
-        c
-    )}
     target={target ?? "_self"}
 >
     <slot />

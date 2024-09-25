@@ -1,10 +1,10 @@
 ---
 import Layout from "@layouts/layout.astro";
 import { sortPostByDate } from "@lib/sortPostByDate";
-import { getPosts } from "@lib/getPosts";
+import { getFilteredPosts } from "@lib/getFilteredPosts";
 import Postlist from "@components/post-list.astro";
 
-const posts = (await getPosts()).sort(sortPostByDate);
+const posts = (await getFilteredPosts()).sort(sortPostByDate);
 ---
 
 <Layout>

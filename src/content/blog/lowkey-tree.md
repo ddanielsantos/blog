@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "i wrote a lil version of the tree command"
 description: "A small note on a low-key implementation of the UNIX `tree` command in Rust."
 date: "18 Sep, 2023"

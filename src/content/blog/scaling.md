@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "scaling"
 description: "(really) small note about what is scaling"
 date: "22 Sep, 2023"

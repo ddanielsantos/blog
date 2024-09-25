@@ -12,6 +12,15 @@ interface Props {
 const { ogImageURL, href, frontmatter, title, description } = Astro.props;
 ---
 
+<!-- OG -->
+<meta property="og:description" content={frontmatter?.description ?? description} />
+<meta property="og:url" content={href}>
+<meta property="og:title" content={frontmatter?.title ?? 'ddaniel.me'}>
+<meta property="og:site_name" content="Link preview site name">
+<meta property="og:image" content={ogImageURL}>
+<meta property="og:type" content="blog"/>
+<meta property="description" content={frontmatter?.description ?? description} />
+
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:domain" content="ddaniel.me" />

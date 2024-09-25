@@ -1,23 +1,26 @@
 ---
+draft: false
 title: "a love letter to early return"
 description: "Embrace early return"
 date: "17 Jun, 2023"
 tags: ["refactoring", "basics"]
 ---
+import { Image } from 'astro:assets';
 
-It's all fun and games with if statements until someone have to maintain code like this:
 
-![early-return(1)](https://github.com/ddanielsantos/blog/assets/80872981/27c2a8da-76ef-400c-ae1b-28698926c6a1)
+it's all fun and games with if statements until someone have to maintain code like this:
 
-Someone that codes like this is one step away of beating old people. If you're a good person and don't want to look like a maniac, please embrace early return. It's not some advanced technique nor require you to read three Martin Fowler books, it's one of the most easy refactorings and will save you a good amount of sanity.
+<Image src="https://github.com/ddanielsantos/blog/assets/80872981/27c2a8da-76ef-400c-ae1b-28698926c6a1" alt="early-return" width="350" height="350" />
 
-With early return, instead of going down the rabbit hole of conditionals, you exit the execution wherever a condition isn't met.
+someone that codes like this is one step away of beating old people. if you're a good person and don't want to look like a maniac, please embrace early return. it's not some advanced technique nor require you to read three martin fowler books, it's one of the most easy refactorings and will save you a good amount of sanity.
 
-Let's check a small example:
+with early return, instead of going down the rabbit hole of conditionals, you exit the execution wherever a condition isn't met.
 
-In the first iteration we have the worst code possible:
+let's check a small example:
 
-```rs
+in the first iteration we have the worst code possible:
+
+```rust
 if a {
     if b {
         if c {
@@ -39,9 +42,9 @@ if a {
 }
 ```
 
-From here we can start killing else statements:
+from here we can start killing else statements:
 
-```rs
+```rust
 if a {
     if b {
         if c {
@@ -63,9 +66,9 @@ if a {
 }
 ```
 
-After this, we can merge some conditions:
+after this, we can merge some conditions:
 
-```rs
+```rust
 if a && b {
     if c {
         if d {
@@ -85,9 +88,9 @@ if a && b {
 }
 ```
 
-If we invert `if c`, we can `do things 4` earlier:
+if we invert `if c`, we can `do things 4` earlier:
 
-```rs
+```rust
 if a && b {
     if !c {
         // do things 4
@@ -109,9 +112,9 @@ if a && b {
 }
 ```
 
-All conditions depends on a and b being true, we can also kill another nesting by doing this:
+all conditions depends on a and b being true, we can also kill another nesting by doing this:
 
-```rs
+```rust
 if !a || !b {
     return;
 }
@@ -135,4 +138,4 @@ if e {
 return;
 ```
 
-And that's it! Now we have a more readable code to handle.
+and that's it! now we have a more readable code to handle.

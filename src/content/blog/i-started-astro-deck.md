@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "i started astro-deck"
 description: "After a long time, I'm working on a side project again. This time, I'm building a tool to create presentations using Astro."
 date: "17 Jul, 2023"

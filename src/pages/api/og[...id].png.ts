@@ -3,7 +3,7 @@ import { getSlugs } from "@lib/getSlugs";
 import { html } from "satori-html";
 import { Resvg } from "@resvg/resvg-js";
 import openSansFile from "../../../public/fonts/OpenSans-Bold.ttf";
-import { getPosts } from "@lib/getPosts";
+import { getFilteredPosts } from "@lib/getFilteredPosts";
 import type { APIContext, Params } from "astro";
 
 const toPrefixed = (value: string | undefined) => {
@@ -46,7 +46,7 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
 
   const slug = params.id.replace("-", "");
 
-  const p = await getPosts({
+  const p = await getFilteredPosts({
     filter: {
       slug,
     },
