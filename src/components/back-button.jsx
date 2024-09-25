@@ -8,7 +8,7 @@ export const BackButton = () => {
   };
 
   return (
-    <a onClick={goBack} >
+    <a onClick={goBack} className='hover:underline cursor-pointer' >
       &#x2190; voltar
     </a>
   );
