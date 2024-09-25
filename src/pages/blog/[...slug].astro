@@ -1,11 +1,11 @@
 ---
 import MarkdownPostLayout from "@layouts/layout.astro";
-import GithubButton from "@components/github-button.astro";
 import Prose from "@components/prose.astro";
-import { getCollection } from "astro:content";
+import Link from "@components/link.astro";
+import { getCollection } from "@lib/getCollection";
 
 export async function getStaticPaths() {
-    const blogEntries = await getCollection("blog");
+    const blogEntries = await getCollection();
     return blogEntries.map((entry) => ({
         params: { slug: entry.slug },
         props: { entry },
@@ -20,5 +20,4 @@ const { Content } = await entry.render();
     <Prose>
         <Content />
     </Prose>
-    <GithubButton id={entry.id} />
 </MarkdownPostLayout>

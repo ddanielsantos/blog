@@ -2,6 +2,7 @@
 import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
+import { BackButton } from "@components/back-button.jsx";
 import { getOgImageURL } from "@lib/getOgImageURL";
 import { type CollectionEntry } from "astro:content";
 
@@ -40,6 +41,9 @@ const ogImageURL = await getOgImageURL(frontmatter);
       <div
         class="w-full max-w-xl self-center flex flex-col p-4 gap-10 sm:my-20 my-10"
       >
+      {frontmatter?.title &&
+          <BackButton client:load />
+      }
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
           frontmatter?.tags ? (
