@@ -1,4 +1,5 @@
 ---
+draft: true
 title: "the astro-deck's CLI"
 description: "CLIs have always been an efficient way to provide powerful functionality."
 date: "09 Aug, 2023"

@@ -1,4 +1,5 @@
-import { CollectionEntry, getCollection, getEntryBySlug } from "astro:content";
+import { type CollectionEntry, getEntryBySlug } from "astro:content";
+import { getCollection } from "./getCollection";
 
 interface Options {
   filter?: {
@@ -9,12 +10,12 @@ interface Options {
 
 type Posts = CollectionEntry<"blog">[];
 
-export const getPosts = async ({ filter }: Options = {}): Promise<Posts> => {
+export const getFilteredPosts = async ({ filter }: Options = {}): Promise<Posts> => {
   if (filter?.slug) {
     return [await getEntryBySlug("blog", filter.slug)];
   }
 
-  let posts = await getCollection("blog");
+  let posts = await getCollection();
 
   if (filter?.tag) {
     posts = posts.filter((post) => post.data.tags?.includes(filter.tag));
