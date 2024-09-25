@@ -19,7 +19,7 @@ const { ogImageURL, href, frontmatter, title, description } = Astro.props;
 <meta property="og:site_name" content="Link preview site name">
 <meta property="og:image" content={ogImageURL}>
 <meta property="og:type" content="blog"/>
-<meta property="description" {frontmatter?.description ?? description} />
+<meta property="description" content={frontmatter?.description ?? description} />
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image" />
