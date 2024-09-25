@@ -33,10 +33,9 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
       >
         <div tw="flex flex-col border-blue-600">
           <div tw="flex border-red-600 items-center">
-            <div tw="bg-black w-[40px] h-full flex"></div>
+            <div tw="bg-[#374151] w-[40px] h-full flex"></div>
             <div tw="flex flex-col ml-15">
-              <h2 tw="text-7xl font-bold">ddaniel.me</h2>
-              <h3 tw="text-4xl font-bold">documenting my journey</h3>
+              <h2 tw="text-7xl font-bold text-[#374151]">ddaniel.me</h2>
             </div>
           </div>
         </div>
@@ -60,10 +59,10 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
   return html`
     <div tw="bg-white w-full h-full flex flex-col justify-around px-24 ">
       <div tw="flex flex-col">
-        <span tw="text-7xl mb-20">${widthSafeTitle}</span>
-        <span tw="text-4xl">${p[0]?.data.description}</span>
+        <span tw="text-7xl mb-20 text-[#374151]">${widthSafeTitle}</span>
+        <span tw="text-4xl text-[#374151]">${p[0]?.data.description}</span>
       </div>
-      <span tw="self-end text-4xl text-gray-600">${p[0]?.data.date}</span>
+      <span tw="self-end text-5xl text-[#374151]">${p[0]?.data.date}</span>
     </div>
   `;
 };
