@@ -37,9 +37,9 @@ const ogImageURL = await getOgImageURL(frontmatter);
   </head>
   <body>
     <Header />
-    <main class="w-full flex flex-col">
+    <main class="w-full flex flex-col p-8">
       <div
-        class="w-full max-w-xl self-center flex flex-col p-4 gap-10 sm:my-20 my-10"
+        class="w-full max-w-xl self-center flex flex-col gap-10 sm:my-20 my-10"
       >
       {frontmatter?.title &&
           <BackButton client:load />
