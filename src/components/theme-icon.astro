@@ -75,4 +75,10 @@ const handleToggleClick = () => {
     document
         .getElementById("themeToggle")
         .addEventListener("click", handleToggleClick);
+
+
+    document.addEventListener('astro:after-swap', function () {
+            if (localStorage.getItem("theme") === 'dark')
+                document.documentElement.classList.toggle('dark');
+        });
 </script>
