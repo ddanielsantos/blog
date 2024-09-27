@@ -12,10 +12,11 @@ import './global.css'
 const { frontmatter } = Astro.props as {
   frontmatter?: CollectionEntry<"blog">["data"];
 };
-const { url } = Astro;
+let { url } = Astro;
 const title = frontmatter?.title;
 
 const ogImageURL = await getOgImageURL(frontmatter);
+url = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
