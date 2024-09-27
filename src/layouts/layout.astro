@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
@@ -29,17 +30,19 @@ const ogImageURL = await getOgImageURL(frontmatter);
       href={url.href}
       ogImageURL={ogImageURL}
       title={"ddaniel.me"}
-      description="Daniel's personal website."
+      description="Website pessoal do Daniel"
       frontmatter={frontmatter}
     />
 
     <title>{title || "ddaniel.me"}</title>
+    <ViewTransitions/>
   </head>
   <body>
     <Header />
     <main class="w-full flex flex-col p-8">
       <div
         class="w-full max-w-xl self-center flex flex-col gap-10 sm:my-20 my-10"
+        transition:animate="fade"
       >
       {frontmatter?.title &&
           <BackButton client:load />

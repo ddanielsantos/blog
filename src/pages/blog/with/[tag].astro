@@ -18,7 +18,7 @@ export const getStaticPaths = async () => {
 const postsWithTag = (await getFilteredPosts({ filter: { tag } })).sort(sortPostByDate);
 ---
 
-<Layout title={"ddaniel.me | posts with " + tag}>
-    <h1>Posts with: {tag}</h1>
+<Layout title={"ddaniel.me | posts com " + tag}>
+    <h1>posts com: #{tag}</h1>
     <Postlist posts={postsWithTag} />
 </Layout>
