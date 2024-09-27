@@ -8,6 +8,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://www.ddaniel.me',
   vite: {
     plugins: [rawFonts([".ttf"])],
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
