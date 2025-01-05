@@ -12,7 +12,7 @@ segui o livro Learn Rust With Entirely Too Many Linked Lists, terminei o capitul
 
 o primeiro ponto foi sobre a [implementação do autor](https://rust-unofficial.github.io/too-many-lists/first-drop.html) para a trait `Drop`, eu havia entendido que ela foi feita daquela forma para evitar problemas na call stack quando uma lista com muitos itens saísse de escopo, mas eu precisava de um desenho no Excalidraw pra absorver melhor a implementação.
 
-![[drop_trait_linked_list.excalidraw.png]]
+![drop_trait_linked_list.excalidraw.png](https://github.com/user-attachments/assets/4a2e9c23-836b-47ea-8e27-4cbc5fe86c0d)
 
 Outro ponto foi que apesar de saber que essa implementação servia para evitar o stack overflow, diferente dos demais implementos ate aquele capitulo, para esse não houve uma demonstração de qual problema ele resolvia, tudo ficou bem mais claro quando eu comentei todo o `impl Drop` e criei uma linked list com 1 milhão de itens:
 
@@ -51,9 +51,9 @@ acredito que foi um ponto que faltou no livro, seria bem melhor cair no problema
 por fim ainda queria ver como a versão presente no livro se saia em um benchmark contra as APIs da linguagem. Mesmo Rust tendo uma API propria de `LinkedList`, decidi fazer o benchmark direto contra o `Vec`, ate porque na propria doc do `LinkedList` do std, eh dito que o preferível mesmo eh usar o `Vec` que provavelmente deve atender a maioria dos casos, bom, .
 
 broke
-![[Captura de tela 2025-01-05 005428.png]]
+![Captura de tela 2025-01-05 005428.png](https://github.com/user-attachments/assets/cab5c4aa-a841-41d3-aa80-91b97e3138ff)
 
 woke
-![[Captura de tela 2025-01-05 005502.png]]
+![Captura de tela 2025-01-05 005502.png](https://github.com/user-attachments/assets/c3c9ed43-1922-4380-b706-04d1af8d2b9f)
 
-![[Captura de tela 2025-01-05 005116.png]]
+![Captura de tela 2025-01-05 005116.png](https://github.com/user-attachments/assets/2c3dacb5-045f-4a38-bd0b-9dfcdf624684)
