@@ -48,12 +48,15 @@ thread 'main' has overflowed its stack
 
 acredito que foi um ponto que faltou no livro, seria bem melhor cair no problema e mostrar ao leitor como corrigi-lo do que corrigir de antemão e ficar por isso mesmo.
 
-por fim ainda queria ver como a versão presente no livro se saia em um benchmark contra as APIs da linguagem. Mesmo Rust tendo uma API propria de `LinkedList`, decidi fazer o benchmark direto contra o `Vec`, ate porque na propria doc do `LinkedList` do std, eh dito que o preferível mesmo eh usar o `Vec` que provavelmente deve atender a maioria dos casos, bom, .
+por fim ainda queria ver como a versão presente no livro se sairia em um benchmark contra a API presente na linguagem. Mesmo Rust tendo uma API propria de `LinkedList`, decidi fazer o benchmark direto contra o `Vec`, até porque na própria doc do `LinkedList` do std, é dito que o preferível seria usar o `Vec` que provavelmente deve atender a maioria dos casos. De qualquer forma, tenho quase certeza que independente do adversário, a surra seria a mesma 💀
 
-broke
+os prints abaixo são os reports gerados pelo Criterion, usando o mesmo benchmark que coloquei mais acima para a questão do `Drop`.
+
+pro `Vec`, os gráficos se mostraram bem mais estáveis e com tempos de execução com menos variações
 ![Captura de tela 2025-01-05 005428.png](https://github.com/user-attachments/assets/cab5c4aa-a841-41d3-aa80-91b97e3138ff)
 
-woke
+enquanto isso, o `List` do livro esteve respirando por aparelhos
 ![Captura de tela 2025-01-05 005502.png](https://github.com/user-attachments/assets/c3c9ed43-1922-4380-b706-04d1af8d2b9f)
 
+ChatGPT mandando a real sobre tudo isso
 ![Captura de tela 2025-01-05 005116.png](https://github.com/user-attachments/assets/2c3dacb5-045f-4a38-bd0b-9dfcdf624684)
