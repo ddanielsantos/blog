@@ -1,19 +1,20 @@
 import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-import tailwind from "@astrojs/tailwind";
 import react from '@astrojs/react';
 
 import mdx from "@astrojs/mdx";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.ddaniel.me',
   vite: {
-    plugins: [rawFonts([".ttf"])],
+    plugins: [rawFonts([".ttf"]), tailwindcss()],
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
-  integrations: [tailwind(), mdx(), react()],
+  integrations: [mdx(), react()],
   markdown: {
     shikiConfig: {
       themes: { light: 'one-light', dark: 'min-dark' },
