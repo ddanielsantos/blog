@@ -19,6 +19,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.3",
     "astro": "5.2.3",
+    "ioredis": "^5.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "satori": "0.12.1",

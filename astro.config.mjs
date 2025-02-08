@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import {defineConfig, envField} from "astro/config";
 
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
@@ -23,6 +23,11 @@ export default defineConfig({
 			],
 		},
 	},
+	env: {
+		schema: {
+			REDIS_URL: envField.string({ context: "server", access: "secret" })
+		}
+	}
 });
 
 function rawFonts(ext) {
