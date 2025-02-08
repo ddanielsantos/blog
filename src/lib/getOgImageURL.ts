@@ -23,7 +23,7 @@ export async function getOgImageURL(frontmatter: Args) {
 
   const prefix = isProd
     ? "https://www.ddaniel.me/api/og"
-    : "http://localhost:3000/api/og";
+    : "http://localhost:4321/api/og";
 
   return prefix + metaImageId + ".png";
 }
