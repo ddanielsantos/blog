@@ -1,22 +1,20 @@
+import { ASTRO_API_URL } from "astro:env/client"
 import {useEffect, useState} from "react";
-import type {IncrementVisitCounter} from "../pages/api/increment-visit-counter.ts";
+import type {IncrementVisitCounter} from "../pages/api/increment-visit-counter";
 
 type Props = {
     page: string;
 }
 
-const apiUrl = () => {
-    return "http://localhost:4321/api/increment-visit-counter";
-}
-
 const incrementVisitCountForPage = async (page: string) => {
-    const url = apiUrl();
+    const url = `${ASTRO_API_URL}/increment-visit-counter`;
     const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify({ page }),
         headers: {
             "Content-Type": "application/json",
         },
+        signal: AbortSignal.timeout(5000)
     });
 
     return (await response.json()) as IncrementVisitCounter;
