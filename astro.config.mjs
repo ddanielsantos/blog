@@ -5,6 +5,12 @@ import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 
+const defaultAstroApiURL = () => {
+	return process.env.VERCEL_BRANCH_URL
+		? `https://${process.env.VERCEL_BRANCH_URL}/api`
+		: "http://localhost:4321/api";
+}
+
 export default defineConfig({
 	site: "https://www.ddaniel.me",
 	adapter: vercel({
@@ -30,7 +36,7 @@ export default defineConfig({
 	env: {
 		validateSecrets: true,
 		schema: {
-			ASTRO_API_URL: envField.string({ context: "client", access: "public", default: "http://localhost:4321/api" }),
+			ASTRO_API_URL: envField.string({ context: "client", access: "public", default: defaultAstroApiURL() }),
 			REDIS_URL: envField.string({ context: "server", access: "secret" })
 		}
 	}
