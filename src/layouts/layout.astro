@@ -11,14 +11,14 @@ import { VisitCounter } from "@components/visit-counter.tsx";
 import '../styles/global.css'
 import './global.css'
 
-const { frontmatter } = Astro.props as {
-  frontmatter?: CollectionEntry<"blog">["data"];
+const { frontmatter, slug } = Astro.props as {
+  frontmatter?: CollectionEntry<"blog">["data"],
+  slug: string,
 };
-let { url } = Astro;
 const title = frontmatter?.title;
 
 const ogImageURL = await getOgImageURL(frontmatter);
-url = new URL(Astro.url.pathname, Astro.site);
+const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ url = new URL(Astro.url.pathname, Astro.site);
         {frontmatter?.title && (
             <>
               <BackButton client:load/>
-              <VisitCounter client:only page={"my_page"}/>
+              <VisitCounter client:only page={slug}/>
             </>
         )
 
