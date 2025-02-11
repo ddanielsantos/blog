@@ -5,6 +5,7 @@ import { Resvg } from "@resvg/resvg-js";
 import openSansFile from "../../../public/fonts/OpenSans-Bold.ttf";
 import { getFilteredPosts } from "@lib/getFilteredPosts";
 import type { APIContext, Params } from "astro";
+import type {ReactNode} from "react";
 
 const toPrefixed = (value: string | undefined) => {
   if (value) {
@@ -25,7 +26,7 @@ export const getStaticPaths = async () => {
 
 type VNode = ReturnType<typeof html>;
 
-const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
+const getHtmlForOGImage = async (params: Params): Promise<VNode> => {
   if (!params.id) {
     return html`
       <div
@@ -68,10 +69,10 @@ const getHmtlForOGImage = async (params: Params): Promise<VNode> => {
 };
 
 export const GET = async ({ params }: APIContext) => {
-  const element = await getHmtlForOGImage(params);
+  const element = await getHtmlForOGImage(params);
   const OpenSans = Buffer.from(openSansFile);
 
-  const svg = await satori(element, {
+  const svg = await satori(element as ReactNode, {
     fonts: [
       {
         data: OpenSans,
