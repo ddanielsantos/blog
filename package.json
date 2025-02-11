@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "bun run ./dist/server/entry.mjs",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -15,7 +15,6 @@
     "@astrojs/react": "4.2.0",
     "@astrojs/tailwind": "^6.0.0",
     "@astrojs/vercel": "8.0.6",
-    "@nurodev/astro-bun": "^2.0.5",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.3",
