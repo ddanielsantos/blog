@@ -3,9 +3,11 @@ import {defineConfig, envField} from "astro/config";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
+import bun from "@nurodev/astro-bun"
 
 export default defineConfig({
 	site: "https://www.ddaniel.me",
+	adapter: bun(),
 	vite: {
 		plugins: [rawFonts([".ttf"]), tailwindcss()],
 		optimizeDeps: { exclude: ["@resvg/resvg-js"] },
