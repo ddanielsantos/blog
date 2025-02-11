@@ -6,8 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 
 const defaultAstroApiURL = () => {
-	return process.env.VERCEL_BRANCH_URL
-		? `https://${process.env.VERCEL_BRANCH_URL}/api`
+	return process.env.PUBLIC_VERCEL_URL
+		? `https://${process.env.PUBLIC_VERCEL_URL}/api`
 		: "http://localhost:4321/api";
 }
 
