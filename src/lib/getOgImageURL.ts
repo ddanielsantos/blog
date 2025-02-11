@@ -1,4 +1,5 @@
 import { getSlugs } from "./getSlugs";
+import { ASTRO_API_URL } from "astro:env/client";
 
 type Args = {
   title?: string;
@@ -19,11 +20,6 @@ export async function getOgImageURL(frontmatter: Args) {
 
   if (metaImageId) metaImageId = "-" + metaImageId;
 
-  const isProd = process.env.NODE_ENV === "production";
 
-  const prefix = isProd
-    ? "https://www.ddaniel.me/api/og"
-    : "http://localhost:4321/api/og";
-
-  return prefix + metaImageId + ".png";
+  return ASTRO_API_URL + "/og" + metaImageId + ".png";
 }

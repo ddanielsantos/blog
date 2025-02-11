@@ -26,7 +26,9 @@ export default defineConfig({
 		},
 	},
 	env: {
+		validateSecrets: true,
 		schema: {
+			ASTRO_API_URL: envField.string({ context: "client", access: "public", default: "http://localhost:4321/api" }),
 			REDIS_URL: envField.string({ context: "server", access: "secret" })
 		}
 	}
