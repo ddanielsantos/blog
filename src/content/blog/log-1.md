@@ -1,10 +1,10 @@
 ---
 draft: false
-title: daily 1
+title: log 1
 description: resumo do que eu aprendi hoje
 date: 05 Jan, 2025
 tags:
-  - daily
+  - log
   - data-structures
 ---
 
