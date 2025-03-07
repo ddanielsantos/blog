@@ -15,6 +15,7 @@ Recentemente, ao trabalhar em uma função AWS Lambda utilizando o AWS SAM, deci
 Neste tutorial, compartilho o passo a passo dessa migração, desde a instalação do `rspack` até a configuração do AWS SAM para utilizar um Makefile personalizado. O objetivo é fornecer um guia prático para quem deseja explorar essa ferramenta em seus próprios projetos, seja para funções Lambda ou outras aplicações baseadas em Node.js.
 
 ---
+
 ### Substituindo o esbuild pelo rspack
 
 A primeira etapa da migração é substituir o `esbuild` pelo `rspack` no projeto
@@ -39,6 +40,7 @@ Para facilitar o processo de build, adicionaremos um script ao `package.json`. E
 Com isso, você poderá rodar `yarn build` para gerar o bundle da função Lambda diretamente a partir do terminal, simplificando o fluxo de trabalho.
 
 ---
+
 ### Configurando o rspack
 
 O próximo passo é criar o arquivo de configuração do `rspack`, o `rspack.config.cjs`. Esse arquivo define como o código será empacotado, incluindo entradas, saídas, regras de processamento e otimizações.
@@ -86,6 +88,7 @@ module.exports = {
 ```
 
 ---
+
 ### Atualizando o AWS SAM
 
 No arquivo `template.yaml` do AWS SAM, precisamos ajustar a configuração da função Lambda para usar um Makefile personalizado em vez do `esbuild`. Isso nos dá maior controle sobre o processo de build.
@@ -119,6 +122,7 @@ Resources:
 ```
 
 ---
+
 ### Criando o Makefile
 
 Finalmente, criamos um `Makefile` para definir o processo de build. O Makefile é uma ferramenta que permite automatizar tarefas, como instalação de dependências, execução de scripts e cópia de arquivos.
