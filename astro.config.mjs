@@ -37,7 +37,8 @@ export default defineConfig({
 		validateSecrets: true,
 		schema: {
 			ASTRO_API_URL: envField.string({ context: "client", access: "public", default: defaultAstroApiURL() }),
-			REDIS_URL: envField.string({ context: "server", access: "secret" })
+			ENDPOINT_URL: envField.string({ context: "server", access: "secret" }),
+			API_KEY: envField.string({ context: "server", access: "secret" }),
 		}
 	}
 });
