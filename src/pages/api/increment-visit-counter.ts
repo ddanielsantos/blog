@@ -33,7 +33,7 @@ export const POST: APIRoute = async (ctx) => {
             console.log('resp', resp);
         }
 
-        return resp;
+        return new Response(await resp.json(), {status: resp.status});
     } catch (error) {
         return new Response(null, {status: 500});
     }
