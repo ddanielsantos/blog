@@ -15,7 +15,12 @@ export const POST: APIRoute = async (ctx) => {
     try {
         const { page } = await ctx.request.json() as Body;
 
-        return await fetch(`${ENDPOINT_URL}`, {
+        if (process.env.NODE_ENV !== 'production') {
+            console.log('key', API_KEY);
+            console.log('url', ENDPOINT_URL);
+        }
+
+        const resp = await fetch(`${ENDPOINT_URL}`, {
             method: 'POST',
             body: JSON.stringify({ page }),
             headers: {
@@ -23,6 +28,12 @@ export const POST: APIRoute = async (ctx) => {
                 'x-api-key': API_KEY
             },
         });
+
+        if (process.env.NODE_ENV !== 'production') {
+            console.log('resp', resp);
+        }
+
+        return resp;
     } catch (error) {
         return new Response(null, {status: 500});
     }
