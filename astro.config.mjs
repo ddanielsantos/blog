@@ -10,8 +10,8 @@ const defaultAstroApiURL = () => {
 		return `https://${process.env.PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api`;
 	}
 
-	if (process.env.PUBLIC_VERCEL_URL) {
-		return `https://${process.env.PUBLIC_VERCEL_URL}/api`;
+	if (process.env.PUBLIC_VERCEL_BRANCH_URL) {
+		return `https://${process.env.PUBLIC_VERCEL_BRANCH_URL}/api`;
 	}
 
 
