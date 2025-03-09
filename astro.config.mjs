@@ -6,9 +6,16 @@ import tailwindcss from "@tailwindcss/vite";
 import vercel from "@astrojs/vercel";
 
 const defaultAstroApiURL = () => {
-	return process.env.PUBLIC_VERCEL_URL
-		? `https://${process.env.PUBLIC_VERCEL_URL}/api`
-		: "http://localhost:4321/api";
+	if (process.env.PUBLIC_VERCEL_ENV === 'production') {
+		return `https://${process.env.PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}/api`;
+	}
+
+	if (process.env.PUBLIC_VERCEL_URL) {
+		return `https://${process.env.PUBLIC_VERCEL_URL}/api`;
+	}
+
+
+	return "http://localhost:4321/api";
 }
 
 export default defineConfig({
