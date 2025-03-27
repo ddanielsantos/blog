@@ -22,7 +22,7 @@
     "ioredis": "^5.5.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "satori": "0.12.1",
+    "satori": "0.12.2",
     "satori-html": "^0.3.2",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "^4.0.3"
