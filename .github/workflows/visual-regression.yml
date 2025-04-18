@@ -3,7 +3,7 @@ name: Teste de regressão visual
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   visual-regression:
