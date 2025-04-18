@@ -1,6 +1,6 @@
 import { getCollection as internal } from "astro:content";
 
-export async function getCollection() {
+export async function getBlogCollection() {
   const collection = await internal('blog', ({ data }) => {
     return data.draft !== true;
   });

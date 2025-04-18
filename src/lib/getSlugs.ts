@@ -1,4 +1,4 @@
-import { getCollection } from "./getCollection";
+import { getBlogCollection } from "./getBlogCollection.ts";
 
 interface Options {
   filter?: {
@@ -7,7 +7,7 @@ interface Options {
 }
 
 export const getSlugs = async ({ filter }: Options = {}): Promise<string[]> => {
-  let posts = await getCollection();
+  let posts = await getBlogCollection();
 
   if (filter?.title) {
     posts = posts.filter((p) => p.data.title === filter.title);
