@@ -38,10 +38,11 @@ jobs:
 
       - name: Fazer upload dos resultados de testes (screenshots, diffs)
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-test-results
-          path: test-results
+          path: test-results/
+          retention-days: 1
 
       - name: Comentar no PR com o link para os artifacts
         if: failure()
