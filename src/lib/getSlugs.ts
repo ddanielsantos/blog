@@ -1,4 +1,3 @@
-import { type CollectionEntry } from "astro:content";
 import { getCollection } from "./getCollection";
 
 interface Options {
@@ -7,9 +6,7 @@ interface Options {
   };
 }
 
-type Slug = CollectionEntry<"blog">["slug"];
-
-export const getSlugs = async ({ filter }: Options = {}): Promise<Slug[]> => {
+export const getSlugs = async ({ filter }: Options = {}): Promise<string[]> => {
   let posts = await getCollection();
 
   if (filter?.title) {
