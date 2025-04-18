@@ -22,6 +22,11 @@ jobs:
       - name: Instalar browsers do Playwright
         run: bunx playwright install
 
+      - name: Gerar arquivo .env fake
+        run: |
+            echo "API_KEY=$(openssl rand -hex 16)" >> .env
+            echo "ENDPOINT_URL=production" >> .env
+
       - name: Build do site Astro
         run: bun run build
 
