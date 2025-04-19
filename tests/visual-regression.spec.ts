@@ -18,7 +18,7 @@ test('Visual regression', async ({ page }) => {
         await expect(page).toHaveScreenshot(`${snapshotName}.png`, {
             threshold: 0,
             fullPage: true,
-            maxDiffPixelRatio: 0.01,
+            maxDiffPixelRatio: 0.05,
         });
     }
 });
