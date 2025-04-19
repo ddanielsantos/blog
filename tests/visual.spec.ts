@@ -12,7 +12,12 @@ test('Visual regression', async ({ page }) => {
 
     for (const url of urls) {
         await page.goto(url);
-        expect(await page.screenshot({ fullPage: true })).toMatchSnapshot(`${url.split('/').pop()}.png`, {
+
+        const snapshotName = url === ASTRO_URL ? 'home' : url.split('/').pop()?.replace(/\W/g, '_') || 'unknown';
+
+        console.log(`Snapshot: ${snapshotName}.png`);
+
+        expect(await page.screenshot({ fullPage: true })).toMatchSnapshot(snapshotName, {
             threshold: 0,
         });
     }
