@@ -62,7 +62,7 @@ jobs:
             }
 
             const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-            const commentBody = `\n⚠️ **Teste de regressão visual falhou**\n\n📸 Veja os screenshots com diferenças: [Acessar artifacts e logs do workflow](${runUrl})\n\nSe a mudança é intencional, atualize os snapshots com:\t\n\`npx playwright test --update-snapshots\`\t\ne commite os novos arquivos.\t\n`;
+            const commentBody = `\n⚠️ **Teste de regressão visual falhou**\n\n📸 Veja os screenshots com diferenças: [Acessar artifacts e logs do workflow](${runUrl})\n\nSe a mudança é intencional, atualize os snapshots com:\`bun run update:visual\` e commite os novos arquivos.`;
             
             await github.rest.issues.createComment({
               owner: context.repo.owner,

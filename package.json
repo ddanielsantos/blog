@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test:visual": "playwright test"
+    "test:visual": "playwright test",
+    "update:visual": "playwright test --update-snapshots"
   },
   "dependencies": {
     "@astrojs/mdx": "4.2.4",
