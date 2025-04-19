@@ -1,12 +1,11 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import Header from "@components/header.astro";
 import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
 import { BackButton } from "@components/back-button.jsx";
 import { getOgImageURL } from "@lib/getOgImageURL";
-import { VisitCounter } from "@components/visit-counter.tsx";
 
 import '../styles/global.css'
 import './global.css'
@@ -50,7 +49,6 @@ const url = new URL(Astro.url.pathname, Astro.site);
         {frontmatter?.title && (
             <>
               <BackButton client:load/>
-              <VisitCounter client:only page={slug}/>
             </>
         )
 

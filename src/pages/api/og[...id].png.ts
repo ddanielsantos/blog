@@ -9,14 +9,14 @@ import type {ReactNode} from "react";
 
 const toPrefixed = (value: string | undefined) => {
   if (value) {
-    value = "-" + value;
+    return `-${value}`;
   }
 
   return value;
 };
 
 export const getStaticPaths = async () => {
-  let urls: (string | undefined)[] = (await getSlugs()).map(toPrefixed);
+  const urls: (string | undefined)[] = (await getSlugs()).map(toPrefixed);
   urls.push(undefined);
 
   return urls.map((u) => ({
@@ -54,7 +54,7 @@ const getHtmlForOGImage = async (params: Params): Promise<VNode> => {
 
   const widthSafeTitle =
     p[0]?.data?.title && p[0].data.title.length > 29
-      ? p[0]?.data?.title.slice(0, 29) + "..."
+      ? `${p[0]?.data?.title.slice(0, 29)}...`
       : p[0]?.data?.title;
 
   return html`

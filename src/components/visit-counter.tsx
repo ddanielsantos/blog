@@ -21,7 +21,7 @@ const incrementVisitCountForPage = async (page: string) => {
 };
 
 function getFromLocalStorage(page: string): number {
-    return parseInt(window.localStorage.getItem(`${page}-visit-count`) || "0", 10);
+    return Number.parseInt(window.localStorage.getItem(`${page}-visit-count`) || "0", 10);
 }
 
 function setToLocalStorage(page: string, count: number) {
@@ -53,7 +53,7 @@ export const VisitCounter = (props : Props) => {
         handleVisitCounting()
             .catch(console.error)
             .finally(() => setLoading(false));
-    },  [])
+    },  [props])
 
     if (loading) {
         return <div>Loading...</div>;

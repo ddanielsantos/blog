@@ -3,7 +3,6 @@ import {defineConfig, envField} from "astro/config";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
-import vercel from "@astrojs/vercel";
 
 const defaultAstroApiURL = () => {
 	if (process.env.PUBLIC_VERCEL_ENV === 'production') {
@@ -20,9 +19,6 @@ const defaultAstroApiURL = () => {
 
 export default defineConfig({
 	site: "https://www.ddaniel.me",
-	adapter: vercel({
-		edgeMiddleware: true,
-	}),
 	vite: {
 		plugins: [rawFonts([".ttf"]), tailwindcss()],
 		optimizeDeps: { exclude: ["@resvg/resvg-js"] },
