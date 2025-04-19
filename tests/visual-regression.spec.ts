@@ -11,14 +11,13 @@ test('Visual regression', async ({ page }) => {
     ]
 
     for (const url of urls) {
-        await page.goto(url);
+        await page.goto(url, { waitUntil: 'networkidle' });
 
         const snapshotName = url === ASTRO_URL ? 'home' : url.split('/').pop()?.replace(/\W/g, '_') || 'unknown';
 
-        console.log(`Snapshot: ${snapshotName}.png`);
-
-        expect(await page.screenshot({ fullPage: true })).toMatchSnapshot(snapshotName, {
+        await expect(page).toHaveScreenshot(`${snapshotName}.png`, {
             threshold: 0,
+            fullPage: true,
         });
     }
 });
