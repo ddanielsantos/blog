@@ -18,8 +18,7 @@ export async function getOgImageURL(frontmatter: Args) {
     if (slug) metaImageId = slug;
   }
 
-  if (metaImageId) metaImageId = "-" + metaImageId;
+  if (metaImageId) metaImageId = `-${metaImageId}`;
 
-
-  return ASTRO_API_URL + "/og" + metaImageId + ".png";
+  return `${ASTRO_API_URL}/og${metaImageId}.png`;
 }
