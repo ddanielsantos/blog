@@ -1,0 +1,12 @@
+---
+import Layout from "@layouts/layout.astro";
+import EditorDev from '../../components/editor-dev.jsx';
+---
+
+<Layout>
+  {import.meta.env.MODE === 'development' ? (
+    <EditorDev client:load />
+  ) : (
+    <div>Editor disponível apenas em desenvolvimento.</div>
+  )}
+</Layout>
