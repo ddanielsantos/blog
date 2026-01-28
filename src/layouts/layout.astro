@@ -39,6 +39,41 @@ const url = new URL(Astro.url.pathname, Astro.site);
 
     <title>{title || "ddaniel.me"}</title>
     <ClientRouter/>
+    <script>
+      function setupCopyButtons() {
+        document.querySelectorAll("pre.astro-code").forEach((preElement) => {
+          if (preElement.querySelector("button[data-copy]")) return;
+          
+          const codeText = preElement.textContent || "";
+          
+          const button = document.createElement("button");
+          button.setAttribute("data-copy", "true");
+          button.className = "absolute top-2 right-2 px-2 py-1 text-xs rounded border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors";
+          button.textContent = "Copiar";
+          button.title = "Copiar código";
+          
+          button.addEventListener("click", async () => {
+            button.classList.add("clicked");
+            await navigator.clipboard.writeText(codeText);
+            button.textContent = "✓";
+            setTimeout(() => {
+              button.textContent = "Copiar";
+              button.classList.remove("clicked");
+            }, 2000);
+          });
+          
+          preElement.appendChild(button);
+        });
+      }
+      
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setupCopyButtons);
+      } else {
+        setupCopyButtons();
+      }
+      
+      document.addEventListener("astro:after-swap", setupCopyButtons);
+    </script>
   </head>
   <body>
     <Header />

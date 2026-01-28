@@ -5,12 +5,10 @@ description: "Embrace early return"
 date: "17 Jun, 2023"
 tags: ["refactoring", "basics"]
 ---
-import { Image } from 'astro:assets';
-
 
 it's all fun and games with if statements until someone have to maintain code like this:
 
-<Image src="https://github.com/ddanielsantos/blog/assets/80872981/27c2a8da-76ef-400c-ae1b-28698926c6a1" alt="early-return" width="350" height="350" />
+![early-return.png](../../assets/early-return.png)
 
 someone that codes like this is one step away of beating old people. if you're a good person and don't want to look like a maniac, please embrace early return. it's not some advanced technique nor require you to read three martin fowler books, it's one of the most easy refactorings and will save you a good amount of sanity.
 

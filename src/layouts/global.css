@@ -42,8 +42,15 @@ ul:not(.tag-group, .post-list) li {
 }
 
 pre.astro-code {
-    border-radius: 0.5rem;
+    border-radius: 0.375rem;
     padding: 1rem;
+    border: 1px solid #d1d5db;
+    position: relative;
+    padding-top: 2.5rem;
+}
+
+html.dark pre.astro-code {
+    border-color: #3f3f46;
 }
 
 html.dark .astro-code,
@@ -53,4 +60,28 @@ html.dark .astro-code span {
   font-style: var(--shiki-dark-font-style) !important;
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+button[data-copy] {
+  transition: transform 150ms ease-in-out;
+}
+
+button[data-copy].clicked {
+  transform: scale(0.95);
+}
+
+.post-list > li {
+  padding-bottom: 1rem;
+}
+
+.post-list > li:not(.border-b) {
+  padding-top: 1rem;
+}
+
+.post-list > li:first-of-type {
+  padding-top: 0;
+}
+
+.post-list > li.border-b {
+  padding: 0;
 }

@@ -31,6 +31,11 @@ export default defineConfig({
 				{
 					pre(node) {
 						node.properties.tabindex = undefined;
+						node.properties.class = (node.properties.class || "") + " relative";
+					},
+					code(node) {
+						// This will be used to extract code for copying
+						node.properties.class = (node.properties.class || "") + " copy-target";
 					},
 				},
 			],

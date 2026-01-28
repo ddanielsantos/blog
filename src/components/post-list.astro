@@ -15,11 +15,18 @@ function entryToURL(entry: { slug: string }) {
 }
 ---
 
-<ul class="flex flex-col gap-4 post-list">
+<ul class="flex flex-col post-list">
     {
         posts &&
-            posts.map((p) => {
-                return <PostCard {...p.data} url={entryToURL(p)} />;
+            posts.map((p, idx) => {
+                return (
+                    <>
+                        <li>
+                            <PostCard {...p.data} url={entryToURL(p)} />
+                        </li>
+                        {idx < posts.length - 1 && <li class="border-b border-gray-200 dark:border-gray-800"></li>}
+                    </>
+                );
             })
     }
 </ul>

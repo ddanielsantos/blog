@@ -8,8 +8,8 @@ export const BackButton = () => {
   };
 
   return (
-    <a onClick={goBack} className='hover:underline cursor-pointer' >
+    <button onClick={goBack} className='hover:underline cursor-pointer w-fit' >
       &#x2190; voltar
-    </a>
+    </button>
   );
 };
