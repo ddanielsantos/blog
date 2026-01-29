@@ -20,20 +20,30 @@ const { signature } = Astro.props;
 )}
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function setupVerifyButtons() {
     const buttons = document.querySelectorAll("[data-verify-button]");
     buttons.forEach((button) => {
+      if (button.hasAttribute("data-verify-listener")) return;
+      button.setAttribute("data-verify-listener", "true");
+      
       button.addEventListener("click", async () => {
         const signature = button.getAttribute("data-signature");
         if (signature) {
-          await navigator.clipboard.writeText(signature);
-          const originalText = button.textContent;
-          button.textContent = "✓ hash copiado!";
-          setTimeout(() => {
-            button.textContent = originalText;
-          }, 2000);
+          try {
+            await navigator.clipboard.writeText(signature);
+            const originalText = button.textContent;
+            button.textContent = "✓ hash copiado!";
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          } catch (err) {
+            console.warn("Clipboard access denied:", err);
+          }
         }
       });
     });
-  });
+  }
+
+  document.addEventListener("astro:page-load", setupVerifyButtons);
+  setupVerifyButtons();
 </script>
