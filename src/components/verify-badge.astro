@@ -19,13 +19,6 @@ const { signature } = Astro.props;
   </li>
 )}
 
-<style>
-  [data-verify-button] {
-    cursor: pointer;
-    font-weight: 500;
-  }
-</style>
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll("[data-verify-button]");
