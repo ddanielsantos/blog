@@ -1,6 +1,10 @@
-import { getCollection as internal } from "astro:content";
+import {type CollectionEntry, getCollection as internal} from "astro:content";
 
-export async function getBlogCollection() {
+export type PostWithSlug = CollectionEntry<"blog"> & {
+  slug?: string;
+}
+
+export async function getBlogCollection(): Promise<PostWithSlug[]> {
   const collection = await internal('blog', ({ data }) => {
     return data.draft !== true;
   });
