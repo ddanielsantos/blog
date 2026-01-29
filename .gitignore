@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # IDE
 .idea
+
+# Private signing keys
+keys/private.pem

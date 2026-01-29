@@ -4,6 +4,7 @@ title: "i wrote a lil version of the tree command"
 description: "A small note on a low-key implementation of the UNIX `tree` command in Rust."
 date: "18 Sep, 2023"
 tags: ["rust", "unix"]
+signature: H9tFBisPGO3VvKT9GJwQms/Dl5QAl0c68STnDDqEBy7/XxKUrVmC4uf93ozgPcLEq0Bv0Aa9VJ3y3iOM+pZ8DQ==
 ---
 
 A low-key implementation of the UNIX `tree` command in Rust.

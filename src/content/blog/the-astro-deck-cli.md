@@ -4,6 +4,7 @@ title: "the astro-deck's CLI"
 description: "CLIs have always been an efficient way to provide powerful functionality."
 date: "09 Aug, 2023"
 tags: ["side-project", "astro"]
+signature: mpN7B1gqFCJ2Q0ksVh1BF2ltprL/iA8eiZsx34M8G4nEB2PLv23vGbnXDywyz0Z3tR7Usu8YZ1q/QCvSwQPCBA==
 ---
 
 Last month I wrote about the [beginning of astro-deck](./i-started-astro-deck), a couple things happened since then, and today I want to talk about its CLI.

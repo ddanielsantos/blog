@@ -4,6 +4,7 @@ title: "revamping"
 description: "Moving to Astro and some other stuff"
 date: "18 Feb, 2023"
 tags: ["astro", "blog"]
+signature: lAaPSQGigfgLEMdVFiB6VPBtdboACUXXe4R42qZShxMBiI/i0UTW0/gOMa83P7N5CWnyHPS6L8sRtVQGpCzXDw==
 ---
 
 I wasn't liking the feeling of the previous state of this blog, I wasn't liking NextJS too much, I all I need here is some static pages and Markdown support, after a quick search I found Astro, which I think has all I need.

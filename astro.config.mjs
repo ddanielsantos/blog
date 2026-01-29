@@ -1,8 +1,10 @@
 import {defineConfig, envField} from "astro/config";
+import fs from "fs";
 
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
+import signPostsIntegration from "./src/integrations/sign-posts.mjs";
 
 const defaultAstroApiURL = () => {
 	if (process.env.PUBLIC_VERCEL_ENV === 'production') {
@@ -23,7 +25,7 @@ export default defineConfig({
 		plugins: [rawFonts([".ttf"]), tailwindcss()],
 		optimizeDeps: { exclude: ["@resvg/resvg-js"] },
 	},
-	integrations: [mdx(), react()],
+	integrations: [mdx(), react(), signPostsIntegration()],
 	markdown: {
 		shikiConfig: {
 			themes: { light: "one-light", dark: "min-dark" },

@@ -4,6 +4,7 @@ title: "creating Rest APIs with Rust"
 description: "How to create a well documented API with Rust"
 date: "12 Dec, 2022"
 tags: ["rust", "rest", "api", "openapi"]
+signature: rcYLaKSq1ECASrvLIzujqMhM88n9bB5nZlJVsr9b4Q68VmYeshkLnh+7G7LF7zyVMWb5bST1umaA+5LqCGzeCw==
 ---
 
 In this series, I'll share the learnings I got developing another personal project, today I bring a brief introduction to building Rest APIs with Rust.

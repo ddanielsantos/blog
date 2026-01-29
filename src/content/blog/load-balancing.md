@@ -4,6 +4,7 @@ title: "load balancing"
 description: "A small note on what is load balancing"
 date: "18 Oct, 2023"
 tags: ["system-design"]
+signature: CzfALTCMrLnYSGLFCTGpaJmeLs/29HlRYqD9XcF6wqhRTP+k3mwSzckR4A6J+4Ljp8aRwO/bTjnQhYEqgYJvCw==
 ---
 
 ![traffic guard](https://media.giphy.com/media/3o6Zt7GpxX0bBvRDgs/giphy.gif)

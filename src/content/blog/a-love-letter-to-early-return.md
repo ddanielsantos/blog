@@ -4,6 +4,7 @@ title: "a love letter to early return"
 description: "Embrace early return"
 date: "17 Jun, 2023"
 tags: ["refactoring", "basics"]
+signature: CAFOk3+LM2qhPmE3X2h/GyqhhsEDXz5Z2WNY8WUGNAaHw/iijyyjVrH8ByONuzODTR1Jbr02i51N4PG82e+XBw==
 ---
 
 it's all fun and games with if statements until someone have to maintain code like this:
