@@ -1,0 +1,25 @@
+---
+interface Props {
+  signature?: string;
+}
+
+const { signature } = Astro.props;
+---
+
+{signature && (
+  <li>
+    <button
+      class="border-[1px] border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs py-1 px-2 rounded-md hover:underline tag"
+      data-verify-button
+    >
+      ✓ verificado
+    </button>
+  </li>
+)}
+
+<style>
+  [data-verify-button] {
+    cursor: pointer;
+    font-weight: 500;
+  }
+</style>

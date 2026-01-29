@@ -2,8 +2,8 @@
 import { ClientRouter } from 'astro:transitions';
 import type { CollectionEntry } from "astro:content";
 import Header from "@components/header.astro";
-import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
+import VerifyBadge from "@components/verify-badge.astro";
 import { BackButton } from "@components/back-button.jsx";
 import { getOgImageURL } from "@lib/getOgImageURL";
 
@@ -91,8 +91,21 @@ const url = new URL(Astro.url.pathname, Astro.site);
       }
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
-          frontmatter?.tags ? (
-            <TagGroup hasAnchor={true} tags={frontmatter.tags} />
+          frontmatter?.tags || frontmatter?.signature ? (
+            <ul class="flex gap-2 tag-group">
+              {frontmatter?.tags &&
+                frontmatter.tags.map((tag: string) => (
+                  <li>
+                    <a
+                      class="border-[1px] border-gray-300 dark:border-gray-700 text-xs py-1 px-2 rounded-md hover:underline tag"
+                      href={"/blog/with/" + tag}
+                    >
+                      #{tag}
+                    </a>
+                  </li>
+                ))}
+              <VerifyBadge signature={frontmatter?.signature} />
+            </ul>
           ) : null
         }
         <slot />
