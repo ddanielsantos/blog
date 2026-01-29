@@ -1,0 +1,105 @@
+---
+import { readFileSync } from "fs";
+import { resolve } from "path";
+import Layout from "@layouts/layout.astro";
+
+const keysPath = resolve(process.cwd(), 'public/keys.json');
+const keysData = JSON.parse(readFileSync(keysPath, 'utf-8'));
+const publicKey = keysData.publicKey;
+---
+
+<Layout frontmatter={{ title: "Chaves e Verificação" }} slug="keys">
+  <div class="flex flex-col gap-6">
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Sobre Assinaturas Digitais</h2>
+      <p class="text-gray-700 dark:text-gray-300 mb-3">
+        Todos os posts neste blog são assinados digitalmente usando criptografia Ed25519. Isso permite que você verifique a autenticidade e integridade do conteúdo publicado aqui.
+      </p>
+      <p class="text-gray-700 dark:text-gray-300">
+        Quando um post é modificado, sua assinatura não corresponderá mais à chave pública aqui exibida, garantindo que você sempre saiba se o conteúdo foi alterado.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Chave Pública Ed25519</h2>
+      <div class="relative">
+        <pre class="bg-gray-100 dark:bg-gray-900 p-4 rounded-lg overflow-x-auto text-sm border border-gray-300 dark:border-gray-700"><code>{publicKey}</code></pre>
+        <button
+          class="absolute top-2 right-2 px-3 py-1 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded text-sm font-medium transition-colors"
+          data-copy-key
+          title="Copiar chave pública"
+        >
+          Copiar
+        </button>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Como Verificar um Post</h2>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+        <li>Abra um post que tenha o badge "✓ verificado"</li>
+        <li>Copie a assinatura (hash) exibida no post</li>
+        <li>Copie o conteúdo completo do post (sem incluir o frontmatter YAML)</li>
+        <li>Use o comando abaixo para verificar a assinatura</li>
+      </ol>
+
+      <div class="mt-4 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+        <p class="text-sm font-mono text-gray-700 dark:text-gray-300 mb-2">
+          Comando de verificação (Linux/macOS/WSL):
+        </p>
+        <pre class="bg-gray-900 text-gray-100 p-3 rounded text-xs overflow-x-auto"><code>echo -n "COLE_O_CONTEUDO_DO_POST" | base64 -d | openssl dgst -sha512 -verify &lt;(openssl pkey -pubin -text -noout &lt;&lt;&lt; "COLE_A_CHAVE_PUBLICA") -signature &lt;(echo "COLE_A_ASSINATURA_BASE64" | base64 -d)</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Informações da Chave</h2>
+      <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
+        <li><strong>Algoritmo:</strong> Ed25519</li>
+        <li><strong>Formato:</strong> PKCS#8 / SPKI</li>
+        <li><strong>Criada em:</strong> {new Date(keysData.createdAt).toLocaleDateString("pt-BR")}</li>
+        <li><strong>Tipo:</strong> Chave pública (segura para compartilhar)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-lg font-semibold mb-3">Perguntas Frequentes</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Por que usar assinaturas digitais?</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            Em uma era de conteúdo gerado por IA, assinaturas digitais fornecem uma forma confiável de verificar que um post é genuíno e não foi alterado.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">A assinatura muda se o post for editado?</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            Sim! Se qualquer caractere do post for alterado, a assinatura mudará. Quando um post é atualizado, uma nova assinatura é gerada no build seguinte.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">Posso confiar completamente nas assinaturas?</h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            As assinaturas garantem integridade (que não foi alterado) e autenticidade (que veio desta chave). No entanto, você ainda precisa confiar que esta chave pública pertence ao autor legítimo.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const copyButton = document.querySelector("[data-copy-key]") as HTMLButtonElement;
+    if (copyButton) {
+      const keyContent = copyButton.previousElementSibling?.textContent || "";
+      copyButton.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(keyContent);
+        const originalText = copyButton.textContent;
+        copyButton.textContent = "Copiado!";
+        setTimeout(() => {
+          copyButton.textContent = originalText;
+        }, 2000);
+      });
+    }
+  });
+</script>
