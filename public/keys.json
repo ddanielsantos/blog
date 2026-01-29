@@ -1,0 +1,5 @@
+{
+  "format": "ed25519-pkcs8-spki",
+  "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA6ozMHgO2GvIY7ctHTqRHDcMuk5f8gJ20AgmIVgaKtrc=\n-----END PUBLIC KEY-----\n",
+  "createdAt": "2026-01-29T00:34:32.289Z"
+}

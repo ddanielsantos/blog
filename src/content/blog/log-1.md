@@ -6,6 +6,7 @@ date: 05 Jan, 2025
 tags:
   - log
   - data-structures
+signature: wZU3lnAXe1ABA4iYAxy4A9lfeE0K9P22Guw3VdH4ycoyovIvUFsJ/o9Jp8StCJlK+A2dlYouLp+JW2qdmvLOCw==
 ---
 
 segui o livro Learn Rust With Entirely Too Many Linked Lists, terminei o capitulo 3 mas ao final decidi revisar o 2, algumas coisas ainda não estavam muito claras, senti que passei muito rápido por elas

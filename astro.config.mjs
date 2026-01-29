@@ -1,4 +1,5 @@
 import {defineConfig, envField} from "astro/config";
+import fs from "fs";
 
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";

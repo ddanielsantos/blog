@@ -4,6 +4,7 @@ title: "what is a webhook"
 description: "Small note about what is a Webhook and how it works"
 date: "03 Jun, 2023"
 tags: ["http"]
+signature: OR3VwxETlJQKVwg6boRDzzz7dNuIGTzachRwMioNPpV87xSZTOK6sqGwLIbsnKXrRZJ9VIhWTMIJ6lNip22eDQ==
 ---
 
 let's imagine a crowded restaurant, the waiter's mission is to deliver customer's orders to the kitchen, and when the food is ready, take it to them.

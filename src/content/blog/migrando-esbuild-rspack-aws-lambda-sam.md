@@ -6,6 +6,7 @@ date: 07 Mar, 2025
 tags:
   - aws
   - nodejs
+signature: VShBcn8IU2+9upfSrVqNvlYVvg8pD+vycgmw+wC34YKbjDeJg//FSBiH62vajX9e+9DaBpVRQfGHlQ8bLy1xAw==
 ---
 
 Nos últimos anos, o ecossistema de ferramentas para desenvolvimento em JavaScript e TypeScript tem evoluído rapidamente, oferecendo opções cada vez mais eficientes para construir e otimizar aplicações. Uma dessas ferramentas que tem ganhado destaque é o `rspack` , um bundler moderno baseado em Rust que combina desempenho excepcional com compatibilidade com o Webpack, permitindo aproveitar plugins e configurações já conhecidas no mercado.

@@ -4,6 +4,7 @@ title: "i started astro-deck"
 description: "After a long time, I'm working on a side project again. This time, I'm building a tool to create presentations using Astro."
 date: "17 Jul, 2023"
 tags: ["side-project", "astro"]
+signature: NG76RSXmKF9RkE5itqvXkHlePM/7JIbj8Gt/amwxzWB5JOIGJ0V4O7RlyAiCodad9TTeUCph0gPF91p4c5aMDg==
 ---
 
 Last month, while scrolling through my list of starred repositories, I came across one from [fersilva](https://twitter.com/fersilvaa16) that caught my attention. It was a [presentation on Lean 4](https://github.com/fersilva16/natural-numbers-from-scratch-talk). As I explored its source code, I recalled [mdx-deck](https://github.com/jxnblk/mdx-deck), a tool that generates presentations from Markdown JSX files. These presentations can be deployed as static websites, making them easily hostable on any platform.

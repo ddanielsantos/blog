@@ -2,13 +2,14 @@
 import { ClientRouter } from 'astro:transitions';
 import type { CollectionEntry } from "astro:content";
 import Header from "@components/header.astro";
-import TagGroup from "@components/tag-group.astro";
 import MetaTags from "@components/meta-tags.astro";
+import VerifyBadge from "@components/verify-badge.astro";
 import { BackButton } from "@components/back-button.jsx";
 import { getOgImageURL } from "@lib/getOgImageURL";
 
 import '../styles/global.css'
 import './global.css'
+import Tag from "@components/tag.astro";
 
 const { frontmatter, slug } = Astro.props as {
   frontmatter?: CollectionEntry<"blog">["data"],
@@ -27,7 +28,6 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <script src="https://app.rybbit.io/api/script.js" data-site-id="215" defer></script>
 
     <MetaTags
       href={url.href}
@@ -48,7 +48,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
           
           const button = document.createElement("button");
           button.setAttribute("data-copy", "true");
-          button.className = "absolute top-2 right-2 px-2 py-1 text-xs rounded border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors";
+          button.className = "absolute top-2 right-2 px-2 py-1 text-xs rounded border border-zinc-300 dark:border-zinc-700 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors";
           button.textContent = "Copiar";
           button.title = "Copiar código";
           
@@ -91,8 +91,16 @@ const url = new URL(Astro.url.pathname, Astro.site);
       }
         {frontmatter?.title && <h1>{frontmatter.title}</h1>}
         {
-          frontmatter?.tags ? (
-            <TagGroup hasAnchor={true} tags={frontmatter.tags} />
+          frontmatter?.tags || frontmatter?.signature ? (
+            <ul class="flex gap-2 tag-group">
+              {frontmatter?.tags &&
+                frontmatter.tags.map((tag: string) => (
+                  <li>
+                    <Tag tag={tag} hasAnchor />
+                  </li>
+                ))}
+              <VerifyBadge signature={frontmatter?.signature} />
+            </ul>
           ) : null
         }
         <slot />

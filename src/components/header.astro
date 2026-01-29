@@ -1,10 +1,16 @@
 ---
 import ThemIcon from "./theme-icon.astro";
+import BlueskyIcon from "./bluesky-icon.astro";
+import Github from "./github-icon.astro"
 ---
 
 <header class="p-8 flex flex-col">
     <nav class="w-full max-w-xl flex self-center justify-between items-center">
         <a href="/" class="hover:underline">ddaniel.me</a>
-        <ThemIcon />
+        <div class="flex items-center gap-6">
+            <BlueskyIcon />
+            <Github />
+            <ThemIcon />
+        </div>
     </nav>
 </header>

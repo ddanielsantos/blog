@@ -1,0 +1,49 @@
+---
+interface Props {
+  signature?: string;
+}
+
+const { signature } = Astro.props;
+---
+
+{signature && (
+  <li>
+    <button
+      class="border-[1px] border-emerald-200 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs py-1 px-2 rounded-md hover:underline tag"
+      data-verify-button
+      data-signature={signature}
+      title="Clique para copiar a assinatura"
+    >
+      ✓ verificado
+    </button>
+  </li>
+)}
+
+<script>
+  function setupVerifyButtons() {
+    const buttons = document.querySelectorAll("[data-verify-button]");
+    buttons.forEach((button) => {
+      if (button.hasAttribute("data-verify-listener")) return;
+      button.setAttribute("data-verify-listener", "true");
+      
+      button.addEventListener("click", async () => {
+        const signature = button.getAttribute("data-signature");
+        if (signature) {
+          try {
+            await navigator.clipboard.writeText(signature);
+            const originalText = button.textContent;
+            button.textContent = "✓ hash copiado!";
+            setTimeout(() => {
+              button.textContent = originalText;
+            }, 2000);
+          } catch (err) {
+            console.warn("Clipboard access denied:", err);
+          }
+        }
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupVerifyButtons);
+  setupVerifyButtons();
+</script>

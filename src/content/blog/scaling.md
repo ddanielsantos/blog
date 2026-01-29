@@ -4,6 +4,7 @@ title: "scaling"
 description: "(really) small note about what is scaling"
 date: "22 Sep, 2023"
 tags: ["system-design"]
+signature: dL2+re57ShF5Y2AdNWiNxLkUPTNg3AzphDgJ8MPtWe6Hc6vug3KRnR+VVWrWn/vEQnWSWxAqQ+2z7rVAaiEGCw==
 ---
 
 the process of getting bigger, so the system can perform more tasks.

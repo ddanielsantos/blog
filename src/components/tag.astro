@@ -10,13 +10,13 @@ const { tag, hasAnchor } = Astro.props;
 {
   hasAnchor ? (
     <a
-      class="border-[1px] border-gray-300 dark:border-gray-700 text-xs py-1 px-2 rounded-md hover:underline tag"
+      class="border-[1px] border-zinc-300 dark:border-zinc-700 text-xs py-1 px-2 rounded-md hover:underline tag"
       href={"/blog/with/" + tag}
     >
       #{tag}
     </a>
   ) : (
-    <p class="border-[1px] border-gray-300 dark:border-gray-700 text-xs py-1 px-2 rounded-md tag">
+    <p class="border-[1px] border-zinc-300 dark:border-zinc-700 text-xs py-1 px-2 rounded-md tag">
       #{tag}
     </p>
   )

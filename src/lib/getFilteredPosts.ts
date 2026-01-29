@@ -1,5 +1,5 @@
-import { type CollectionEntry, getEntry } from "astro:content";
-import { getBlogCollection } from "./getBlogCollection.ts";
+import { getEntry } from "astro:content";
+import {getBlogCollection, type PostWithSlug} from "./getBlogCollection.ts";
 
 interface Options {
   filter?: {
@@ -8,9 +8,7 @@ interface Options {
   };
 }
 
-type Posts = CollectionEntry<"blog">[];
-
-export const getFilteredPosts = async ({ filter }: Options = {}): Promise<Posts> => {
+export const getFilteredPosts = async ({ filter }: Options = {}): Promise<PostWithSlug[]> => {
   if (filter?.slug) {
     return [await getEntry("blog", filter.slug)];
   }
