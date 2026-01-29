@@ -8,20 +8,19 @@ const keysData = JSON.parse(readFileSync(keysPath, 'utf-8'));
 const publicKey = keysData.publicKey;
 ---
 
-<Layout frontmatter={{ title: "chaves e verificação" }} slug="keys">
   <div class="flex flex-col gap-6">
-    <p class="text-gray-800 dark:text-gray-200">
+    <p class="text-zinc-800 dark:text-zinc-200">
       todos os posts neste blog são assinados digitalmente usando ed25519. clique no badge "✓ verificado" em qualquer post para copiar a assinatura.
     </p>
 
     <div>
       <h4 class="text-sm font-semibold mb-3">chave pública ed25519</h4>
-      <pre class="astro-code astro-code-themes one-light min-dark relative bg-gray-100 dark:bg-gray-900 p-4 rounded text-xs overflow-x-auto border border-gray-300 dark:border-gray-700" style="background-color:#FAFAFA;--shiki-dark-bg:#1f1f1f;color:#383A42;--shiki-dark:#b392f0;"><code>{publicKey}</code></pre>
+
     </div>
 
     <div>
       <h4 class="text-sm font-semibold mb-3">informações da chave</h4>
-      <ul class="space-y-1 text-sm text-gray-700 dark:text-gray-300">
+      <ul class="space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
         <li>algoritmo: ed25519</li>
         <li>criada em: {new Date(keysData.createdAt).toLocaleDateString("pt-BR")}</li>
       </ul>
@@ -29,9 +28,8 @@ const publicKey = keysData.publicKey;
 
     <div>
       <h4 class="text-sm font-semibold mb-2">por que assinaturas digitais?</h4>
-      <p class="text-sm text-gray-700 dark:text-gray-300">
+      <p class="text-sm text-zinc-700 dark:text-zinc-300">
         em uma era de conteúdo gerado por IA, assinaturas garantem autenticidade. se um post for alterado, a assinatura muda.
       </p>
     </div>
   </div>
-</Layout>
