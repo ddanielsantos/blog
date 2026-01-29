@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sign-posts": "node scripts/sign-posts.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
