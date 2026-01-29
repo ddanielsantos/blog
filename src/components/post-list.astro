@@ -1,21 +1,21 @@
 ---
 import PostCard from "@components/post-card.astro";
-import type { CollectionEntry } from "astro:content";
+import type {PostWithSlug} from "@lib/getBlogCollection.ts";
 
 interface Props {
-    posts?: CollectionEntry<"blog">[];
+    posts?: PostWithSlug[];
 }
 
 const {
     props: { posts },
 } = Astro;
 
-function entryToURL(entry: { slug: string }) {
+function entryToURL(entry: PostWithSlug) {
     return `/blog/${entry.slug}`;
 }
 ---
 
-<ul class="flex flex-col post-list">
+<ul class="flex flex-col post-list gap-6">
     {
         posts &&
             posts.map((p, idx) => {
@@ -24,7 +24,7 @@ function entryToURL(entry: { slug: string }) {
                         <li>
                             <PostCard {...p.data} url={entryToURL(p)} />
                         </li>
-                        {idx < posts.length - 1 && <li class="border-b border-gray-200 dark:border-gray-800"></li>}
+                        {idx < posts.length - 1 && <li class="border-b border-zinc-200 dark:border-zinc-800"></li>}
                     </>
                 );
             })
